@@ -2,8 +2,6 @@
 
 ## 4. Profile Options
 
----
-
 The profile option 'Blitz Report Access' should be set to 'Developer' for users with the SQL skills required for creating Blitz Reports.
 
 The following optional profile options can be set to configure Blitz Report functionality according to your business and user requirements:
@@ -160,6 +158,6 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz FSG Webservice Maximum Functions** | Maximum functions via webservice call | 1000 |
 | **Blitz FSG Webservice Timeout** | Webservice timeout threshold in seconds | 120 |
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

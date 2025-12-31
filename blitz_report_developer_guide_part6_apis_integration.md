@@ -2,15 +2,11 @@
 
 ## 5. APIs and Integration
 
----
-
 ### 5.1 Export
 
 To make migration tasks easier Blitz Report offers the following Export APIs:
 
 - [Blitz Report Library Export API](https://www.enginatics.com/blitz-report-developer-guide/#export_api)
-
----
 
 ### 5.2 Import
 
@@ -23,8 +19,6 @@ To make migration tasks easier Blitz Report offers the following Import APIs:
 - [Excel4apps Reports Wand Import API](https://www.enginatics.com/blitz-report-developer-guide/#excel4apps)
 - [Enterprise Command Center Import API](https://www.enginatics.com/blitz-report-developer-guide/#ecc)
 - [Polaris Reporting Workbench Import API](https://www.enginatics.com/blitz-report-developer-guide/#polaris)
-
----
 
 ### 5.3 Submitting Blitz Report from PLSQL
 
@@ -213,7 +207,7 @@ begin
 end;
 ```
 
----
+
 
 ### 5.4 Useful DB Functions
 
@@ -337,6 +331,6 @@ from dual
 | `p_column_name_prefix` | Prefix for dff column name (e.g., 'Item: ' creates: `msiv.attribute15 "Item: Invoice UOM"`) |
 | `p_prefix` | Prefix for outer query (e.g., 'x.' generates: `x."Invoice UOM"`) |
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

@@ -2,8 +2,6 @@
 
 ## 3. Tips and Tricks
 
----
-
 ### 3.1 Debugging
 
 If you encounter an error during Blitz Report execution e.g. the message 'Blitz Report output file creation failed.', then this is usually due to an error encountered during SQL execution.
@@ -13,8 +11,6 @@ If you encounter an error during Blitz Report execution e.g. the message 'Blitz 
 1. Review the report concurrent logfile for error messages
 2. Try to execute the SQL as shown in the logfile directly in a development tool such as Toad or SQL Developer for further debugging
 3. The logfile also shows the user entered parameter values and corresponding bind variables
-
----
 
 ### 3.2 Using Firefox with Oracle EBS
 
@@ -40,13 +36,11 @@ And check that the Java plugin shows up in:
 
 **Add-ons > Plugins**
 
-![Firefox Java plugin](./images/Firefox-Java-plugin.png)
+![Firefox Java plugin](./images/firefox_java_plugin.webp)
 
 If the Java does not appear in this list, check that you have the 32 bit version of the Java RE installed and confirm the 32 bit version 52 of Firefox by navigating to Help Menu > Troubleshooting Information and check that the User Agent string contains 'WOW64'.
 
 ![Confirm Firefox 32bit Version](./images/confirm_firefox_32bit_version.png)
-
----
 
 ### 3.3 Incremental Outbound Interface
 
@@ -72,8 +66,6 @@ If a scheduled report does not retrieve any data, Blitz Report does not send an 
 
 If you want to give your outbound interface report an additional level of protection and allow modifications by users with 'System' access profile only, set its type to 'Protected'.
 
----
-
 ### 3.4 Data Warehouse
 
 Blitz Report's output files can also be used as a simple data warehouse, e.g. by scheduling reports and writing the output files in XLSX or CSV format to a server directory.
@@ -97,8 +89,6 @@ This generates a time series of data files, which can then be used as data wareh
 - OBIEE
 
 ![Data Warehouse Files](./images/data-warehouse-files-1.png)
-
----
 
 ### 3.5 MS Excel and CSV Files
 
@@ -171,7 +161,7 @@ Next iColumn
 End Sub
 ```
 
----
+
 
 ### 3.6 Blitz Report Production Deployment
 
@@ -193,8 +183,6 @@ High level steps for your Blitz Report migration from test to production:
 5. **Import the XML file** - In the production Blitz Report, navigate to Setup > Tools > Import > XML Upload and select the XML file exported previously
 
 6. **Optionally run the SQL script** generated previously to load the Blitz Report profile option values
-
----
 
 ### 3.7 MS Excel Blocked Macros Warning
 
@@ -222,6 +210,6 @@ To fix this, please add the EBS URL to the trusted sites or ask your system admi
 
 ![Trusted Sites Step 2](./images/Trusted-Sites-2.png)
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

@@ -2,8 +2,6 @@
 
 ## 1. Creating a Blitz Report
 
----
-
 ### 1.1 Report Creation Steps
 
 With Blitz Report you can easily leverage existing SQL to create reports for your users. There is a ![YouTube](./images/Youtube.png) [training video](https://www.enginatics.com/blitz-report-training-videos/) available on creating a report from an SQL query.
@@ -20,13 +18,11 @@ To create new Reports, the profile option 'Blitz Report Access' must be set to e
 4. Test the report by clicking the 'Run' button
 5. Set up the user access rights
 
-![Blitz Report Setup Window](./images/SQL.png)
+![Blitz Report Setup Window](./images/7-1.webp)
 
 Unlike most reporting tools, Blitz Report creates dynamic SQL at run-time, combining the extraction SQL and the user-specified parameters in an optimal way. This allows unused parameters to be dropped at run-time, thus eliminating a frequent source of non-performant SQL – the very common WHERE clause for optional parameters `column_name=nvl(:bind_variable, column_name)`.
 
 To ensure that there is no unnecessary parsing of the dynamic SQL, Blitz Report's parameterization uses bind variables.
-
----
 
 ### 1.2 Anchors and Binds
 
@@ -92,8 +88,6 @@ Example: The Sheet name parameter inherits its value from the Operating unit par
 ![Sheet Name Parameter](./images/blitz_report_sheet_name_parameter.png)
 
 ![Sheet Name Parameter Example](./images/blitz_report_sheet_name_parameter-2.png)
-
----
 
 ### 1.3 Dynamic SQL Example
 
@@ -185,8 +179,6 @@ pivot(sum(amount) for period_name in (&gl_period_pivot))
 ```
 
 ![Pivot Table Parameters](./images/pivot_table_parameters.png)
-
----
 
 ### 1.4 Report Header
 
@@ -348,8 +340,6 @@ The report extraction SQL must start either with the word `select` or `with`. Bl
 
 New 'Blitz Report Information' descriptive flexfield allows to store additional information, e.g. for change management.
 
----
-
 ### 1.5 Parameters
 
 Parameter definitions consist of:
@@ -506,8 +496,6 @@ Blitz Report provides a possibility to create parameters with dynamic SQL text w
 
 ![Dynamic Parameter SQL Text Example 4](./images/Dynamic-parameter-SQL-text-example-5.png)
 
----
-
 ### 1.6 Assignments
 
 ![Blitz Report Assignment Tab](./images/Blitz-Report-assignment-tab.png)
@@ -559,15 +547,11 @@ The Blitz Report installation includes seeded reports developed by Enginatics, a
 
 Assignments can be loaded from Excel with the Blitz Report Assignment Upload.
 
----
-
 ### 1.7 Categories
 
 If you have a large number of reports in your system, category assignments will help users to find the reports they require via the category drop-down list on the run window.
 
 To create a new category, navigate to the menu Tools > Categories.
-
----
 
 ### 1.8 Multi-language Support
 
@@ -598,8 +582,6 @@ The labels shown on the Blitz Report user interface can be translated via Applic
 ![German Translation Lookup](./images/transaltion_german_lookup.png)
 
 > **Note:** If you install an additional language in Oracle applications, in addition to running the adadmin 'Maintain multi-lingual tables' process, you need to run the concurrent request 'Blitz Report Maintain Multilingual Tables'.
-
----
 
 ### 1.9 Security and User Profiles
 
@@ -632,8 +614,6 @@ Blitz Report provides the following levels of security:
 \* Users can see and run reports restricted to their assignments only.
 \*\* Depending on the setup of profile option 'Blitz Report Template Access'.
 
----
-
 ### 1.10 Data Access Security
 
 For increased flexibility and maintainability, we recommend using `_all` tables in report SQL queries, for example `ap_invoices_all`, instead of Oracle's VPD secured synonyms, such as `ap_invoices`.
@@ -647,8 +627,6 @@ Security is then applied by adding a required Operating Unit parameter in Blitz 
 ![Blitz Report Restricted Operating Unit LOV](./images/Blitz-Report-restricted-operating-unit-LOV.png)
 
 This approach allows greater flexibility, e.g. to enable certain users, such as in shared service centers, to see all data in the system, or to test SQL queries through database access tools, without having the application user session context initialized.
-
----
 
 ### 1.11 Securing Sensitive Information with Oracle Virtual Private Database
 
@@ -668,7 +646,7 @@ Blitz Report includes the following objects to maintain these:
 
 Application Developer > Application > Lookups > Application Object Library: Query lookup type `XXEN_REPORT_VPD_POLICY_TABLES` and enter one lookup value for each table or table column that need to be secured.
 
-![Blitz Report VPD Lookup Setup](./images/Blitz-Report-VPD-lookup-setup.png)
+![Blitz Report VPD Lookup Setup](./images/Blitz-Report-VPD-lookup-setup.webp)
 
 **2. Run concurrent program 'Blitz Report Update VPD Policies'**
 
@@ -678,8 +656,8 @@ System Administrator > Concurrent > Requests: Run concurrent program 'Blitz Repo
 
 System Administrator > Profile > System: Set profile option 'Blitz Report VPD Policy Rule' to 'Full access' for responsibilities or users who should have access to run Blitz reports on secured data.
 
-![Blitz Report VPD Access Rule Profile Option Setup](./images/Blitz-Report-VPD-access-rule-profile-option-setup.png)
+![Blitz Report VPD Access Rule Profile Option Setup](./images/Blitz-Report-VPD-access-rule-profile-option-setup.webp)
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

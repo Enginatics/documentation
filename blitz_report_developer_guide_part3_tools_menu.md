@@ -2,15 +2,13 @@
 
 ## 2. Tools Menu
 
----
-
-![Blitz Report tools menu](./images/Blitz-Report-tools-menu.png)
+![Blitz Report tools menu](./images/tools-menu-3.webp)
 
 ### 2.1 LOVs
 
 Use the LOV setup window to define list of values shared by different report parameters. Changes to a shared LOV affect all report parameters referencing the LOV.
 
-![Define LOV](./images/Define-LOV.png)
+![Define LOV](./images/Define-LOV-2.webp)
 
 #### Name
 
@@ -42,21 +40,15 @@ Double click on a LOV version number to review the change history and previous L
 
 ![LOV Version History](./images/LOV-version-history.png)
 
----
-
 ### 2.2 Tools > Assignments
 
 The Assignment function in the Tools menu allows to mass-assign different reports to one assignment level, or to review existing assignments through the assignment value LOV.
 
 Defines access to reports for users on a particular assignment level.
 
----
-
 ### 2.3 Tools > Categories
 
 Categories can be defined to help users find reports, or to migrate specific reports between environments though the export and import options.
-
----
 
 ### 2.4 Copy Report
 
@@ -68,8 +60,6 @@ Seeded reports should not be modified as all updates will be removed as soon as 
 
 > **Note:** Assignments and category assignments are not copied.
 
----
-
 ### 2.5 Copy LOV
 
 Creates a new copy of an existing LOV. This functionality should be used if user wants to do any changes to the existing LOV.
@@ -78,13 +68,13 @@ Seeded LOVs should not be modified as all updates will be removed as soon as new
 
 ![Copy LOV](./images/Blitz-report-copy-LOV.png)
 
----
+
 
 ### 2.6 Export
 
 The Blitz Report export functionality allows to generate XML files or SQL scripts for automated load of report definitions, LOVs, categories and other Blitz Report related setup for migration purposes.
 
-![Blitz Report Export menu options](./images/Blitz-Report-Export-menu-options.png)
+![Blitz Report Export menu options](./images/Blitz-Report-export-options-1.webp)
 
 The following items can be exported:
 
@@ -111,13 +101,14 @@ When choosing one of the Report export options, you can use checkboxes to decide
 | **Templates** | Includes all templates in the export |
 | **Columns** | Includes optional multi language column translation and number format settings |
 
-![Blitz Report Export Options](./images/Blitz-Report-export-options-1.png)
-
 ![Blitz Report Export All Content](./images/Blitz-Report-Export-all-content.png)
 
-![Blitz Report Export by Search Pattern](./images/Blitz-Report-export-by-search-pattern.png)
+Examples:
 
-![Blitz Report Export Profile Options](./images/Blitz-Report-Export-profile-options.png)
+To generate an XML file for migration of a single report, choose ‘Report’ and select the report name from the list of values.
+To generate an XML file for migration of all reports starting with a specific text, for example FND%, choose ‘Report by Search pattern’ and enter that text in the form.
+
+![Blitz Report Export by Search Pattern](./images/Blitz-Report-export-by-search-pattern.png)
 
 #### Blitz Report Library
 
@@ -211,7 +202,7 @@ Or through PLSQL:
 function import_xml(p_xml in clob) return varchar2; --returns null if successful, otherwise returns an error message
 ```
 
----
+
 
 ### 2.7 Import
 
@@ -416,7 +407,7 @@ procedure import_reporting_workbench(
 );
 ```
 
----
+
 
 ### 2.8 Upload Large SQL
 
@@ -430,7 +421,7 @@ To upload report SQLs larger than Oracle's Forms limit of 32767 characters, sele
 
 While the form displays the first 32767 characters only, a double click on the SQL downloads the full SQL text as a file.
 
----
+
 
 ### 2.9 Column Translations
 
@@ -442,7 +433,7 @@ The number of existing translations is shown in column 'Count'. If you have a re
 
 ![Column Translations](./images/Column-Translations.png)
 
----
+
 
 ### 2.10 Dynamic Column Translations
 
@@ -454,7 +445,7 @@ This can for example be used to show GL segment names based on a selected ledger
 
 ![Dynamic Column Translation Rules](./images/Blitz-Reports-dynamic-column-translation-rules.png)
 
----
+
 
 ### 2.11 Resequence Parameters
 
@@ -466,7 +457,7 @@ Assigns new parameter sequence numbers automatically. Sometimes you cannot inser
 
 ![Resequence Parameters Example](./images/Resequence-parameters-1.png)
 
----
+
 
 ### 2.12 License Key
 
@@ -484,7 +475,7 @@ Double click on the active users count to open a detailed list of active Blitz R
 
 > **Note:** If you are using the free version of Blitz Report without a license key, you can still use Blitz Report's full functionality for storing and maintaining SQLs, but Blitz Report will generate an output for the 30 most recently created reports only (custom reports take precedence over Enginatics reports).
 
----
+
 
 ### 2.13 User License Assignment
 
@@ -507,7 +498,7 @@ If you have a large number of EBS users, but a limited number of Blitz Report li
 
 > **Important:** Do not create custom Blitz Report responsibilities. Blitz Report is designed to work in the existing users' responsibilities.
 
----
+
 
 ### 2.14 Mass Change
 
@@ -521,6 +512,6 @@ The mass change functionality allows to update SQL text or List of Values for al
 
 ![Blitz Report Mass Change](./images/Blitz-Report-mass-change.png)
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

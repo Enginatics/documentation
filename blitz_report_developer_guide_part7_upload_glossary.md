@@ -2,13 +2,9 @@
 
 ## 6. Creating a Blitz Upload
 
----
-
 Blitz Upload is available with Blitz Report which is fully integrated with Oracle E-Business Suite. It enables your IT team to easily create and edit Uploads where they can choose to use an API or directly insert records into an Interface table. Blitz Upload runs as a concurrent process and upon completion generates output file using Blitz Report. The output file automatically downloads and opens in Excel.
 
 With Blitz Upload, we created the most efficient and easy to use data upload solution for Oracle EBS. It leverages the reporting capabilities of Blitz Report to efficiently produce outputs while giving you a meaningful interpretation of the upload result.
-
----
 
 A Blitz Upload consists of an SQL query defining the column structure of the Excel file for data entry, and three additional tabs that define Excel column validations, API processing and success and error reporting.
 
@@ -32,7 +28,7 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 > - Blitz Upload Example (API with no parameters)
 > - Blitz Upload Example (Interface Table)
 
----
+
 
 ### 6.1 Header
 
@@ -46,7 +42,7 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 | **Description** | An optional description of maximum 4000 characters may be set up to assist users in understanding and using the upload. |
 | **Type** | Type should be 'Upload'. |
 
----
+
 
 ### 6.2 SQL Requirements
 
@@ -75,7 +71,7 @@ null modified_columns_,
 
 ![Blitz Upload API SQL](./images/Blitz-Upload-API-SQL.png)
 
----
+
 
 ### 6.3 Upload Columns
 
@@ -130,7 +126,7 @@ msiv.segment1=:$column$.item and
 msiv.organization_id=fspa.inventory_organization_id
 ```
 
----
+
 
 ### 6.4 Upload API
 
@@ -188,7 +184,7 @@ Excel Validation can be used to execute validations for the records directly on 
 
 > **Note:** The validation function should return a message only in case of validation failure, otherwise it should return null.
 
----
+
 
 ### 6.5 Upload Results
 
@@ -223,7 +219,7 @@ Use these functions when working with 'status_' column:
 xxen_upload.status_meaning(xxen_upload.status_success)
 ```
 
----
+
 
 ## 7. Glossary
 
@@ -246,6 +242,6 @@ xxen_upload.status_meaning(xxen_upload.status_success)
 | **TSV** | Tab Separated Values |
 | **XLSX** | Excel Open XML Spreadsheet format |
 
----
+
 
 *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*

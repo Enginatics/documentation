@@ -55,6 +55,6 @@ The Developer Guide is organized into the following sections:
 1. **For Users:** Start with the [User Guide](Blitz_Report_User_Guide.md) to learn how to run reports
 2. **For Developers:** Begin with the [Introduction](blitz_report_developer_guide_part1_introduction.md) and then proceed to [Creating a Blitz Report](blitz_report_developer_guide_part2_creating_report.md)
 
----
+
 
 *For feedback and suggestions, please contact [support@enginatics.com](mailto:support@enginatics.com)*

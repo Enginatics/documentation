@@ -12,7 +12,7 @@
   - [1.6 Scheduling a report](#16-scheduling-a-report)
 - [2. GL Financial Statement and Drilldown (FSG)](#2-gl-financial-statement-and-drilldown-fsg)
 
----
+
 
 ## Introduction
 
@@ -22,7 +22,7 @@ With Blitz Report, we created the most efficient and easy to use operational rep
 
 We hope that you will enjoy working with Blitz Report as much as we do, and we welcome your feedback to support@enginatics.com.
 
----
+
 
 ## 1. Running Blitz Report
 
@@ -37,7 +37,7 @@ Basic steps to run a Blitz Report are:
 
 ![Blitz Report submit screen](https://www.enginatics.com/wp-content/uploads/Submit-screen-1.png)
 
----
+
 
 ### 1.1 Selecting a report
 
@@ -69,7 +69,7 @@ To search on either of the keywords, combine them with 'or'.
 
 To search for an exact match in the order of keywords e.g. 'item' directly followed by 'invoice', enclose them into quotation marks such as "item invoice".
 
----
+
 
 ### 1.2 Parameter values
 
@@ -95,7 +95,7 @@ Once a template is selected it is also possible to store default parameter value
 
 ![Save template parameter defaults](https://www.enginatics.com/wp-content/uploads/Save-template-parameter-defaults-3.png)
 
----
+
 
 ### 1.3 Running and viewing the output
 
@@ -103,7 +103,7 @@ A click on the **Run** button launches a background concurrent process to extrac
 
 While the report concurrent process is pending or running, the request status is displayed on the output button. Once the report is complete, the output button can also be used to re-download the output file.
 
----
+
 
 ### 1.4 Options
 
@@ -257,7 +257,7 @@ Manually entered tokens are validated against the LOV values, and an error messa
 > 2. The output file on the concurrent processing server in directory $APPLCSF/out. This is the attachment file name when sending Blitz Reports via email and the Oracle EBS delivery option.
 > 3. An additional output file placed into a directory either on the application or database server.
 
----
+
 
 ### 1.5 Templates
 
@@ -347,7 +347,7 @@ You can exclude certain parameters for a template. When the template is selected
 
 ![Blitz Report excluded parameters window 2](https://www.enginatics.com/wp-content/uploads/Blitz-Report-excluded-parameters-window-2.png)
 
----
+
 
 ### 1.6 Scheduling a report
 
@@ -375,7 +375,7 @@ Oracle's delivery options allow sending the report output e.g. as an email attac
 
 If a scheduled report does not retrieve any data, Blitz Report does not send an empty output file. In case you also want to send empty output files for scheduled reports, set profile option **Blitz Report Suppress Empty File Delivery** to 'No'.
 
----
+
 
 ## 2. GL Financial Statement and Drilldown (FSG)
 
@@ -392,7 +392,7 @@ For a quick demonstration, refer to the YouTube video: https://youtu.be/dsRWXT2b
 
 > **Note:** Please do not delete the "Financial Statement Generator" sheet or modify the Advanced Custom Properties in the Excel output, as these are essential for the proper functioning of the report.
 
----
+
 
 ## Related Links
 
@@ -402,6 +402,6 @@ For a quick demonstration, refer to the YouTube video: https://youtu.be/dsRWXT2b
 - [Blitz Report™ Installation Guide](https://www.enginatics.com/installation-guide/)
 - [Blitz Report™ FAQ](https://www.enginatics.com/faq/)
 
----
+
 
 *Source: [Enginatics Blitz Report™ User Guide](https://www.enginatics.com/blitz-report-user-guide/)*
