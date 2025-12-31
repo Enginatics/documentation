@@ -16,6 +16,8 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 
 ### Basic Steps to Create a New Upload
 
+![Blitz Upload Steps](./images/Blitz-Upload-Steps-1.png)
+
 1. Enter a report **name**, an optional **description** and set the type as **Upload**
 2. Enter the main extraction **SQL** - This query is used to export existing data to be updated. For create only scenarios the SQL defines the column names and types for data entry in Excel
 3. Setup **Excel column validations** - This tab allows setting up column validations through LOVs, defining default values or specifying required and read-only columns
@@ -35,6 +37,8 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 ### 6.1 Header
 
 > **Note:** As all the setup fields have been explained in Blitz Report Developer Guide, this section focuses on the fields most relevant to Blitz Upload.
+
+![Blitz Upload Header](./images/Blitz-Upload-Header.png)
 
 | Field | Description |
 |-------|-------------|
@@ -69,6 +73,8 @@ null modified_columns_,
 "table alias".rowid row_id_,
 ```
 
+![Blitz Upload API SQL](./images/Blitz-Upload-API-SQL.png)
+
 ---
 
 ### 6.3 Upload Columns
@@ -101,6 +107,10 @@ The Upload Columns tab lists all available SQL columns derived from the main rep
 | **Hidden** | Check for internally used columns |
 | **Group Validation** | Enable to group records for validation |
 
+![Blitz Upload Columns](./images/Blitz-Upload-5-6.png)
+
+![Blitz Upload Column Properties](./images/Blitz-Upload-6-4.png)
+
 #### LOV Query Example with Dependencies
 
 The LOV query can contain report parameter reference (`:$flex$.`) or report column reference (`:$column$.`):
@@ -123,6 +133,8 @@ msiv.organization_id=fspa.inventory_organization_id
 ---
 
 ### 6.4 Upload API
+
+![Blitz Upload API](./images/Blitz-Upload-API.png)
 
 | Field | Description |
 |-------|-------------|
@@ -152,6 +164,8 @@ message_ out varchar2
 
 Parameters are auto populated on selection of the API or Interface table.
 
+![Blitz Upload API Parameters](./images/Blitz-Upload-API-Parameters.png)
+
 | Field | Description |
 |-------|-------------|
 | **Parameter Name** | Auto populated from API parameters or Interface table column names |
@@ -180,9 +194,17 @@ Excel Validation can be used to execute validations for the records directly on 
 
 The Upload Results SQL need to be defined to be able to display the success and error records after upload processing.
 
+![Blitz Upload Results](./images/Blitz-Upload-10-2.png)
+
 The Error and Success SQL's are automatically defaulted and contain placeholders for defining the join conditions. The SQL's need to be reviewed and amended as required by unchecking the Default checkbox.
 
+![Blitz Upload Success SQL](./images/Blitz-Upload-11.png)
+
+![Blitz Upload Error SQL](./images/Blitz-Upload-12.png)
+
 **Data View:** This is an auto-generated database view which displays the data uploaded by the user and can be used in the Result SQLs to select the uploaded data. It has the same column structure as the report SQL and also shows the status and message returned by the API for the uploaded records.
+
+![Blitz Upload Data View](./images/Blitz-Upload-13.png)
 
 #### Pre-built Functions for Result SQL
 

@@ -40,6 +40,8 @@ SQL query for LOVs, selecting the two mandatory columns 'value' and 'description
 
 Double click on a LOV version number to review the change history and previous LOV SQLs. Note that a LOV report version number is added and stored automatically at each update of a LOV's SQL. Other LOV modifications such as LOV name, description are not stored in the version history.
 
+![LOV Version History](./images/LOV-version-history.png)
+
 ---
 
 ### 2.2 Tools > Assignments
@@ -62,6 +64,8 @@ Creates a new copy of an existing report. This functionality should be used if u
 
 Seeded reports should not be modified as all updates will be removed as soon as new version of Blitz Report will be installed.
 
+![Copy Report](./images/copy_report.png)
+
 > **Note:** Assignments and category assignments are not copied.
 
 ---
@@ -71,6 +75,8 @@ Seeded reports should not be modified as all updates will be removed as soon as 
 Creates a new copy of an existing LOV. This functionality should be used if user wants to do any changes to the existing LOV.
 
 Seeded LOVs should not be modified as all updates will be removed as soon as new version of Blitz Report will be installed.
+
+![Copy LOV](./images/Blitz-report-copy-LOV.png)
 
 ---
 
@@ -104,6 +110,14 @@ When choosing one of the Report export options, you can use checkboxes to decide
 | **Assignments** | Includes all report assignments in the export |
 | **Templates** | Includes all templates in the export |
 | **Columns** | Includes optional multi language column translation and number format settings |
+
+![Blitz Report Export Options](./images/Blitz-Report-export-options-1.png)
+
+![Blitz Report Export All Content](./images/Blitz-Report-Export-all-content.png)
+
+![Blitz Report Export by Search Pattern](./images/Blitz-Report-export-by-search-pattern.png)
+
+![Blitz Report Export Profile Options](./images/Blitz-Report-Export-profile-options.png)
 
 #### Blitz Report Library
 
@@ -213,6 +227,14 @@ During import, reports are assigned to categories automatically, depending on th
 
 With XML upload, you can migrate reports exported from other EBS environments or downloaded from the Blitz Report library.
 
+![XML Import Step 1](./images/import-xml-1-1.png)
+
+![XML Import Step 2](./images/import-xml-2.png)
+
+![XML Import Step 3](./images/import-xml-3.png)
+
+![XML Import Step 4](./images/import-xml-4.png)
+
 > **Note:** To avoid incompatibilities due to possible file format changes between different Blitz Report versions, please ensure that source and destination environment have the same or latest Blitz Report version installed.
 
 #### 2.7.2 BI Publisher
@@ -220,6 +242,8 @@ With XML upload, you can migrate reports exported from other EBS environments or
 Blitz Report imports BI Publisher reports of java executable `XDODTEXE` (XML Publisher Data Template Executable) by importing the report SQL from the corresponding XML data source.
 
 Reports imported from BI Publisher show the original source code in field 'BIP Code' and Blitz Report uses this value to identify and execute beforereport triggers from the original XML data source.
+
+![Imported BI Publisher Report](./images/Imported-BI-Publisher-report.png)
 
 **Import API:**
 
@@ -242,7 +266,11 @@ Note that the report SQL can usually not be imported automatically for such tech
 
 Select 'Discoverer Worksheet' to import worksheets available from the selected end user layer. By default, the LOV shows worksheets that ran within the History Days timeframe only.
 
+![Blitz Report Discoverer Workbook Import LOV](./images/Blitz-Report-Discoverer-Workbook-Import-LOV.png)
+
 During import, Blitz Report derives parameter types from the Discoverer EUL items and creates LOVs automatically for the item classes used by the workbook parameters.
+
+![Discoverer Worksheet Import Parameter Definition](./images/Discoverer-Worksheet-import-parameter-definition.png)
 
 **Import API:**
 
@@ -260,6 +288,8 @@ xxen_api.import_discoverer_worksheet(
 #### 2.7.5 Discoverer Folders
 
 The 'Discoverer Folders' import option allows consolidation of different workbooks during migration to Blitz Report by importing distinct folder or view object combinations only.
+
+![Blitz Report Discoverer Folders Import](./images/Blitz-Report-Discoverer-Folders-import.png)
 
 | Option | Description |
 |--------|-------------|
@@ -286,6 +316,8 @@ xxen_api.import_discoverer_folders(
 **Enable statistics collection:**
 
 Blitz Report's Discoverer import uses information from table `EUL5_QPP_STATS`, which is populated by Discoverer Desktop or Discoverer plus with a history of worksheet query execution statistics.
+
+![Discoverer Admin Collect Statistics](./images/Discoverer-admin-collect-statistics.png)
 
 **Discoverer server configuration file:**
 
@@ -336,6 +368,8 @@ create index .xxeul5_documents_n1 on .eul5_documents (doc_name) tablespace apps_
 
 Blitz Report imports custom Excel4apps Reports Wand reports through the import menu option.
 
+![Blitz Report Import Excel4apps Reports Wand](./images/Blitz-Report-import-Excel4apps-Reports-Wand-1.png)
+
 **Import API:**
 
 ```sql
@@ -351,6 +385,8 @@ xxen_api.import_concurrent_program(
 
 Blitz Report imports Oracle's Enterprise Command Center dataset queries, allowing users to access ECC data of unlimited size and real-time in Excel.
 
+![Blitz Report Oracle EBS Enterprise Command Center Import](./images/Blitz-Report-Oracle-EBS-Enterprise-Command-Center-import.png)
+
 **Import API:**
 
 ```sql
@@ -364,6 +400,8 @@ xxen_api.import_ecc_dataset(
 #### 2.7.9 Polaris Reporting Workbench
 
 Blitz Report imports Polaris Reporting Workbench reports either through the import menu option or an API.
+
+![Blitz Report Polaris Reporting Workbench Import](./images/Blitz-Report-Polaris-Reporting-Workbench-Import.png)
 
 The import process consolidates different RWB reports, which are based on the same database views, into single Blitz Reports. The RWB report specific column selections are imported as individual Blitz Report templates.
 
@@ -386,6 +424,10 @@ procedure import_reporting_workbench(
 
 To upload report SQLs larger than Oracle's Forms limit of 32767 characters, select the 'Upload Large SQL' menu entry to open a browser window and select a SQL file for upload. If the SQL file contains non ANSI characters, it must be uploaded in UTF-8 encoding.
 
+![SQL Bigger Than 32K Characters](./images/SQL-bigger-than-32k-characters.png)
+
+![Upload SQL](./images/upload_sql_gfm.jpg)
+
 While the form displays the first 32767 characters only, a double click on the SQL downloads the full SQL text as a file.
 
 ---
@@ -398,6 +440,8 @@ The number of existing translations is shown in column 'Count'. If you have a re
 
 > **Note:** Column translations and number formats are global, which means that they apply to all reports in the system.
 
+![Column Translations](./images/Column-Translations.png)
+
 ---
 
 ### 2.10 Dynamic Column Translations
@@ -408,6 +452,8 @@ The output of a rule SQL should contain two columns, the first for the column or
 
 This can for example be used to show GL segment names based on a selected ledger parameter. Translations are applicable for both, parameters and header columns in the report.
 
+![Dynamic Column Translation Rules](./images/Blitz-Reports-dynamic-column-translation-rules.png)
+
 ---
 
 ### 2.11 Resequence Parameters
@@ -415,6 +461,10 @@ This can for example be used to show GL segment names based on a selected ledger
 **Blitz Report Setup > Tools > Resequence parameters**
 
 Assigns new parameter sequence numbers automatically. Sometimes you cannot insert a new parameter because there is no spare sequence number. Then you can resequence parameters so they have room between sequence numbers again.
+
+![Resequence Parameters](./images/Resequence-parameters.png)
+
+![Resequence Parameters Example](./images/Resequence-parameters-1.png)
 
 ---
 
@@ -424,7 +474,13 @@ Assigns new parameter sequence numbers automatically. Sometimes you cannot inser
 
 Enter the company name and license key information.
 
+![Blitz Report License Key](./images/Blitz-Report-License-Key.png)
+
+![Blitz Report License Key Details](./images/Blitz-Report-License-Key-1.png)
+
 Double click on the active users count to open a detailed list of active Blitz Report users.
+
+![Blitz Report License Key Users](./images/Blitz-Report-License-Key-2.png)
 
 > **Note:** If you are using the free version of Blitz Report without a license key, you can still use Blitz Report's full functionality for storing and maintaining SQLs, but Blitz Report will generate an output for the 30 most recently created reports only (custom reports take precedence over Enginatics reports).
 
@@ -462,6 +518,8 @@ The mass change functionality allows to update SQL text or List of Values for al
 - Use the check boxes to decide which data you would like to update
 - For report SQL and LOV query updates, you can add an optional change comment
 - Use the Preview button to see a list of changed objects, before applying the changes
+
+![Blitz Report Mass Change](./images/Blitz-Report-mass-change.png)
 
 ---
 

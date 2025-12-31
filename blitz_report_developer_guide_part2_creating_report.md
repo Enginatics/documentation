@@ -89,6 +89,10 @@ By default the Excel output's data sheet name is the same as the report name. A 
 
 Example: The Sheet name parameter inherits its value from the Operating unit parameter concatenated with the word 'suppliers' by using the following default value: `:$flex$.operating_unit||' suppliers'`
 
+![Sheet Name Parameter](./images/blitz_report_sheet_name_parameter.png)
+
+![Sheet Name Parameter Example](./images/blitz_report_sheet_name_parameter-2.png)
+
 ---
 
 ### 1.3 Dynamic SQL Example
@@ -180,6 +184,8 @@ group by gb.period_name
 pivot(sum(amount) for period_name in (&gl_period_pivot))
 ```
 
+![Pivot Table Parameters](./images/pivot_table_parameters.png)
+
 ---
 
 ### 1.4 Report Header
@@ -209,6 +215,8 @@ Defines whether a report is visible to end users. Disabling a report removes it 
 #### Version
 
 Click on a report's version number to review the change history and previous report SQLs. A new version number is added and stored automatically for each report SQL update. Other report setup modifications such as report name, description or parameter changes are not tracked in the version history.
+
+![Version Window](./images/version_window.png)
 
 #### Type
 
@@ -248,6 +256,8 @@ Report Options define additional attributes and processing options for a specifi
 12. Naming convention for output files if additional output directories are defined
 13. Request type for defining concurrent managers specialization rules
 14. Standby database name to run report on
+
+![Blitz Report Setup Options](./images/Blitz-Report-Setup-Options.png)
 
 #### DB Package
 
@@ -422,6 +432,10 @@ If the parameter value entered at run-time matches the matching value, then the 
 
 Matching values may contain wildcard characters. If, for the same Anchor, the parameter value entered by the user matches more than one matching value due to use of wildcards, then the SQL text of the best (longest string) match is inserted.
 
+![Blitz Report Matching Value Example](./images/Blitz-Report-matching-value-example.png)
+
+![Blitz Report Matching Value Example 2](./images/Blitz-Report-matching-value-example-1.png)
+
 #### Default Value
 
 Specifies a default parameter value. If the value starts with the keyword `select`, then Blitz Report would execute the SQL to derive the default value dynamically instead of using a fixed value.
@@ -437,6 +451,10 @@ Some functions can be used without selecting from dual:
 ```
 abs, add_months, bitand, cast, ceil, chr, coalesce, decode, greatest, initcap, instr, last_day, least, length, lower, lpad, mod, months_between, nvl, nvl2, power, regexp_replace, regexp_substr, replace, round, rtrim, sign, substr, substrb, to_char, to_date, to_number, translate, trim, trunc, upper, userenv
 ```
+
+![Blitz Report Default Value Example](./images/Blitz-Report-default-value-example.png)
+
+![Blitz Report Default Value Example 2](./images/Blitz-Report-default-value-example-1.png)
 
 #### Description
 
@@ -468,15 +486,31 @@ Similar to Oracle standard's dependent parameter functionality, you can define p
 
 Where `parameter_or_lov_name` is a reference to either the parameter name in US language or to the LOV name of the parameter, which the query depends on.
 
+![Dependent Parameters Example](./images/Dependent-Parameters-example-1.png)
+
 In case you want to use multiple values functionality for a parameter which the query depends on, `xxen_util.contains` function can help.
+
+![Multiple Dependent Parameters Example](./images/Multiple-Dependent-Parameters-example.png)
+
+![Multiple Dependent Parameters Example 2](./images/Multiple-dependent-parameters-example-1.png)
 
 #### Dynamic Parameter SQL Text
 
 Blitz Report provides a possibility to create parameters with dynamic SQL text which depends on a runtime value of a parameter.
 
+![Dynamic Parameter SQL Text Example](./images/Dynamic-parameter-SQL-text-example.png)
+
+![Dynamic Parameter SQL Text Example 2](./images/Dynamic-parameter-SQL-text-example-2.png)
+
+![Dynamic Parameter SQL Text Example 3](./images/Dynamic-parameter-SQL-text-example-4.png)
+
+![Dynamic Parameter SQL Text Example 4](./images/Dynamic-parameter-SQL-text-example-5.png)
+
 ---
 
 ### 1.6 Assignments
+
+![Blitz Report Assignment Tab](./images/Blitz-Report-assignment-tab.png)
 
 Access to individual Blitz Reports for normal users can be controlled using the following levels:
 
@@ -489,6 +523,8 @@ Access to individual Blitz Reports for normal users can be controlled using the 
 | **Responsibility** | Users having the assignment responsibility |
 | **User** | Inclusion or exclusion by specific user |
 | **Form** | Make report available from an Oracle standard form through the custom Blitz Report icon |
+
+![Blitz Report Assignment Levels](./images/Blitz-Report-assignment-levels.png)
 
 Exclusions take precedence over inclusions. A report included on Site level, but excluded for application 'Receivables', for example, would be accessible by all users in the system except from users only having responsibilities linked to the receivables application.
 
@@ -503,10 +539,17 @@ The forms assignment feature allows opening Blitz Reports directly from any Orac
 To integrate a Blitz Report to a form:
 
 1. First identify the standard form name through the top menu > Help > About Oracle Applications > Current Form > Form Name
+
+![Identify Oracle Standard Form Name](./images/Identify-Oracle-standard-internal-form-name-for-Blitz-Report-zoom-integration.png)
+
 2. Navigate to the assignment setup of the Blitz Report that you would like to integrate
 3. Select the form name from the list of values
 4. If needed, enter the name of that block in the Block Restriction field
 5. You can pass default parameter values from the assigned form to the Blitz Report
+
+![Define Forms Items to Pass Parameters](./images/Define-Forms-items-to-pass-default-parameter-values-to-Blitz-Report.png)
+
+![Blitz Report Parameter Values Passed from Form](./images/Blitz-Report-parameter-values-passed-from-a-standard-Oracle-form-1.png)
 
 #### Default Assignments
 
@@ -540,6 +583,10 @@ If you have more than one language installed, Blitz Report offers multi-language
 - LOV description
 - Column headers
 
+![Setting Parameter Translations](./images/Setting-parameter-translations-for-a-blitz-report.png)
+
+![Blitz Report German Translation](./images/Blitz-Report-german-translation.png)
+
 #### User Messages
 
 To add translations for user-facing messages, navigate to Application Developer > Application > Messages > query messages starting with XXEN and add translations for a different language as required.
@@ -547,6 +594,8 @@ To add translations for user-facing messages, navigate to Application Developer 
 #### User Interface Translations
 
 The labels shown on the Blitz Report user interface can be translated via Application Developer > Application > Lookups > Application Object Library, query Lookup `XXEN_REPORT_TRANSLATIONS` and enter translations for the lookup code descriptions as required.
+
+![German Translation Lookup](./images/transaltion_german_lookup.png)
 
 > **Note:** If you install an additional language in Oracle applications, in addition to running the adadmin 'Maintain multi-lingual tables' process, you need to run the concurrent request 'Blitz Report Maintain Multilingual Tables'.
 
@@ -589,7 +638,13 @@ Blitz Report provides the following levels of security:
 
 For increased flexibility and maintainability, we recommend using `_all` tables in report SQL queries, for example `ap_invoices_all`, instead of Oracle's VPD secured synonyms, such as `ap_invoices`.
 
+![AP Invoices Base Table Example](./images/AP-Invoices-base-table-example.png)
+
 Security is then applied by adding a required Operating Unit parameter in Blitz Report with an LOV that contains the allowed Operating Units only.
+
+![AP Invoices Report with Operating Unit Parameter](./images/AP-Invoices-report-with-operating-unit-parameter.png)
+
+![Blitz Report Restricted Operating Unit LOV](./images/Blitz-Report-restricted-operating-unit-LOV.png)
 
 This approach allows greater flexibility, e.g. to enable certain users, such as in shared service centers, to see all data in the system, or to test SQL queries through database access tools, without having the application user session context initialized.
 
@@ -613,6 +668,8 @@ Blitz Report includes the following objects to maintain these:
 
 Application Developer > Application > Lookups > Application Object Library: Query lookup type `XXEN_REPORT_VPD_POLICY_TABLES` and enter one lookup value for each table or table column that need to be secured.
 
+![Blitz Report VPD Lookup Setup](./images/Blitz-Report-VPD-lookup-setup.png)
+
 **2. Run concurrent program 'Blitz Report Update VPD Policies'**
 
 System Administrator > Concurrent > Requests: Run concurrent program 'Blitz Report Update VPD Policies'. This program first removes all possibly existing Blitz Report VPD policies, creates the policy function package `XXEN_VPD` and then creates database policies for all tables and columns referenced in the lookup.
@@ -620,6 +677,8 @@ System Administrator > Concurrent > Requests: Run concurrent program 'Blitz Repo
 **3. Optionally set profile option 'Blitz Report VPD Policy Rule'**
 
 System Administrator > Profile > System: Set profile option 'Blitz Report VPD Policy Rule' to 'Full access' for responsibilities or users who should have access to run Blitz reports on secured data.
+
+![Blitz Report VPD Access Rule Profile Option Setup](./images/Blitz-Report-VPD-access-rule-profile-option-setup.png)
 
 ---
 

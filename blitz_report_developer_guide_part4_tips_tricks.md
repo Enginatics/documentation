@@ -44,6 +44,8 @@ And check that the Java plugin shows up in:
 
 If the Java does not appear in this list, check that you have the 32 bit version of the Java RE installed and confirm the 32 bit version 52 of Firefox by navigating to Help Menu > Troubleshooting Information and check that the User Agent string contains 'WOW64'.
 
+![Confirm Firefox 32bit Version](./images/confirm_firefox_32bit_version.png)
+
 ---
 
 ### 3.3 Incremental Outbound Interface
@@ -64,6 +66,8 @@ fcr.parent_request_id=fcr0.request_id)
 
 You can find an example of such a parameter restriction in the seeded report **FND Concurrent Requests**, which uses this logic in parameter 'Incremental Alert Mode' to monitor concurrent request activity and send an alert email e.g. only in case of errors that occurred since the last scheduled report run.
 
+![FND Concurrent Requests Incremental Alert Mode](./images/FND-Concurrent-Requests-incremental-alert-mode.png)
+
 If a scheduled report does not retrieve any data, Blitz Report does not send an empty output file. In case you also want to send empty output files for scheduled reports, set the profile option 'Blitz Report Suppress Empty File Delivery' to 'No'.
 
 If you want to give your outbound interface report an additional level of protection and allow modifications by users with 'System' access profile only, set its type to 'Protected'.
@@ -81,6 +85,8 @@ Blitz Report's output files can also be used as a simple data warehouse, e.g. by
 | **Blitz Report Additional Output Directory** | Location of output files (can be set for application or database server) |
 | **Blitz Report Additional Output Filename** | Defines the template of the output filename |
 
+![Set Additional Output Directory Profile Option](./images/Set-additional-output-directory-profile-option.png)
+
 Setting the filename profile to a template containing date format string like `<report_name>_<DD-Mon-YYYY>` and scheduling a report every 30 minutes, for example, would write one separate file per day which gets refreshed with current data every 30 minutes.
 
 This generates a time series of data files, which can then be used as data warehouse for analysis by other tools such as:
@@ -89,6 +95,8 @@ This generates a time series of data files, which can then be used as data wareh
 - Qlik Sense
 - Tableau
 - OBIEE
+
+![Data Warehouse Files](./images/data-warehouse-files-1.png)
 
 ---
 
@@ -209,6 +217,10 @@ To fix this, please add the EBS URL to the trusted sites or ask your system admi
 5. Add your EBS URL to the list
 
 ![Trusted Sites Windows](./images/Trusted-Sites-Windows.png)
+
+![Trusted Sites Step 1](./images/Trusted-Sites-1.png)
+
+![Trusted Sites Step 2](./images/Trusted-Sites-2.png)
 
 ---
 
