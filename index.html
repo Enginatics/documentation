@@ -319,7 +319,7 @@
     }
 
     .cover-main > p:first-child img {
-      max-width: 200px;
+      max-width: 400px;
       height: auto;
     }
 
@@ -393,16 +393,6 @@
       text-decoration: none;
     }
 
-    .cover-main > p:last-child a:first-child {
-      background-color: var(--text-primary);
-      color: var(--bg-white);
-      border-color: var(--text-primary);
-    }
-
-    .cover-main > p:last-child a:hover {
-      text-decoration: none;
-    }
-
     .cover-main a.anchor {
       display: none;
     }
@@ -460,28 +450,50 @@
   <script>
     window.$docsify = {
       name: 'Blitz Report Documentation',
-      repo: '',
+      repo: '', // Add URL if public
+      
+      // Visuals
+      themeColor: '#545454',
       loadSidebar: true,
       subMaxLevel: 3,
       coverpage: true,
       auto2top: true,
+      
+      // PLUGINS CONFIGURATION
+      
+      // 1. Search
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: 'Search...',
-        noData: 'No results',
+        placeholder: 'Search docs...',
+        noData: 'No results found',
         depth: 3
       },
+
+      // 2. Copy Code Button
       copyCode: {
         buttonText: 'Copy',
         errorText: 'Error',
         successText: 'Copied'
       },
+
+      // 3. Pagination
       pagination: {
         previousText: 'Previous',
         nextText: 'Next',
         crossChapter: true,
         crossChapterText: true
+      },
+
+      // 4. Right-side Table of Contents
+      toc: {
+        tocMaxLevel: 4,
+        target: 'h2, h3, h4, h5, h6'
+      },
+
+      // 5. Alerts (Callouts)
+      'flexible-alerts': {
+        style: 'flat' // 'flat' fits corporate style better than 'callout'
       }
     }
   </script>
