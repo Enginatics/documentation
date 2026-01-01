@@ -1,11 +1,3 @@
----
-title: "Blitz Report Documentation"
-last_updated: "2026-01-01"
-version: "1.0"
-owner: "Tech Writing Team"
-status: "Published"
-ai_update_scope: "This is the main landing page for the documentation. Update summaries and links as the document structure evolves."
----
 # Blitz Report Documentation
 
 Welcome to the official documentation for **Blitz Report**, the world’s fastest operational reporting and data upload solution for Oracle E-Business Suite.
@@ -40,16 +32,15 @@ The [User Guide](user_guide/README.md) covers everything end users need to know 
 
 ### Developer Guide
 
-The [Developer Guide](developer_guide/) provides in-depth information for developers:
+The [Developer Guide](developer_guide/README.md) provides in-depth information for developers:
 
-- [Introduction](developer_guide/part1_introduction.md)
-- [Creating a Blitz Report](developer_guide/part2_creating_report.md)
-- [Tools Menu](developer_guide/part3_tools_menu.md)
-- [Tips and Tricks](developer_guide/part4_tips_tricks.md)
-- [Profile Options](developer_guide/part5_profile_options.md)
-- [APIs and Integration](developer_guide/part6_apis_integration.md)
-- [Creating a Blitz Upload](developer_guide/part7_upload_glossary.md)
-- [Glossary](developer_guide/part7_upload_glossary.md#_7-glossary)
+- [Introduction](developer_guide/introduction.md)
+- [Creating a Blitz Report](developer_guide/part1_creating_report.md)
+- [Tools Menu](developer_guide/part2_tools_menu.md)
+- [Tips and Tricks](developer_guide/part3_tips_tricks.md)
+- [Profile Options](developer_guide/part4_profile_options.md)
+- [APIs and Integration](developer_guide/part5_apis_integration.md)
+- [Glossary](developer_guide/part6_upload_glossary.md)
 
 ## Quick Links
 

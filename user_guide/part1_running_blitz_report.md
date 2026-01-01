@@ -12,7 +12,6 @@ Basic steps to run a Blitz Report are:
 ![Blitz Report submit screen](https://www.enginatics.com/wp-content/uploads/Submit-screen-1.png)
 
 
-
 ### 1.1 Selecting a report
 
 When opening Blitz Report for the first time, a selection of available reports is displayed automatically. The list can be restricted further by typing the first characters of the desired report name.

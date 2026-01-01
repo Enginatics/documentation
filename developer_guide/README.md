@@ -1,11 +1,3 @@
----
-title: "Blitz Report™ Developer Guide"
-last_updated: "2026-01-01"
-version: "1.0"
-owner: "Developer Advocacy"
-status: "Published"
-ai_update_scope: "This is the main table of contents for the Developer Guide. Only update the file links and descriptions, do not add procedural content."
----
 # Blitz Report™ Developer Guide
 
 This guide provides technical, in-depth information for developers on how to create reports, integrate with APIs, and leverage advanced features of Blitz Report.

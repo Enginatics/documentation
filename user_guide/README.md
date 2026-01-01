@@ -1,11 +1,3 @@
----
-title: "Blitz Report™ User Guide"
-last_updated: "2026-01-01"
-version: "1.0"
-owner: "Tech Writing Team"
-status: "Published"
-ai_update_scope: "This is the main table of contents for the User Guide. Only update the file links and descriptions, do not add procedural content."
----
 # Blitz Report™ User Guide
 
 This guide provides information for end-users on how to effectively use Blitz Report to run, manage, and customize reports.

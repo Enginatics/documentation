@@ -16,7 +16,7 @@ To create new Reports, the profile option 'Blitz Report Access' must be set to e
 4. Test the report by clicking the 'Run' button
 5. Set up the user access rights
 
-![Blitz Report Setup Window](./images/7-1.webp)
+![Blitz Report Setup Window](./images/7-1.png)
 
 Unlike most reporting tools, Blitz Report creates dynamic SQL at run-time, combining the extraction SQL and the user-specified parameters in an optimal way. This allows unused parameters to be dropped at run-time, thus eliminating a frequent source of non-performant SQL – the very common WHERE clause for optional parameters `column_name=nvl(:bind_variable, column_name)`.
 
