@@ -10,37 +10,40 @@ This guide provides rules and best practices for all contributors to ensure the 
 
 ## Formatting Rules
 
-*   **Headings:** Use Markdown headings (`#`, `##`, etc.) to structure content. The main document title should be a single `#` heading.
+*   **Headings:** Use Markdown headings (`#`, `##`, etc.) to structure content.
+    *   `# Heading 1`: Reserved for main document titles, such as in `README.md` or `_coverpage.md`.
+    *   `## Heading 2`: The top-level heading for all other content files (e.g., `## 1. Creating a Blitz Report`).
+    *   `### Heading 3` and `#### Heading 4`: Used for subsequent sub-sections.
+
+*   **Emphasis:**
+    *   Use bold (`**text**`) for UI elements (e.g., **Run** button, **Setup** window) and for drawing strong attention to key phrases (e.g., "**Basic steps are:**").
+    *   Use inline code (`` `text` ``) for technical terms, filenames, parameter names, and values (e.g., `part1_creating_report.md`, `n=n`, `:bind_variable`).
+    *   Use italics (`*text*`) for general emphasis on a concept or for file paths.
+
 *   **Code Blocks:** All code blocks must specify the language for syntax highlighting.
     *   For SQL: ` ```sql `
     *   For Bash/Shell: ` ```bash `
-*   **Emphasis:** Use bold (`**text**`) for UI elements like button names or menu options. Use italics (`*text*`) for emphasis on concepts or terms.
+
 *   **Admonitions:** Use blockquotes with a note type for important information.
     *   `> **Note:** This is an important piece of information.`
     *   `> **Warning:** This action can have critical consequences.`
 
+*   **Tables:** Use Markdown tables to present structured data, such as parameter descriptions or examples. Ensure headers are clear and content is aligned for readability.
+
 ## Image Guidelines
 
-*   **Storage:** All images must be stored in the root `/images` directory.
+*   **Storage:** Images are stored in a subdirectory named `images` within the guide they belong to.
+    *   User guide images go in `/user_guide/images/`.
+    *   Developer guide images go in `/developer_guide/images/`.
 *   **Naming:** Use descriptive, kebab-case filenames (e.g., `blitz-report-main-screen.png`).
-*   **Alt Text:** All images must have descriptive alternative text for accessibility. `![Descriptive alt text](path/to/image.png)`
+*   **Alt Text:** All images must have descriptive alternative text for accessibility. `![Descriptive alt text](./images/image-name.png)`
 
 ## Linking Policy
 
 *   **Internal Links:** Always use relative paths for links between documents within this repository. For example, from a file in `/developer_guide`, a link to the user guide would be `../user_guide/README.md`.
 *   **External Links:** Use full, absolute URLs for links to external websites.
 
-## Metadata Header (Frontmatter)
+## Source Attribution
 
-Every markdown file must begin with a YAML frontmatter block.
-
-```yaml
----
-title: "The Document Title"
-last_updated: "YYYY-MM-DD"
-version: "Product version relevant to the doc"
-owner: "Team or individual owner"
-status: "Draft | In Review | Published"
-ai_update_scope: "A concise, one-sentence directive explaining the file's purpose and boundaries for AI editors."
----
-```
+If the content of a file is derived from an external source, add an attribution link at the very end of the file in italics.
+*   *Source: [Enginatics Blitz Report Developer Guide](https://www.enginatics.com/blitz-report-developer-guide/)*
