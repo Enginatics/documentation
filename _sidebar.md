@@ -103,7 +103,6 @@
       * [Access Profile Functionality Matrix](developer_guide/part1_creating_report.md#access-profile-functionality-matrix)
     * [1.10 Data Access Security](developer_guide/part1_creating_report.md#110-data-access-security)
     * [1.11 Securing Sensitive Information with Oracle Virtual Private Database](developer_guide/part1_creating_report.md#111-securing-sensitive-information-with-oracle-virtual-private-database)
-      * [Steps to Secure Your Data](developer_guide/part1_creating_report.md#steps-to-secure-your-data)
   * [2. Tools Menu](developer_guide/part2_tools_menu.md)
     * [2.1 LOVs](developer_guide/part2_tools_menu.md#21-lovs)
       * [Name](developer_guide/part2_tools_menu.md#name)
