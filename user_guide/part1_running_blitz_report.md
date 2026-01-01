@@ -9,7 +9,7 @@ Basic steps to run a Blitz Report are:
 
 > There is a [training video](https://www.enginatics.com/tutorials/) available on selecting and running reports.
 
-![Blitz Report submit screen](https://www.enginatics.com/wp-content/uploads/Submit-screen-1.png)
+![Blitz Report submit screen](images/submit-screen.png)
 
 
 ### 1.1 Selecting a report
@@ -30,7 +30,7 @@ By default, users can select from reports assigned to their current logon respon
 
 **Text search example:**
 
-![Blitz Report text search](https://www.enginatics.com/wp-content/uploads/Blitz-Report-text-search.png)
+![Blitz Report text search](images/text-search.png)
 
 Scrolling further to the right in the search results shows the matching score and fields in which the keywords are found.
 
@@ -54,7 +54,7 @@ Some parameters may allow entry of multiple values, depending on the definition 
 
 To run a report for a list of account numbers for example, check the 'Multiple Values' checkbox next to the parameter and either select account numbers one by one from the LOV or enter a semicolon-separated list of numbers manually.
 
-![Select multiple parameter values](https://www.enginatics.com/wp-content/uploads/Select-multiple-parameter-values-1.png)
+![Select multiple parameter values](images/multiple-values.png)
 
 Larger lists of multiple parameter values up to a length of 32000 characters can be entered using the 'Edit Field' menu function.
 
@@ -62,11 +62,11 @@ Multiple values can be separated by semicolon or line feed. Using the 'Edit Fiel
 
 Users can store their own default parameter values using the **Actions > Save User Parameter Defaults** menu option.
 
-![Save user parameter defaults](https://www.enginatics.com/wp-content/uploads/Save-user-parameter-defaults-3.png)
+![Save user parameter defaults](images/save-user-defaults.png)
 
 Once a template is selected it is also possible to store default parameter values against a template using the **Actions > Save Template Parameter Defaults** menu option.
 
-![Save template parameter defaults](https://www.enginatics.com/wp-content/uploads/Save-template-parameter-defaults-3.png)
+![Save template parameter defaults](images/save-template-defaults.png)
 
 
 
@@ -84,11 +84,11 @@ The Options window is accessed by clicking on the grey options field. It allows 
 
 **User view:**
 
-![Blitz Report runtime options window](https://www.enginatics.com/wp-content/uploads/Blitz-Report-runtime-options-window-1.png)
+![Blitz Report runtime options window](images/runtime-options-user.png)
 
 **Developer view:**
 
-![Blitz Report runtime options window developer](https://www.enginatics.com/wp-content/uploads/Blitz-Report-runtime-options-window-developer.png)
+![Blitz Report runtime options window developer](images/runtime-options-developer.png)
 
 #### Email
 
@@ -164,7 +164,7 @@ The script must be placed under the `$CUSTOM_TOP/bin/custom/` directory, for exa
 
 To add a new custom postprocess script name to the runtime options LOV, add it to lookup **XXEN_REPORT_POSTPROCESS_SCRIPT**.
 
-![Blitz Report postprocessing script lookup](https://www.enginatics.com/wp-content/uploads/Blitz-Report-postprocess-list-of-value-lookup-700x419.png)
+![Blitz Report postprocessing script lookup](images/postprocess-lookup.png)
 
 #### Output Filename
 
@@ -217,13 +217,13 @@ You can use any of the below tokens to dynamically generate values for the follo
 
 `/interface/<report_name>_<DD-MM-YYYY>`
 
-![Blitz Report runtime options tokens](https://www.enginatics.com/wp-content/uploads/Blitz-Report-runtime-options-tokens.png)
+![Blitz Report runtime options tokens](images/tokens.png)
 
-![Blitz Report runtime options tokens LOV](https://www.enginatics.com/wp-content/uploads/Blitz-Report-runtime-options-tokens-LOV.png)
+![Blitz Report runtime options tokens LOV](images/tokens-lov.png)
 
 Manually entered tokens are validated against the LOV values, and an error message is displayed in case a token is not valid.
 
-![Blitz Report runtime options tokens validation](https://www.enginatics.com/wp-content/uploads/Blitz-Report-runtime-options-tokens-validation.png)
+![Blitz Report runtime options tokens validation](images/tokens-validation.png)
 
 > **Note:** There are three different output files, which can have different names in Blitz Report:
 > 1. The file name that is downloaded to the client desktop when opening the Blitz Report output.
@@ -238,15 +238,15 @@ From the options window, you can either select an existing template to edit, or,
 
 > There is a [training video](https://www.enginatics.com/tutorials/) available on creating and sharing layout templates.
 
-![Blitz Report select a template](https://www.enginatics.com/wp-content/uploads/Blitz-Report-select-a-template.png)
+![Blitz Report select a template](images/select-template.png)
 
-![Blitz Report create a new template](https://www.enginatics.com/wp-content/uploads/Blitz-Report-create-a-new-template.png)
+![Blitz Report create a new template](images/create-template.png)
 
 #### Template layout
 
 A template allows users to select the data columns, the level of reporting (detail transactional or summarized), aggregation calculations, and to define a pivot table output. Using templates, report columns can be selected and/or de-selected, summarized, and sorted as well as pivoted.
 
-![Blitz report pivot template window](https://www.enginatics.com/wp-content/uploads/Blitz-Report-pivot-template-window-2.png)
+![Blitz report pivot template window](images/pivot-template-window.png)
 
 The template window contains the following elements:
 
@@ -282,23 +282,23 @@ The Filters, Columns, Rows and Values fields are used to create and deliver the 
 
 **Sample pivot table output:**
 
-![Blitz Report pivot table example](https://www.enginatics.com/wp-content/uploads/Blitz-Report-pivot-table-example.png)
+![Blitz Report pivot table example](images/pivot-table-example.png)
 
 #### Excel upload
 
 The Excel template upload functionality allows creation of additional sheets with graphs, pie charts, macros or any other Excel functionality.
 
-![GL revenue by department and type pie charts](https://www.enginatics.com/wp-content/uploads/GL-revenue-by-department-and-type-pie-charts.png)
+![GL revenue by department and type pie charts](images/pie-charts.png)
 
-![Blitz Report Excel template upload](https://www.enginatics.com/wp-content/uploads/Blitz-Report-Excel-template-upload-2-1.png)
+![Blitz Report Excel template upload](images/excel-template-upload.png)
 
 #### Datasheet
 
 The excel template upload functionality also allows custom template definitions to the datasheet. The excel functions, pictures, screenshots, charts, header footer texts, comments, notes and freeze panes can be defined in the datasheet.
 
-![Datasheet Modifications in Template Upload](https://www.enginatics.com/wp-content/uploads/Template_DataSheet_Feature-1.png)
+![Datasheet Modifications in Template Upload](images/datasheet-feature.png)
 
-![Datasheet Modifications with charts in Template Upload](https://www.enginatics.com/wp-content/uploads/Template_DataSheet_Feature_with_Chart.png)
+![Datasheet Modifications with charts in Template Upload](images/datasheet-chart.png)
 
 > **Note:** If the excel functions are used in the datasheet template then hit "CTRL + SHIFT + R" to refresh them in the report output.
 
@@ -310,15 +310,15 @@ Templates can be shared across the following levels:
 - **Responsibility:** users having the responsibility
 - **User:** inclusion or exclusion by specific user
 
-![Blitz Report template sharing window](https://www.enginatics.com/wp-content/uploads/Blitz-Report-template-sharing-window-1.png)
+![Blitz Report template sharing window](images/template-sharing.png)
 
 #### Excluded parameters
 
 You can exclude certain parameters for a template. When the template is selected on the Run window, the excluded parameters are not displayed.
 
-![Blitz Report excluded parameters window](https://www.enginatics.com/wp-content/uploads/Blitz-Report-excluded-parameters-window.png)
+![Blitz Report excluded parameters window](images/excluded-params1.png)
 
-![Blitz Report excluded parameters window 2](https://www.enginatics.com/wp-content/uploads/Blitz-Report-excluded-parameters-window-2.png)
+![Blitz Report excluded parameters window 2](images/excluded-params2.png)
 
 
 
@@ -336,9 +336,9 @@ The easiest way to schedule a report is to run the Blitz Report first, and to th
 
 Alternatively, you can submit a new 'Blitz Report' concurrent request, populating its parameters manually. Select the required report name from the LOV and populate parameters 1 to 87 with values in exactly the same order as they appear on the Blitz Report run window.
 
-![Blitz Report scheduling](https://www.enginatics.com/wp-content/uploads/Blitz-Report-custom-postprocess-3.png)
+![Blitz Report scheduling](images/scheduling.png)
 
-![Blitz Report scheduling parameters](https://www.enginatics.com/wp-content/uploads/Blitz-Report-custom-postprocess-4.png)
+![Blitz Report scheduling parameters](images/scheduling-params.png)
 
 > **Note:** For date parameters in scheduled Blitz Reports, you can use Oracle's increment date functionality.
 
