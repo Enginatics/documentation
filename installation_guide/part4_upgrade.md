@@ -10,7 +10,7 @@ In case of any issues, please download and share the concurrent request's output
 
 ![Blitz Report Upgrade concurrent program](images/upgrade-concurrent.png)
 
----
+
 
 ## Manual Upgrade Steps
 
@@ -42,7 +42,7 @@ etc/generate_webservice_artifacts.sh
 
 **6.** If you notice any errors or would like the Enginatics team to validate if the upgrade completed successfully, please send us the created `*_blitz_report_install_logs_*.zip` file using our [support channels](mailto:support@enginatics.com).
 
----
+
 
 ## Additional guidelines
 
@@ -90,6 +90,6 @@ user_name
 
 In case you see a `Warning: CUSTOM.pll is already customized` in the error_summary.log file, then the Blitz Report related changed in the CUSTOM.pll are either missing or outdated and the changes described in [section 6.22](part6_troubleshooting.md#622-custom-library-attachment) would need to be (re-)applied. Please [contact us](mailto:support@enginatics.com) if you need help with this change.
 
----
+
 
 *Previous: [Application Setup](part3_application_setup.md) | Next: [Optional Configurations](part5_optional_configurations.md)*

@@ -12,7 +12,6 @@
 8. Run the [Blitz Report Update Menu Entries](part3_application_setup.md#33-update-menu-entries-concurrent-program) concurrent program to assign the Blitz Report function and program to menus and request groups.
 9. Perform additional [application setup](part3_application_setup.md) steps.
 
----
 
 ## 1.1 Required tools and access credentials
 
@@ -37,7 +36,6 @@ The installation of Blitz Report is done in a similar way to Oracle standard pat
 - At least 100 MB of free space under $APPL_TOP for EBS 12 and 500 MB for EBS 11i.
 - More space may be required in case additional languages are enabled in the instance.
 
----
 
 ## 1.2 Creating a custom application in Oracle E-Business Suite
 
@@ -162,13 +160,13 @@ FNDCPASS apps/***** 0 Y system/****** ORACLE XXEN *******
 
 **12.** Stop and restart the application tier services.
 
----
+
 
 ## 1.3 Configure Oracle EBS Integrated SOA Gateway
 
 The Blitz Upload and Financial Statement features require the Oracle EBS Integrated SOA Gateway (ISG) to be configured. Please refer to the following blog posts for [EBS R12.1.3](https://www.enginatics.com/blog/configuring-oracle-ebs-integrated-soa-gateway-isg-in-ebs-r12-1-3/) and [EBS R12.2](https://www.enginatics.com/blog/configuring-oracle-ebs-integrated-soa-gateway-isg/) to configure the ISG in your instances.
 
----
+
 
 ## 1.4 Other prerequisites
 
@@ -192,6 +190,6 @@ Please note that granting the SELECT_CATALOG_ROLE role is not sufficient. To use
 select dsp.* from dba_sys_privs dsp where dsp.grantee='APPS' and dsp.privilege='SELECT ANY DICTIONARY'
 ```
 
----
+
 
 *Next: [Installation](part2_installation.md)*

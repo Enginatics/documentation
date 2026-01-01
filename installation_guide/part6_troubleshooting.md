@@ -1,6 +1,6 @@
 # 6. Troubleshooting
 
----
+
 
 ## 6.1 ORA-12154: TNS:could not resolve the connect identifier specified
 
@@ -33,7 +33,7 @@ frmbld.sh,frmcmp.sh,frmcmp_batch.sh,frmplsqlconv.sh,frmplsqlconv.bat
 
 For EBS R12.2, repeat above actions on both run and patch file systems.
 
----
+
 
 ## 6.2 Error: CUSTOM_SCHEMA could not be derived for custom application XX
 
@@ -45,7 +45,7 @@ If you encounter this error message during installation, please validate if you 
 
 This required setup is done automatically when creating custom applications through adsplice, but is frequently missed for older applications created before AD Splice, as this step is missing in Oracle note 2519062.1 describing manual custom application creation. See [section 5.10](part5_optional_configurations.md#510-creating-a-custom-application-manually-alternative-to-adsplice) for complete instructions on how to create a custom application manually.
 
----
+
 
 ## 6.3 Concurrent Manager stops processing requests when the first Blitz Report is started
 
@@ -53,7 +53,7 @@ This happens if a new application is created for Blitz Report through adsplice, 
 
 Creating a new application through adsplice requires autoconfig and a conc manager restart, to enable processing concurrents of the newly created application.
 
----
+
 
 ## 6.4 Blitz Reports ends with ORA-01843: not a valid month when using date parameters
 
@@ -61,7 +61,7 @@ When changing the ICX: Date format mask to something different than DD-MON-RR an
 
 If this happens, you are missing Oracle patch 12678526: 1-OFF:12533040:12.1.3:12.1.3:FND_DATE OUTPUT FORMAT MASK IS NOT CONSISTENT IN
 
----
+
 
 ## 6.5 ORA-29855: error occurred in the execution of ODCIINDEXCREATE routine, DRG-11446
 
@@ -115,7 +115,7 @@ In case of RAC configuration, perform above steps on all RAC nodes.
 
 **5.** Due to the missing files and the domain index being invalid during Blitz Report installation, the load of Blitz Report templates ends in error ORA-29861: domain index is marked LOADING/FAILED/UNUSABLE. To correct these and reload the Blitz Report templates, rerun the Blitz Report installation script again.
 
----
+
 
 ## 6.6 ORA-29855: error occurred in the execution of ODCIINDEXCREATE routine, DRG-10700 on 12c multitenant container db
 
@@ -132,7 +132,7 @@ ORA-06512: at "CTXSYS.TEXTINDEXMETHODS", line 366
 
 Please follow Oracle note 1994919.1 to create the missing default lexer preference and rerun the installation.
 
----
+
 
 ## 6.7 FRM-40654: Record has been updated by another user, when saving and modifying reports
 
@@ -182,19 +182,19 @@ focf.name not in ('TEMPLATE','METADATA') and
 focf.ctx_type='D';
 ```
 
----
+
 
 ## 6.8 FRM-99999: Error 408 occurred, when deleting reports or parameters
 
 This is an issue related to incorrect context index (CTXSYS) synchronization code in your database version, as described in Oracle notes 2031953.1 and 1586704.1. To resolve this problem, please follow the instructions described in note 1586704.1.
 
----
+
 
 ## 6.9 PLS-00306: wrong number or types of arguments in call to 'SYNCRN', when loading reports
 
 This is the same as issue 6.8 and resolved by following the instructions described in note 1586704.1.
 
----
+
 
 ## 6.10 APP-FND-02901: You do not have access privilege to any operating unit, when opening the Blitz Report form
 
@@ -206,7 +206,7 @@ According to various Oracle support notes, this error showing fnd message MO_ORG
 2. Concurrent 'Security List Maintenance' did not run after changing the security profile setup, note 887512.1.
 3. There is a mismatch between profile options settings for 'MO: Security Profile' and 'HR: Security Profile', note 2022551.1.
 
----
+
 
 ## 6.11 Error: The Blitz Report function is not available under the responsibility
 
@@ -223,7 +223,7 @@ If it does not work please try the following action plan as per Doc ID 454285.1:
 - If it does not work please try restarting Apache.
 - If it still does not work, try restarting all the application services.
 
----
+
 
 ## 6.22 CUSTOM library attachment
 
@@ -253,7 +253,7 @@ Remove the directory path when prompted:
 
 Copy and recompile the updated CUSTOM.pll.
 
----
+
 
 ## 6.30 ORA-28003: password verification for the specified password failed
 
@@ -265,7 +265,7 @@ ORA-28003: password verification for the specified password failed
 
 **Solution:** Temporarily disable the password verification function as per Doc ID 2698389.1.
 
----
+
 
 ## 6.31 java.lang.SecurityException: User: ISGADMIN~~EBSDB, failed to be authenticated
 
@@ -304,7 +304,7 @@ select fnd_vault.get('ISG','ISGADMIN') from dual;
 
 9. Review the logfiles to ensure that the xxen_webservices webservice has been deployed successfully.
 
----
+
 
 ## 6.32 ISG_SERVICE_EXECUTION_ERROR
 
@@ -328,7 +328,7 @@ If clearing the cache does not help please try to reset the ISGDatasource from t
 
 If resetting the ISGDatasource does not help then please run FND SOA Runtime Error report and share the output with our [support](mailto:support@enginatics.com) for the investigation.
 
----
+
 
 ## 6.33 ORA-04088: error during execution of trigger
 
@@ -362,7 +362,7 @@ alter trigger apps.note_1342126_1_audit_trig disable;
 alter trigger apps.note_1342126_1_audit_trig enable;
 ```
 
----
+
 
 ## 6.34 ISG_SERVICE_AUTH_FAILURE
 
@@ -383,7 +383,7 @@ The issue can be resolved by one of the below options:
 
 2. Clear the cache using Functional Administrator responsibility.
 
----
+
 
 ## 6.35 ISG_INVALID_ALIAS or ISG_FILE_ACCESS_ERROR
 
@@ -419,7 +419,7 @@ The following error may be observed in the Blitz Report installation logfile if 
 
 Please configure the Integrated SOA Gateway (ISG). See [section 1.3](part1_prerequisites.md#13-configure-oracle-ebs-integrated-soa-gateway).
 
----
+
 
 ## 6.36 FND_SOA_AUTHORIZATION_FAILURE
 
@@ -441,7 +441,7 @@ This error may occur after Blitz Report upgrade and webservice redeployment.
 
 2. If the above does not help, reboot the OC4J containers for r12.1.3 and Weblogic servers for EBS 12.2.
 
----
+
 
 ## 6.37 Run-time error '1004': Method 'Onkey' of object '_Application' failed
 
@@ -477,7 +477,7 @@ Add the location where the Blitz output files are downloaded.
 
 ![Trust Center Trusted locations](images/trust-center-locations.png)
 
----
+
 
 ## 6.38 ORA-00001: unique constraint (SYS.I_OBJAUTH1) violated
 
@@ -501,7 +501,7 @@ set define off;
 @XXEN_UTIL.pkb
 ```
 
----
+
 
 ## 6.39 SECURITY WARNING Macros have been disabled
 
@@ -527,7 +527,7 @@ Then choose: 'Trust all documents from this publisher'.
 
 If your company's security policy does not allow you to update Excel settings, please ask your infrastructure team to import the Enginatics Certum Code signing public certificate to the Trusted Publishers certificate store.
 
----
+
 
 ## 6.40 504: Gateway Time-out
 
@@ -539,7 +539,7 @@ When querying general ledger balance data in Blitz FSG, the following error mess
 
 Increase the OAFM servers Java Heap Size.
 
----
+
 
 ## 6.41 FRM-30085: Unable to adjust form for output
 
@@ -603,6 +603,6 @@ FORMS_PATH=$AU_TOP/$APPLFRM/US:$FORMS_PATH; export FORMS_PATH
 frmcmp_batch.sh module=$XXEN_TOP/$APPLFRM/US/XXEN_REPORTS.fmb userid=apps/$APPS_PWD output_file=$XXEN_TOP/$APPLFRM/US/XXEN_REPORTS.fmx module_type=form compile_all=yes
 ```
 
----
+
 
 *Previous: [Optional Configurations](part5_optional_configurations.md)*

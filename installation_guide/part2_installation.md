@@ -2,7 +2,7 @@
 
 An installation video is available on [YouTube](https://www.youtube.com/watch?v=YOUR_VIDEO_ID) to guide the deployment of Blitz Report, which installs the necessary components on the Oracle E-Business Suite server, including database objects, user interface elements, application setups, and all items prefixed with XXEN.
 
----
+
 
 ## 2.1 Installation Steps
 
@@ -93,6 +93,6 @@ admanagedsrvctl.sh start oacore_server2
 adapcctl.sh start
 ```
 
----
+
 
 *Previous: [Prerequisites](part1_prerequisites.md) | Next: [Application Setup](part3_application_setup.md)*

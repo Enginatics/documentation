@@ -12,7 +12,7 @@ After running the installation script, additional configuration is required to g
 6. Create [GL Summary Accounts](#37-gl-summary-accounts) and run the Blitz Report Update GL Indexes concurrent program.
 7. [Test the Integrated SOA Gateway](#38-test-integrated-soa-gateway-isg-connectivity) connectivity.
 
----
+
 
 ## 3.1 Access profile option
 
@@ -22,7 +22,7 @@ The profile option 'Blitz Report Access' controls which users can consume a lice
 
 ![Blitz Report Access profile option setting](images/access-profile-option.png)
 
----
+
 
 ## 3.2 Default assignment load profile option
 
@@ -32,7 +32,7 @@ The Blitz Report installation includes assignments, which give access to seeded 
 
 ![Blitz Report Load Default Assignments during Upgrades](images/default-assignments-upgrades.png)
 
----
+
 
 ## 3.3 Update Menu Entries concurrent program
 
@@ -54,7 +54,7 @@ After running the concurrent program, please wait for completion of Oracle's 'Co
 
 After running the program, continue with additional manual setup steps in [section 5.8](part5_optional_configurations.md#58-request-group-entry).
 
----
+
 
 ## 3.4 Concurrent manager sleep time
 
@@ -66,7 +66,7 @@ For an optimal user experience, reduce the concurrent manager sleep time to 5 se
 
 If you would like to run Blitz Report on a separate concurrent manager, you can run the [Blitz Report Create Manager](part5_optional_configurations.md#59-blitz-report-create-manager-program) concurrent program to create a dedicated manager for Blitz Reports and Uploads.
 
----
+
 
 ## 3.5 Monitor concurrent program
 
@@ -92,7 +92,7 @@ Schedule concurrent 'Blitz Report Monitor' to run, for example, daily.
 
 ![Blitz Report Monitor concurrent request schedule](images/monitor-schedule.png)
 
----
+
 
 ## 3.6 License key
 
@@ -102,7 +102,7 @@ The initial Blitz Report installation includes a trial license key valid for 10 
 
 ![Blitz Report license key](images/license-key.png)
 
----
+
 
 ## 3.7 GL Summary Accounts
 
@@ -116,7 +116,7 @@ After the creation of the summary templates is completed, navigate to the System
 
 ![Run Blitz Report Update GL Indexes](images/update-gl-indexes.png)
 
----
+
 
 ## 3.8 Test Integrated SOA Gateway (ISG) connectivity
 
@@ -136,6 +136,6 @@ You may also face [the following issue](part6_troubleshooting.md#637-run-time-er
 
 If you see an error message instead of the values, please review the [troubleshooting notes](part6_troubleshooting.md) for possible solutions, or contact our [support](mailto:support@enginatics.com).
 
----
+
 
 *Previous: [Installation](part2_installation.md) | Next: [Upgrade](part4_upgrade.md)*

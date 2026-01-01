@@ -1,6 +1,6 @@
 # 5. Optional Configurations
 
----
+
 
 ## 5.1 Installation on Windows
 
@@ -10,7 +10,7 @@ The commands to install Blitz Report are the same as for Linux. Before executing
 
 ![Start MKS toolkit bash on Windows](images/mks-toolkit-windows.png)
 
----
+
 
 ## 5.2 Running blitz reports on a standby database
 
@@ -41,13 +41,13 @@ If you already have some other events defined, use this syntax:
 alter system set event='10946 trace name context forever, level 8454144', '30580 trace name context forever, level 4096' scope=spfile;
 ```
 
----
+
 
 ## 5.3 Configure mod_plsql (EBS 11i only)
 
 The Blitz Upload and Financial Statement features require the Oracle EBS Integrated SOA Gateway (ISG) to be configured. As it is unavailable in EBS 11i, mod_plsql needs to be configured as a replacement. Please refer to [the following blog post](https://www.enginatics.com/blog/configuring-mod_plsql-for-blitz-upload/) to configure mod_plsql in your EBS 11i instance.
 
----
+
 
 ## 5.4 SSO enabled profile option
 
@@ -57,7 +57,7 @@ The profile option 'Blitz Report SSO Enabled' allows connecting to EBS instances
 
 ![SSO Enabled profile option](images/sso-enabled.png)
 
----
+
 
 ## 5.5 Mod plsql profile option
 
@@ -65,7 +65,7 @@ The profile option 'Blitz Upload Use mod_plsql' allows using the mod_plsql to co
 
 **Navigation:** System Administrator > Profile > System
 
----
+
 
 ## 5.6 Setup Blitz Report Advanced Email Delivery
 
@@ -78,7 +78,7 @@ By default Blitz Report uses the built in Oracle EBS Delivery functionality. It 
 - Blitz Report Email Body Message
 - Blitz Report Email Subject Message
 
----
+
 
 ## 5.7 Menu entry
 
@@ -86,7 +86,7 @@ If you would like to restrict access to Blitz Report to specific menus, assign t
 
 **Navigation:** System Administrator > Application > Menu
 
----
+
 
 ## 5.8 Request group entry
 
@@ -94,7 +94,7 @@ To enable users to schedule reports as a background concurrent process (e.g. for
 
 **Navigation:** System Administrator > Security > Responsibility > Request
 
----
+
 
 ## 5.9 Blitz Report Create Manager program
 
@@ -104,7 +104,7 @@ If you would like to create a separate concurrent manager for the Blitz Report a
 
 ![Blitz Report Manager](images/blitz-manager.png)
 
----
+
 
 ## 5.10 Creating a custom application manually (alternative to adsplice)
 
@@ -172,6 +172,6 @@ Create the following custom parameters:
 
 Then run AutoConfig to apply the changes.
 
----
+
 
 *Previous: [Upgrade](part4_upgrade.md) | Next: [Troubleshooting](part6_troubleshooting.md)*
