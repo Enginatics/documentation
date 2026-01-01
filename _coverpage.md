@@ -13,6 +13,6 @@
 - 800+ ready-to-use reports
 
 [Get Started](#blitz-report-documentation)
-[User Guide](Blitz_Report_User_Guide.md)
-[Developer Guide](blitz_report_developer_guide_part1_introduction.md)
+[User Guide](user_guide/README.md)
+[Developer Guide](developer_guide/README.md)
 [Report Library](https://www.enginatics.com/reports/)

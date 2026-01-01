@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 6. Creating a Blitz Upload
 
 Blitz Upload is available with Blitz Report which is fully integrated with Oracle E-Business Suite. It enables your IT team to easily create and edit Uploads where they can choose to use an API or directly insert records into an Interface table. Blitz Upload runs as a concurrent process and upon completion generates output file using Blitz Report. The output file automatically downloads and opens in Excel.

@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 4. Profile Options
 
 The profile option 'Blitz Report Access' should be set to 'Developer' for users with the SQL skills required for creating Blitz Reports.

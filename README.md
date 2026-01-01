@@ -1,16 +1,37 @@
+---
+title: "Blitz Report Documentation"
+last_updated: "2026-01-01"
+version: "1.0"
+owner: "Tech Writing Team"
+status: "Published"
+ai_update_scope: "This is the main landing page for the documentation. Update summaries and links as the document structure evolves."
+---
 # Blitz Report Documentation
 
-Welcome to the official documentation for **Blitz Report** - the most efficient and easy-to-use operational reporting solution for Oracle E-Business Suite.
+Welcome to the official documentation for **Blitz Report**, the world’s fastest operational reporting and data upload solution for Oracle E-Business Suite.
 
 ## What is Blitz Report?
 
-Blitz Report is an Oracle Forms-based software, fully integrated with Oracle E-Business Suite. It enables your IT team to easily store and edit SQL scripts for reports, and make them available to your business users. Blitz Report runs as a concurrent process and generates output files in XLSX or text delimited CSV format. Upon completion, reports automatically download and open in Excel.
+Blitz Report is a powerful, Oracle Forms-based software that fully integrates with Oracle E-Business Suite. It empowers your IT and development teams to create, manage, and deploy SQL-based reports with ease. For business users, it offers a seamless experience to run reports, analyze data in Excel, and perform mass data uploads directly from the Oracle EBS standard forms.
+
+## Key Features
+
+*   **Perfectly Formatted Excel Reports:** Generate richly formatted Excel reports with correct data types, fixed headers, and filters, without the need for CSV or intermediate files.
+*   **Mass Data Upload:** A fast and reliable alternative to Oracle Web ADI, capable of loading thousands of records in seconds.
+*   **Fully Embedded in Oracle EBS:** A seamless user experience with no extra logins or applications to manage. Installs in minutes.
+*   **User Configurable Report Data:** A single SQL can support unlimited report templates. Users can add, remove, or re-order columns and set up pivot tables and drilldowns in Excel.
+*   **Version Control and Change Management:** Automatic version control streamlines the development and deployment cycle, ensuring corporate IP assets are protected and centrally managed.
+*   **Seamless Integration with Oracle EBS:** Leverages Oracle Forms to deliver instant user productivity. Execute reports from inside any Oracle standard form.
+*   **Unlimited Records Export:** Export unrestricted volumes of transactions to Excel (.xlsx).
+*   **Automated Migration Routines:** Effortlessly migrate from Discoverer, BI Publisher, Polaris, and other third-party reporting tools.
+*   **Leverages Oracle EBS Security:** Fully integrated with Oracle EBS security, ensuring users can only access the data they are authorized to see.
+*   **Speed of Execution:** Export millions of records in seconds, not minutes or hours.
 
 ## Documentation Overview
 
 ### User Guide
 
-The [User Guide](Blitz_Report_User_Guide.md) covers everything end users need to know about running reports:
+The [User Guide](user_guide/README.md) covers everything end users need to know about running reports:
 
 - Running and scheduling reports
 - Working with parameters and templates
@@ -19,17 +40,16 @@ The [User Guide](Blitz_Report_User_Guide.md) covers everything end users need to
 
 ### Developer Guide
 
-The Developer Guide is organized into the following sections:
+The [Developer Guide](developer_guide/) provides in-depth information for developers:
 
-| Section | Description |
-|---------|-------------|
-| [Introduction](blitz_report_developer_guide_part1_introduction.md) | Overview of Blitz Report |
-| [Creating a Blitz Report](blitz_report_developer_guide_part2_creating_report.md) | Step-by-step guide to creating reports, anchors, parameters, assignments |
-| [Tools Menu](blitz_report_developer_guide_part3_tools_menu.md) | LOVs, export/import, column translations, license management |
-| [Tips and Tricks](blitz_report_developer_guide_part4_tips_tricks.md) | Debugging, Firefox setup, incremental interfaces, data warehouse |
-| [Profile Options](blitz_report_developer_guide_part5_profile_options.md) | Complete reference of all profile options |
-| [APIs and Integration](blitz_report_developer_guide_part6_apis_integration.md) | PLSQL APIs, useful functions, integration methods |
-| [Blitz Upload & Glossary](blitz_report_developer_guide_part7_upload_glossary.md) | Creating uploads and terminology reference |
+- [Introduction](developer_guide/part1_introduction.md)
+- [Creating a Blitz Report](developer_guide/part2_creating_report.md)
+- [Tools Menu](developer_guide/part3_tools_menu.md)
+- [Tips and Tricks](developer_guide/part4_tips_tricks.md)
+- [Profile Options](developer_guide/part5_profile_options.md)
+- [APIs and Integration](developer_guide/part6_apis_integration.md)
+- [Creating a Blitz Upload](developer_guide/part7_upload_glossary.md)
+- [Glossary](developer_guide/part7_upload_glossary.md#_7-glossary)
 
 ## Quick Links
 
@@ -39,22 +59,12 @@ The Developer Guide is organized into the following sections:
 - **Installation Guide:** [Installation Instructions](https://www.enginatics.com/blitz-report-installation-guide/)
 - **Support:** [support@enginatics.com](mailto:support@enginatics.com)
 
-## Key Features
+## What Customers Are Saying
 
-- **Easy Report Creation** - Create reports from SQL queries with dynamic parameters
-- **Excel Integration** - Output directly to XLSX with automatic download
-- **Parameter Flexibility** - Dynamic SQL generation with optional parameters
-- **Template Support** - Save and share report layouts and configurations
-- **Migration Tools** - Import from BI Publisher, Discoverer, and other tools
-- **Security** - Role-based access control and VPD support
-- **Scheduling** - Schedule reports with Oracle concurrent manager
-- **Data Upload** - Blitz Upload for data import via Excel
+> "The flexibility of Blitz reporting tools increases the user’s data access exponentially!" - Tim Clark, Oracle Functional Consultant
 
-## Getting Started
+> "With Blitz Report, we stumbled across a tool, that we really acknowledge as a true innovation in the EBS space." - Andrew Finkel, ERP Technical Analyst, LiDestri
 
-1. **For Users:** Start with the [User Guide](Blitz_Report_User_Guide.md) to learn how to run reports
-2. **For Developers:** Begin with the [Introduction](blitz_report_developer_guide_part1_introduction.md) and then proceed to [Creating a Blitz Report](blitz_report_developer_guide_part2_creating_report.md)
-
-
+> "Blitz reports have been absolute GAME CHANGERS for our company. Can’t say enough great things about them!” - Scott Winter, Cost Accountant, Fujirebio Diagnostic
 
 *For feedback and suggestions, please contact [support@enginatics.com](mailto:support@enginatics.com)*

@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 2. Tools Menu
 
 ![Blitz Report tools menu](./images/tools-menu-3.webp)

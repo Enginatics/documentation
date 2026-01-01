@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 1. Creating a Blitz Report
 
 ### 1.1 Report Creation Steps

@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 5. APIs and Integration
 
 ### 5.1 Export

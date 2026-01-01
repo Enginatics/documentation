@@ -1,5 +1,3 @@
-# Blitz Report Developer Guide
-
 ## 3. Tips and Tricks
 
 ### 3.1 Debugging
