@@ -135,3 +135,97 @@ Contains technical, in-depth information for developers on how to create reports
         -   `6.5 Upload Results`: Error SQL, Success SQL, Data View, Pre-built Functions for Result SQL.
         -   `7. Glossary`: List of common terms (LOV, Anchor, Bind Variable, Lexical Parameter, VPD, EUL, DFF, API, BLOB, CLOB, EBS, SSO, SMTP, CSV, TSV, XLSX).
     -   **Common Queries**: "How to create a data upload?", "Blitz Upload API requirements.", "What are Blitz Upload column validations?", "Glossary of terms."
+
+## 3. Installation Guide (`installation_guide/`)
+
+Contains comprehensive instructions for installing, configuring, upgrading, and troubleshooting Blitz Report on Oracle E-Business Suite.
+
+-   **`README.md`**
+    -   **Topics**: Introduction to the Installation Guide, table of contents, quick start summary, and links to related resources.
+    -   **Keywords**: Installation overview, quick start, support, related resources.
+    -   **Common Queries**: "How to install Blitz Report?", "Installation guide overview."
+
+-   **`part1_prerequisites.md`**
+    -   **Topics**: All requirements that must be met before installing Blitz Report, including required tools, access credentials, space requirements, creating a custom application via adsplice, configuring the Integrated SOA Gateway (ISG), and other database prerequisites.
+    -   **Keywords**: Prerequisites, Required tools, Kitty, Putty, WinSCP, SQL Developer, Toad, APPS password, SYSTEM password, applmgr, Space requirements, APPS_TS_TX_DATA, APPS_TS_TX_IDX, Custom application, adsplice, XXEN, XXEN_TOP, newprods.txt, topfile.txt, AutoConfig, APPL_TOP, shared APPL_TOP, FNDCPASS, ISG, Integrated SOA Gateway, SELECT ANY DICTIONARY, RESOURCE role, ctxsys.context.
+    -   **Inner Structure**:
+        -   `1.1 Required tools and access credentials`: Tools list, access requirements, space requirements.
+        -   `1.2 Creating a custom application in Oracle E-Business Suite`: adsplice steps 1-12, shared APPL_TOP considerations, EBS R12.2 and 11i notes.
+        -   `1.3 Configure Oracle EBS Integrated SOA Gateway`: Links to ISG configuration for R12.1.3 and R12.2.
+        -   `1.4 Other prerequisites`: EBS versions supported, database version, SELECT ANY DICTIONARY grant.
+    -   **Common Queries**: "What are the prerequisites for Blitz Report?", "How to create XXEN custom application?", "Configure ISG for Blitz Report.", "Required database grants."
+
+-   **`part2_installation.md`**
+    -   **Topics**: Step-by-step instructions for installing Blitz Report on the application server, including running the install script, handling multi-node environments, and configuring the OAF user interface.
+    -   **Keywords**: Installation, install.sh, unzip, APPS_PWD, CUSTOM_APP, CUSTOM_TABLESPACE, CUSTOM_INDEXSPACE, skip_db, generate_webservice_artifacts.sh, adcgnjar, customall.jar, adapcctl.sh, admanagedsrvctl.sh, OACORE_SERVER, R12.1.3, R12.2.
+    -   **Inner Structure**:
+        -   `2.1 Installation Steps`: Steps 1-7, non-interactive parameters, multi-node installation, OAF UI setup for R12.1.3 and R12.2.
+    -   **Common Queries**: "How to install Blitz Report?", "Run installation script.", "Multi-node installation.", "Configure OAF user interface."
+
+-   **`part3_application_setup.md`**
+    -   **Topics**: Post-installation configuration steps including setting up access profiles, default assignments, menu entries, concurrent manager settings, license key, GL summary accounts, and testing ISG connectivity.
+    -   **Keywords**: Application setup, Blitz Report Access profile, User, Developer, System access levels, Default assignment load, Blitz Report Load Default Assignments during Upgrades, Update Menu Entries, Menu Entry Prompt, Include Web User Interface, Add to Navigator Top10 List, Compile Security, Concurrent manager sleep time, Work Shifts, Blitz Report Monitor, License key, trial license, free version, GL Summary Accounts, Update GL Indexes, ISG connectivity, GL Daily Rates Upload, Excel Trust Center, VBA macros.
+    -   **Inner Structure**:
+        -   `3.1 Access profile option`: Profile levels, User/Developer/System access.
+        -   `3.2 Default assignment load profile option`: Profile setting, custom assignments.
+        -   `3.3 Update Menu Entries concurrent program`: Parameters (Update Mode, Menu Entry Prompt, Include Web UI, Update Manually Created, Add to Navigator Top10), Compile Security.
+        -   `3.4 Concurrent manager sleep time`: Work Shifts, Blitz Report Create Manager.
+        -   `3.5 Monitor concurrent program`: Tasks performed, scheduling recommendations.
+        -   `3.6 License key`: Trial license, free version limitations.
+        -   `3.7 GL Summary Accounts`: Summary accounts setup, Update GL Indexes.
+        -   `3.8 Test Integrated SOA Gateway connectivity`: GL Daily Rates Upload test, Excel Trust Center settings.
+    -   **Common Queries**: "How to setup Blitz Report access?", "Configure concurrent manager for Blitz Report.", "Enter license key.", "Test ISG connectivity."
+
+-   **`part4_upgrade.md`**
+    -   **Topics**: Instructions for upgrading Blitz Report using the automatic concurrent program or manual terminal session, including handling blocking sessions and CUSTOM.pll updates.
+    -   **Keywords**: Upgrade, Blitz Report Upgrade concurrent program, Maintenance Mode, Manual upgrade, install.sh, skip_db, generate_webservice_artifacts.sh, ORA-00955, Blocking sessions, active sessions query, disconnect_db_session, kill_db_server_process, CUSTOM.pll warning.
+    -   **Inner Structure**:
+        -   `Manual Upgrade Steps`: Steps 1-6 for manual upgrade.
+        -   `Additional guidelines`: ORA-00955 errors, blocking sessions (query to identify active users), CUSTOM.pll update.
+    -   **Common Queries**: "How to upgrade Blitz Report?", "Manual upgrade steps.", "Handle blocking sessions during upgrade.", "CUSTOM.pll warning."
+
+-   **`part5_optional_configurations.md`**
+    -   **Topics**: Optional configurations for specific environments including Windows installation, standby database setup, mod_plsql for EBS 11i, SSO configuration, advanced email delivery, manual menu/request group entries, dedicated concurrent manager, and manual custom application creation.
+    -   **Keywords**: Optional configurations, Windows, MKS Toolkit, Cygwin, Standby database, Active Data Guard, DML Redirection, xxen_adg database link, Event 10946, mod_plsql, EBS 11i, SSO Enabled profile, Blitz Report SSO Enabled, Blitz Upload Use mod_plsql, Advanced Email Delivery, SMTP Host, SMTP Port, SMTP SSL, Email Body Message, Email Subject Message, Menu entry, Request group entry, Blitz Report Create Manager, Custom application manually, CREATE USER XXEN, Register Application, DataGroup, Alert Manager Installations, AutoConfig custom parameters.
+    -   **Inner Structure**:
+        -   `5.1 Installation on Windows`: MKS Toolkit bash.
+        -   `5.2 Running blitz reports on a standby database`: Prerequisites (Oracle 19c+, Active Data Guard, xxen_adg link, Event 10946).
+        -   `5.3 Configure mod_plsql (EBS 11i only)`: Link to blog post.
+        -   `5.4 SSO enabled profile option`: Blitz Report SSO Enabled profile.
+        -   `5.5 Mod plsql profile option`: Blitz Upload Use mod_plsql profile.
+        -   `5.6 Setup Blitz Report Advanced Email Delivery`: Profile options list.
+        -   `5.7 Menu entry`: Manual menu assignment.
+        -   `5.8 Request group entry`: Adding to request groups.
+        -   `5.9 Blitz Report Create Manager program`: Dedicated concurrent manager.
+        -   `5.10 Creating a custom application manually`: Steps 1-6 (CREATE USER, Register Application, Register Oracle User, DataGroup, Alert Manager, AutoConfig).
+    -   **Common Queries**: "Install Blitz Report on Windows.", "Configure standby database for Blitz Report.", "Setup SSO for Blitz Report.", "Create custom application without adsplice."
+
+-   **`part6_troubleshooting.md`**
+    -   **Topics**: Comprehensive troubleshooting guide covering common installation errors, form errors, ISG connectivity issues, Excel/macro problems, and database errors with detailed solutions.
+    -   **Keywords**: Troubleshooting, ORA-12154, TNS_ADMIN, frmcmp_batch.sh, CUSTOM_SCHEMA error, Alert Manager Installations, Concurrent Manager stops, ORA-01843, date format, ORA-29855, DRG-11446, DRG-10700, Oracle Text Knowledge Base, droldUS.dat, DEFAULT_LEXER, FRM-40654, character set mismatch, NLS_CHARACTERSET, FRM-99999 Error 408, CTXSYS synchronization, PLS-00306 SYNCRN, APP-FND-02901, MO_ORG_ACCESS_NO_DATA_FOUND, Security Profile, Function not available, Compile Security, Clear All Cache, CUSTOM.pll library attachment, ORA-28003, password verification, ISGADMIN authentication, ISG_SERVICE_EXECUTION_ERROR, ISGDatasource reset, ORA-04088 trigger error, ISG_SERVICE_AUTH_FAILURE, GLOBAL user, ISG_INVALID_ALIAS, ISG_FILE_ACCESS_ERROR, ASADMIN password, FND_SOA_AUTHORIZATION_FAILURE, Run-time error 1004, Protected View, Trusted Sites, ORA-00001 I_OBJAUTH1, Macros disabled, Trust Publisher, 504 Gateway Time-out, OAFM Java Heap Size, FRM-30085, package recompilation.
+    -   **Inner Structure**:
+        -   `6.1 ORA-12154`: TNS_ADMIN variable fix.
+        -   `6.2 CUSTOM_SCHEMA error`: Alert Manager link setup.
+        -   `6.3 Concurrent Manager stops`: Restart after adsplice.
+        -   `6.4 ORA-01843`: Missing Oracle patch 12678526.
+        -   `6.5 ORA-29855 DRG-11446`: Oracle Text Knowledge Base files.
+        -   `6.6 ORA-29855 DRG-10700`: DEFAULT_LEXER preference.
+        -   `6.7 FRM-40654`: Character set mismatch.
+        -   `6.8 FRM-99999 Error 408`: CTXSYS synchronization.
+        -   `6.9 PLS-00306 SYNCRN`: Same as 6.8.
+        -   `6.10 APP-FND-02901`: Security profile issues.
+        -   `6.11 Function not available`: Compile Security, clear cache.
+        -   `6.22 CUSTOM library attachment`: Library attachment steps.
+        -   `6.30 ORA-28003`: Password verification function.
+        -   `6.31 ISGADMIN authentication`: Reset ISGADMIN password.
+        -   `6.32 ISG_SERVICE_EXECUTION_ERROR`: Clear cache, reset ISGDatasource.
+        -   `6.33 ORA-04088 trigger`: Disable investigation trigger.
+        -   `6.34 ISG_SERVICE_AUTH_FAILURE`: GLOBAL user, clear cache.
+        -   `6.35 ISG_INVALID_ALIAS`: Configure ISG.
+        -   `6.36 FND_SOA_AUTHORIZATION_FAILURE`: Clear cache, reboot servers.
+        -   `6.37 Run-time error 1004`: Trusted Sites, Trust Center.
+        -   `6.38 ORA-00001 I_OBJAUTH1`: Recreate package.
+        -   `6.39 Macros disabled`: Trust Publisher.
+        -   `6.40 504 Gateway Time-out`: Increase OAFM heap size.
+        -   `6.41 FRM-30085`: Recompile packages and form.
+    -   **Common Queries**: "ORA-12154 during installation.", "ISG connection error.", "Excel macro blocked.", "Form compilation error.", "Character set mismatch.", "Blitz Report function not available."

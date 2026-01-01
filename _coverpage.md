@@ -15,4 +15,5 @@
 [Get Started](#blitz-report-documentation)
 [User Guide](user_guide/README.md)
 [Developer Guide](developer_guide/README.md)
+[Installation Guide](installation_guide/README.md)
 [Report Library](https://www.enginatics.com/reports/)

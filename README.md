@@ -28,7 +28,7 @@ The [User Guide](user_guide/README.md) covers everything end users need to know 
 - Running and scheduling reports
 - Working with parameters and templates
 - Exporting and sharing reports
-- Excel integration features
+- GL Financial Statement and Drilldown (FSG)
 
 ### Developer Guide
 
@@ -40,14 +40,25 @@ The [Developer Guide](developer_guide/README.md) provides in-depth information f
 - [Tips and Tricks](developer_guide/part3_tips_tricks.md)
 - [Profile Options](developer_guide/part4_profile_options.md)
 - [APIs and Integration](developer_guide/part5_apis_integration.md)
-- [Glossary](developer_guide/part6_upload_glossary.md)
+- [Blitz Upload & Glossary](developer_guide/part6_upload_glossary.md)
+
+### Installation Guide
+
+The [Installation Guide](installation_guide/README.md) provides comprehensive instructions for system administrators:
+
+- [Prerequisites](installation_guide/part1_prerequisites.md) - Required tools, custom application setup, ISG configuration
+- [Installation](installation_guide/part2_installation.md) - Step-by-step installation process
+- [Application Setup](installation_guide/part3_application_setup.md) - Post-installation configuration
+- [Upgrade](installation_guide/part4_upgrade.md) - Upgrade procedures and guidelines
+- [Optional Configurations](installation_guide/part5_optional_configurations.md) - Windows, SSO, standby database
+- [Troubleshooting](installation_guide/part6_troubleshooting.md) - Common issues and solutions
 
 ## Quick Links
 
 - **Website:** [www.enginatics.com](https://www.enginatics.com/)
 - **Report Library:** [Blitz Report Library](https://www.enginatics.com/reports/) - 800+ ready-to-use reports
 - **Training Videos:** [Video Tutorials](https://www.enginatics.com/blitz-report-training-videos/)
-- **Installation Guide:** [Installation Instructions](https://www.enginatics.com/blitz-report-installation-guide/)
+- **Download:** [Download Blitz Report](https://www.enginatics.com/download/)
 - **Support:** [support@enginatics.com](mailto:support@enginatics.com)
 
 ## What Customers Are Saying
