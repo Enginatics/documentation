@@ -1,7 +1,5 @@
 # 7. Troubleshooting
 
-
-
 ## 7.1 PL/SQL ERROR 302, when compiling XXEN_SCHUB_WIPDJMDF.fmb
 
 For some clients on older patching levels, the custom form `XXEN_SCHUB_WIPDJMDF.fmb` may fail compilation during the installation of Supply Chain Hub.
@@ -21,8 +19,6 @@ Change the description of the Lookup Code from `XXEN_SCHUB_WIPDJMDF` to `WIPDJMD
 
 ![Form Compilation Error Workaround](images/form-compilation-workaround.png)
 
-
-
 ## 7.2 Index Synchronization Performance Issues
 
 If you face performance issues with mass updates of item descriptions (e.g. updating items' long description via the EGO Spreadsheet Java Concurrent Program), you can reduce the intermedia index synchronization frequency from on commit to daily.
@@ -35,8 +31,6 @@ grant create job to inv;
 alter index inv.xxen_mtl_sys_items_tl_t1 rebuild parameters('replace sync(every "trunc(sysdate)+1+2/24")');
 alter index inv.xxen_mtl_sys_items_tl_t2 rebuild parameters('replace sync(every "trunc(sysdate)+1+2/24")');
 ```
-
-
 
 ## 7.3 Planned Orders
 
@@ -59,15 +53,11 @@ alter index inv.xxen_mtl_sys_items_tl_t2 rebuild parameters('replace sync(every 
 
 ![ASCP Batch Release](images/sch2-ascp-batch-release.png)
 
-
-
 ### Understanding Supply/Demand Grid Behavior
 
 - The **Release Order Transaction ID** column determines if a planned order can be released.
 - If this column is not populated, the order cannot be released.
 - Right-click on the Supply/Demand grid headers to make this column visible.
-
-
 
 ### Make vs Buy Confusion Across Orgs
 
@@ -82,8 +72,6 @@ alter index inv.xxen_mtl_sys_items_tl_t2 rebuild parameters('replace sync(every 
 
 ![All Planned Orgs](images/sch4-all-planned-orgs.png)
 
-
-
 ### Visibility of Cross-Org Fulfillment
 
 Use the **Pegging Info** column in the Supply/Demand tab to trace fulfillment sources.
@@ -92,15 +80,11 @@ Use the **Pegging Info** column in the Supply/Demand tab to trace fulfillment so
 
 ![Pegging Info](images/sch5-pegging-info.png)
 
-
-
 ### Known Gaps & Upcoming Enhancements
 
 - Backport of Purchase Requisition release for MRP is in progress.
 - This update will also include:
   - Batch release support
   - Ability to modify quantity and dates at release time
-
-
 
 *Previous: [Upgrade](part5_upgrade.md) | Back to: [Introduction](README.md)*

@@ -1,7 +1,5 @@
 # 3. Installation
 
-
-
 Follow these steps to install the Supply Chain Hub:
 
 1. Log in to the application tier node as the application owner user e.g. `applmgr`.
@@ -27,7 +25,6 @@ export APPS_PWD=apps
 Review the error summary and installation log file and in case of any errors, please contact our support and send us the created `supply_chain_hub_install_logs_*.zip` file to analyze the problem.
 
 > **Note:** If you are running decentralized ASCP and wish to use the Action Release/Reschedule/Cancel recommendations functionality from the Supply Chain Hub running in the EBS Instance; then you must also install Blitz Report on the ASCP instance.
-
 
 
 *Previous: [Prerequisites](part1_prerequisites.md) | Next: [Application Setup](part3_application_setup.md)*
