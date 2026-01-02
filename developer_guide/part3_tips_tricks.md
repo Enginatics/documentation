@@ -1,6 +1,6 @@
-## 3. Tips and Tricks
+# 3. Tips and Tricks
 
-### 3.1 Debugging
+## 3.1 Debugging
 
 If you encounter an error during Blitz Report execution e.g. the message 'Blitz Report output file creation failed.', then this is usually due to an error encountered during SQL execution.
 
@@ -10,19 +10,19 @@ If you encounter an error during Blitz Report execution e.g. the message 'Blitz 
 2. Try to execute the SQL as shown in the logfile directly in a development tool such as Toad or SQL Developer for further debugging
 3. The logfile also shows the user entered parameter values and corresponding bind variables
 
-### 3.2 Using Firefox with Oracle EBS
+## 3.2 Using Firefox with Oracle EBS
 
 We recommend using Firefox instead of Internet Explorer to access Oracle EBS, as it has better performance and allows automated download and opening of output files without repeatedly prompting for confirmation.
 
-#### Download Historic Version
+### Download Historic Version
 
 Since Firefox stopped supporting NPAPI plugins in their latest version, you either need to have Java Web Start installed, or use the last supported 32bit ESR version 52, which can be downloaded from the Mozilla [version history](https://ftp.mozilla.org/pub/firefox/releases/).
 
-#### Remove Mozilla Maintenance Service
+### Remove Mozilla Maintenance Service
 
 To make sure that Firefox does not update itself, remove "Mozilla Maintenance Service" Windows program. The steps may vary depending on your Windows version.
 
-#### Disable Automatic Updates
+### Disable Automatic Updates
 
 After installation, ensure that you have disabled automated updates in:
 
@@ -40,7 +40,7 @@ If the Java does not appear in this list, check that you have the 32 bit version
 
 ![Confirm Firefox 32bit Version](./images/confirm_firefox_32bit_version.png)
 
-### 3.3 Incremental Outbound Interface
+## 3.3 Incremental Outbound Interface
 
 Integration with Oracle's concurrent delivery options allows scheduling a Blitz report as an outbound interface or monitoring tool. If you need to transfer incremental data changes only, you can restrict the query to records modified since the previous scheduled request run by a parameter SQL like the following example:
 
@@ -64,11 +64,11 @@ If a scheduled report does not retrieve any data, Blitz Report does not send an 
 
 If you want to give your outbound interface report an additional level of protection and allow modifications by users with 'System' access profile only, set its type to 'Protected'.
 
-### 3.4 Data Warehouse
+## 3.4 Data Warehouse
 
 Blitz Report's output files can also be used as a simple data warehouse, e.g. by scheduling reports and writing the output files in XLSX or CSV format to a server directory.
 
-#### Configuration
+### Configuration
 
 | Profile Option | Description |
 |---------------|-------------|
@@ -88,9 +88,9 @@ This generates a time series of data files, which can then be used as data wareh
 
 ![Data Warehouse Files](./images/data-warehouse-files-1.png)
 
-### 3.5 MS Excel and CSV Files
+## 3.5 MS Excel and CSV Files
 
-#### Default Delimiter
+### Default Delimiter
 
 When opening a comma-separated CSV file with Microsoft Excel, the data gets parsed and arranged into different columns automatically. For this parser to work, the delimiter used in the output file needs to match the delimiter defined in the client computer's regional settings.
 
@@ -102,7 +102,7 @@ In some countries, the default regional settings use a semicolon instead of a co
 | **Option 2** | Change the client computer's regional settings from a semicolon to a comma |
 | **Option 3** | Set profile option 'Blitz Report CSV Delimiter' according to the regional settings |
 
-#### Column Type Detection – Retain Leading Zeroes
+### Column Type Detection – Retain Leading Zeroes
 
 When opening CSV files, Microsoft Excel automatically detects column datatypes and formats the data accordingly.
 
@@ -116,7 +116,7 @@ This problem can be avoided by prefixing column data with an equal sign and encl
 
 > **Note:** If you apply this workaround to your report SQLs and run them in XLSX output format instead of CSV, Blitz Report will automatically remove the `'="'` and `'"'` characters from the data to display correctly in Excel.
 
-#### Macro to Filter and Freeze Top Row
+### Macro to Filter and Freeze Top Row
 
 One of the most common repetitive tasks when dealing with Excel spreadsheets is adding a filter and freezing the top row. For increased productivity, we recommend creating a Visual Basic macro for this task using Excel's personal macro workbook (see Microsoft's documentation on how to create a VB macro in PERSONAL.XLSB).
 
@@ -161,7 +161,7 @@ End Sub
 
 
 
-### 3.6 Blitz Report Production Deployment
+## 3.6 Blitz Report Production Deployment
 
 High level steps for your Blitz Report migration from test to production:
 
@@ -182,7 +182,7 @@ High level steps for your Blitz Report migration from test to production:
 
 6. **Optionally run the SQL script** generated previously to load the Blitz Report profile option values
 
-### 3.7 MS Excel Blocked Macros Warning
+## 3.7 MS Excel Blocked Macros Warning
 
 You may face the following warning when using Excel templates with macros after running a report and opening the output:
 
@@ -190,7 +190,7 @@ You may face the following warning when using Excel templates with macros after 
 
 ![Excel macro warning](./images/Excel-macro-warning.png)
 
-#### Solution
+### Solution
 
 To fix this, please add the EBS URL to the trusted sites or ask your system administrator to do it. The required steps may differ depending on your operating system version.
 

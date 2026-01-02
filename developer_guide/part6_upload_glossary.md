@@ -1,4 +1,4 @@
-## 6. Creating a Blitz Upload
+# 6. Creating a Blitz Upload
 
 Blitz Upload is available with Blitz Report which is fully integrated with Oracle E-Business Suite. It enables your IT team to easily create and edit Uploads where they can choose to use an API or directly insert records into an Interface table. Blitz Upload runs as a concurrent process and upon completion generates output file using Blitz Report. The output file automatically downloads and opens in Excel.
 
@@ -8,7 +8,7 @@ A Blitz Upload consists of an SQL query defining the column structure of the Exc
 
 To create new Uploads, the profile option 'Blitz Report Access' must be set to 'System'. With this profile setting, the Blitz Report run window shows an additional 'Setup' button, which opens the setup window.
 
-### Basic Steps to Create a New Upload
+## Basic Steps to Create a New Upload
 
 ![Blitz Upload Steps](./images/Blitz-Upload-Steps-1.png)
 
@@ -28,7 +28,7 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 
 
 
-### 6.1 Header
+## 6.1 Header
 
 > **Note:** As all the setup fields have been explained in Blitz Report Developer Guide, this section focuses on the fields most relevant to Blitz Upload.
 
@@ -42,9 +42,9 @@ To create new Uploads, the profile option 'Blitz Report Access' must be set to '
 
 
 
-### 6.2 SQL Requirements
+## 6.2 SQL Requirements
 
-#### For API Based Uploads
+### For API Based Uploads
 
 The SQL query to retrieve the existing records from database should always contain the columns `action_`, `status_`, `message_` and `modified_columns_` in the first four positions:
 
@@ -55,7 +55,7 @@ null message_,
 null modified_columns_,
 ```
 
-#### For Interface Table Based Uploads
+### For Interface Table Based Uploads
 
 The SQL query should always contain the columns `action_`, `status`, `message_`, `modified_columns_` and `row_id_` columns in the first positions:
 
@@ -71,7 +71,7 @@ null modified_columns_,
 
 
 
-### 6.3 Upload Columns
+## 6.3 Upload Columns
 
 The Upload Columns tab lists all available SQL columns derived from the main report SQL and allows you to define additional validation functionality in Excel:
 
@@ -87,7 +87,7 @@ The Upload Columns tab lists all available SQL columns derived from the main rep
 | **Hidden columns** | For internal processing of the upload |
 | **Group Validation** | Reject all records with same column value in case of validation failures |
 
-#### Column Properties
+### Column Properties
 
 | Property | Description |
 |----------|-------------|
@@ -105,7 +105,7 @@ The Upload Columns tab lists all available SQL columns derived from the main rep
 
 ![Blitz Upload Column Properties](./images/Blitz-Upload-6-4.png)
 
-#### LOV Query Example with Dependencies
+### LOV Query Example with Dependencies
 
 The LOV query can contain report parameter reference (`:$flex$.`) or report column reference (`:$column$.`):
 
@@ -126,7 +126,7 @@ msiv.organization_id=fspa.inventory_organization_id
 
 
 
-### 6.4 Upload API
+## 6.4 Upload API
 
 ![Blitz Upload API](./images/Blitz-Upload-API.png)
 
@@ -136,7 +136,7 @@ msiv.organization_id=fspa.inventory_organization_id
 | **Create Only** | Check if the upload does not support updating existing records |
 | **Name** | Lists procedures or interface tables available based on Type selected |
 
-#### API Wrapper Procedure Requirements
+### API Wrapper Procedure Requirements
 
 If using an API, a custom wrapper procedure needs to be created with the below required parameters:
 
@@ -154,7 +154,7 @@ message_ out varchar2
 
 > **Reference:** See [XXEN_UPLOAD_EXAMPLE_API.zip](./images/XXEN_UPLOAD_EXAMPLE_API.zip) for usage example.
 
-#### 6.4.1 Upload Parameters
+### 6.4.1 Upload Parameters
 
 Parameters are auto populated on selection of the API or Interface table.
 
@@ -168,7 +168,7 @@ Parameters are auto populated on selection of the API or Interface table.
 | **Column Name** | Auto mapped from SQL columns to API parameters - review and correct if required |
 | **Id or Value** | Determines what to pass to API parameter based on LOV query. Default is Id if LOV contains Id column |
 
-#### 6.4.2 Post Procedure
+### 6.4.2 Post Procedure
 
 Optionally define a post procedure in case a post process must be executed after the primary upload processing.
 
@@ -176,7 +176,7 @@ Optionally define a post procedure in case a post process must be executed after
 
 Choose between the available PL SQL procedures, and on selection it auto populates the parameters like the upload parameters.
 
-#### 6.4.3 Excel Validation
+### 6.4.3 Excel Validation
 
 Excel Validation can be used to execute validations for the records directly on the server from the Excel when the file is saved. The call to the validation PL SQL function can be entered with the function parameters mapped to the SQL columns.
 
@@ -184,7 +184,7 @@ Excel Validation can be used to execute validations for the records directly on 
 
 
 
-### 6.5 Upload Results
+## 6.5 Upload Results
 
 The Upload Results SQL need to be defined to be able to display the success and error records after upload processing.
 
@@ -200,7 +200,7 @@ The Error and Success SQL's are automatically defaulted and contain placeholders
 
 ![Blitz Upload Data View](./images/Blitz-Upload-13.png)
 
-#### Pre-built Functions for Result SQL
+### Pre-built Functions for Result SQL
 
 Use these functions when working with 'status_' column:
 
@@ -219,7 +219,7 @@ xxen_upload.status_meaning(xxen_upload.status_success)
 
 
 
-## 7. Glossary
+# 7. Glossary
 
 | Term | Meaning |
 |------|---------|

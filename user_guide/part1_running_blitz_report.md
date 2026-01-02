@@ -1,4 +1,4 @@
-## 1. Running Blitz Report
+# 1. Running Blitz Report
 
 Basic steps to run a Blitz Report are:
 
@@ -12,7 +12,7 @@ Basic steps to run a Blitz Report are:
 ![Blitz Report submit screen](images/submit-screen.png)
 
 
-### 1.1 Selecting a report
+## 1.1 Selecting a report
 
 When opening Blitz Report for the first time, a selection of available reports is displayed automatically. The list can be restricted further by typing the first characters of the desired report name.
 
@@ -44,7 +44,7 @@ To search for an exact match in the order of keywords e.g. 'item' directly follo
 
 
 
-### 1.2 Parameter values
+## 1.2 Parameter values
 
 Report parameters filter, limit or define the extracted data. Parameters can have lists of values that either enforce selection of one particular value (e.g. account number) or that allow matching by wildcards such as '%' or '_'.
 
@@ -70,7 +70,7 @@ Once a template is selected it is also possible to store default parameter value
 
 
 
-### 1.3 Running and viewing the output
+## 1.3 Running and viewing the output
 
 A click on the **Run** button launches a background concurrent process to extract the report data. The output XLSX file opens automatically upon program completion.
 
@@ -78,7 +78,7 @@ While the report concurrent process is pending or running, the request status is
 
 
 
-### 1.4 Options
+## 1.4 Options
 
 The Options window is accessed by clicking on the grey options field. It allows controlling the report generation process and the output format at run time, for example email delivery and output formats. Some options are available only for developers. The runtime options inherit their default values from the Blitz Report Setup Window options with the same names.
 
@@ -90,7 +90,7 @@ The Options window is accessed by clicking on the grey options field. It allows 
 
 ![Blitz Report runtime options window developer](images/runtime-options-developer.png)
 
-#### Email
+### Email
 
 Enter an e-mail address that you wish to send the report output to. Multiple email addresses can be entered as a comma-separated list. Developers can define a default email address for individual reports, or you can set up a default email through profile option **Blitz Report Default Email Address**.
 
@@ -111,15 +111,15 @@ You can use the following placeholders for automated replacement at run-time:
 
 You can also create new custom messages. Prefix these with XXEN_REPORT_EMAIL and use them as default email subjects by setting the profile option **Blitz Report Email Subject Message**.
 
-#### Output Format
+### Output Format
 
 Output file format. Possible options: **CSV**, **TSV**, **XLSX**
 
-#### Row Limit
+### Row Limit
 
 You can restrict the number of rows in the output file by indicating that option.
 
-#### Time Limit
+### Time Limit
 
 Indicates timeout in seconds. Program is terminated by the 'Blitz Report Monitor' after indicated time. This avoids excessive server loads if e.g. user submits report with insufficient parameter restrictions.
 
@@ -131,66 +131,66 @@ A time limit can also be set when running reports or using profile option **Blit
 4. Profile option on responsibility level
 5. Profile option on site level
 
-#### Disable Column Translations
+### Disable Column Translations
 
 Disabling translation of the report's header if multi-language setup is in place. E.g.: interface requirements.
 
-#### Exclude Column Headers
+### Exclude Column Headers
 
 Removing header column from the output file. E.g. for interface requirements.
 
-#### Custom Postprocess
+### Custom Postprocess
 
 A custom post-processing shell script can be set up to run after report completion, for example to distribute or transform the output file to a different format, such as generating a report in PDF format.
 
 The script must be placed under the `$CUSTOM_TOP/bin/custom/` directory, for example `$XXEN_TOP/bin/custom/generate_and_send_pdf.sh`, and it allows the use of variables as shown in the following example:
 
 ```bash
-# You can use a custom postprocess script to perform additional actions on the Blitz Report output files
-# e.g. scp them to a different server, transform them to .pdf via external tools etc.
-# This script is called with following parameters:
-# $FCP_LOGIN                    example: APPS/w#*fe=+~12fweDg
-# $p_report_name                example: AP Suppliers
-# $p_template_name              example: Pivot by supplier type
-# $p_request_id                 example: 6590137
-# $outfile_name                 example: /d01/oracle/VIS/inst/apps/VIS_r12/logs/appl/conc/out/AP_Suppliers_6590142.xlsx
-# $output_filename              example: AP_Suppliers_6590142.xlsx
-# $additional_outfile_name      example: /d01/oracle/VIS/inst/apps/VIS_r12/logs/appl/conc/out/AP_Suppliers_20191117.xlsx
-# $parameter1 ... $parameter87
-#
-# Example of copying output xlsx file to an interface directory on a remote server:
-# scp "$outfile_name" user@remoteserver.com:/interface_dir
+ You can use a custom postprocess script to perform additional actions on the Blitz Report output files
+ e.g. scp them to a different server, transform them to .pdf via external tools etc.
+ This script is called with following parameters:
+ $FCP_LOGIN                    example: APPS/w#*fe=+~12fweDg
+ $p_report_name                example: AP Suppliers
+ $p_template_name              example: Pivot by supplier type
+ $p_request_id                 example: 6590137
+ $outfile_name                 example: /d01/oracle/VIS/inst/apps/VIS_r12/logs/appl/conc/out/AP_Suppliers_6590142.xlsx
+ $output_filename              example: AP_Suppliers_6590142.xlsx
+ $additional_outfile_name      example: /d01/oracle/VIS/inst/apps/VIS_r12/logs/appl/conc/out/AP_Suppliers_20191117.xlsx
+ $parameter1 ... $parameter87
+
+ Example of copying output xlsx file to an interface directory on a remote server:
+ scp "$outfile_name" user@remoteserver.com:/interface_dir
 ```
 
 To add a new custom postprocess script name to the runtime options LOV, add it to lookup **XXEN_REPORT_POSTPROCESS_SCRIPT**.
 
 ![Blitz Report postprocessing script lookup](images/postprocess-lookup.png)
 
-#### Output Filename
+### Output Filename
 
 Defines the Excel output file name, downloaded to the client desktop. Tokens can be used to create a filename dynamically, for example based on report parameter values.
 
-#### Additional Out. Directory on APPS Server (Developer access only)
+### Additional Out. Directory on APPS Server (Developer access only)
 
 Saves a copy of the report output file in the specified directory on the application server. This setting can be defaulted by the profile option **Blitz Report Additional Output Directory APPS Server**. Tokens can be used to create a directory path dynamically, for example based on report parameter values. If the resulting directory does not exist on the filesystem, it is created.
 
-#### Additional Out. Directory on DB Server (Developer access only)
+### Additional Out. Directory on DB Server (Developer access only)
 
 Saves a copy of the report output file in the specified directory on the database server. This setting can be defaulted by profile option **Blitz Report Additional Output Directory DB Server**. The list of the available directories is fetched from the dba_directories table.
 
-#### Additional Out. Filename (Developer access only)
+### Additional Out. Filename (Developer access only)
 
 Naming convention for output files if additional output directories are defined. Tokens can be used to create a filename dynamically, for example based on report parameter values.
 
-#### Reset button
+### Reset button
 
 This button is used to set runtime options to the default values based on the profile option or report level settings.
 
-#### Freeze flag
+### Freeze flag
 
 When checking the freeze flag, option values are not changed or reset to their defaults when navigating to a different report.
 
-#### Tokens
+### Tokens
 
 You can use any of the below tokens to dynamically generate values for the following runtime options: Output Filename, Additional Out. Directory on APPS Server, Additional Out. Filename.
 
@@ -232,7 +232,7 @@ Manually entered tokens are validated against the LOV values, and an error messa
 
 
 
-### 1.5 Templates
+## 1.5 Templates
 
 From the options window, you can either select an existing template to edit, or, if the template name is empty, create a new template by clicking on the 'New' button.
 
@@ -242,7 +242,7 @@ From the options window, you can either select an existing template to edit, or,
 
 ![Blitz Report create a new template](images/create-template.png)
 
-#### Template layout
+### Template layout
 
 A template allows users to select the data columns, the level of reporting (detail transactional or summarized), aggregation calculations, and to define a pivot table output. Using templates, report columns can be selected and/or de-selected, summarized, and sorted as well as pivoted.
 
@@ -268,7 +268,7 @@ The template window contains the following elements:
 | **Reset button** | Recover the initial column layout |
 | **Hide All button** | Deselect and move all data off of the "selected" columns and back to the "available" column |
 
-#### Pivot table
+### Pivot table
 
 The Filters, Columns, Rows and Values fields are used to create and deliver the data in pivot table format with full drill down to details.
 
@@ -284,7 +284,7 @@ The Filters, Columns, Rows and Values fields are used to create and deliver the 
 
 ![Blitz Report pivot table example](images/pivot-table-example.png)
 
-#### Excel upload
+### Excel upload
 
 The Excel template upload functionality allows creation of additional sheets with graphs, pie charts, macros or any other Excel functionality.
 
@@ -292,7 +292,7 @@ The Excel template upload functionality allows creation of additional sheets wit
 
 ![Blitz Report Excel template upload](images/excel-template-upload.png)
 
-#### Datasheet
+### Datasheet
 
 The excel template upload functionality also allows custom template definitions to the datasheet. The excel functions, pictures, screenshots, charts, header footer texts, comments, notes and freeze panes can be defined in the datasheet.
 
@@ -302,7 +302,7 @@ The excel template upload functionality also allows custom template definitions 
 
 > **Note:** If the excel functions are used in the datasheet template then hit "CTRL + SHIFT + R" to refresh them in the report output.
 
-#### Template sharing
+### Template sharing
 
 Templates can be shared across the following levels:
 
@@ -312,7 +312,7 @@ Templates can be shared across the following levels:
 
 ![Blitz Report template sharing window](images/template-sharing.png)
 
-#### Excluded parameters
+### Excluded parameters
 
 You can exclude certain parameters for a template. When the template is selected on the Run window, the excluded parameters are not displayed.
 
@@ -322,7 +322,7 @@ You can exclude certain parameters for a template. When the template is selected
 
 
 
-### 1.6 Scheduling a report
+## 1.6 Scheduling a report
 
 Blitz Reports can be scheduled as background processes to run at a certain date or time. This feature can be used to run time-consuming reports during non-office hours, or to automatically distribute files by email or place them into a folder on the file system.
 
@@ -342,7 +342,7 @@ Alternatively, you can submit a new 'Blitz Report' concurrent request, populatin
 
 > **Note:** For date parameters in scheduled Blitz Reports, you can use Oracle's increment date functionality.
 
-#### Delivery options and output distribution
+### Delivery options and output distribution
 
 Oracle's delivery options allow sending the report output e.g. as an email attachment, to an FTP location or uploading it to a WebDAV cloud storage.
 

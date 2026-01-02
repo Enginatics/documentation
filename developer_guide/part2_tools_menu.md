@@ -1,54 +1,54 @@
-## 2. Tools Menu
+# 2. Tools Menu
 
 ![Blitz Report tools menu](./images/tools-menu-3.webp)
 
-### 2.1 LOVs
+## 2.1 LOVs
 
 Use the LOV setup window to define list of values shared by different report parameters. Changes to a shared LOV affect all report parameters referencing the LOV.
 
 ![Define LOV](./images/Define-LOV-2.webp)
 
-#### Name
+### Name
 
 Unique name for shared LOVs.
 
-#### Description
+### Description
 
 Description for shared LOVs. This description is displayed in the bottom left message area of the run window, if parameter description is left blank.
 
-#### Validate From List
+### Validate From List
 
 If checked, the parameter validation enforces selection of one record from the LOV and does not allow use of wildcards. If unchecked, the parameter value is not validated against the LOV and use of wildcards is allowed.
 
-#### Filter Before Display
+### Filter Before Display
 
 The Filter Before Display setting is used to avoid performance issues for large LOVs. If unchecked, which is the more user-friendly default, Blitz Report queries all possible parameter values from the LOV in the background when selecting a report on the run window. As this can be slow for large LOVs, checking the 'Filter Before Display' setting prompts the user to enter a (partial) value before LOV display, and the form then queries a restricted dataset instead of all records.
 
-#### Used By
+### Used By
 
 The 'Used By' button shows all reports and parameters referencing the LOV.
 
-#### LOV Query
+### LOV Query
 
 SQL query for LOVs, selecting the two mandatory columns 'value' and 'description', and it may include an optional 'id' column at the beginning of the select clause.
 
-#### Version
+### Version
 
 Double click on a LOV version number to review the change history and previous LOV SQLs. Note that a LOV report version number is added and stored automatically at each update of a LOV's SQL. Other LOV modifications such as LOV name, description are not stored in the version history.
 
 ![LOV Version History](./images/LOV-version-history.png)
 
-### 2.2 Tools > Assignments
+## 2.2 Tools > Assignments
 
 The Assignment function in the Tools menu allows to mass-assign different reports to one assignment level, or to review existing assignments through the assignment value LOV.
 
 Defines access to reports for users on a particular assignment level.
 
-### 2.3 Tools > Categories
+## 2.3 Tools > Categories
 
 Categories can be defined to help users find reports, or to migrate specific reports between environments though the export and import options.
 
-### 2.4 Copy Report
+## 2.4 Copy Report
 
 Creates a new copy of an existing report. This functionality should be used if user wants to do any changes to the existing Blitz report.
 
@@ -58,7 +58,7 @@ Seeded reports should not be modified as all updates will be removed as soon as 
 
 > **Note:** Assignments and category assignments are not copied.
 
-### 2.5 Copy LOV
+## 2.5 Copy LOV
 
 Creates a new copy of an existing LOV. This functionality should be used if user wants to do any changes to the existing LOV.
 
@@ -68,7 +68,7 @@ Seeded LOVs should not be modified as all updates will be removed as soon as new
 
 
 
-### 2.6 Export
+## 2.6 Export
 
 The Blitz Report export functionality allows to generate XML files or SQL scripts for automated load of report definitions, LOVs, categories and other Blitz Report related setup for migration purposes.
 
@@ -87,7 +87,7 @@ The following items can be exported:
 - Dynamic Column Translation Rules
 - Assignments
 
-#### Export Checkboxes
+### Export Checkboxes
 
 When choosing one of the Report export options, you can use checkboxes to decide which related object information you would like to include in the exported XML file:
 
@@ -108,18 +108,18 @@ To generate an XML file for migration of all reports starting with a specific te
 
 ![Blitz Report Export by Search Pattern](./images/Blitz-Report-export-by-search-pattern.png)
 
-#### Blitz Report Library
+### Blitz Report Library
 
 To download XML files from the [Blitz Report library](https://www.enginatics.com/reports/), find the desired report and click on the XML icon in the 'Download' column.
 
-#### Notes
+### Notes
 
 - If a report already exists, the load script or import from the XML file updates it with the new definition while keeping the previous SQL in the version history.
 - Report version numbers are generated automatically in each environment and thus may differ between environments.
 - Report load scripts and XML files contain current report SQLs versions only. They do not include previous versions SQL history.
 - The load of parameters based on shared LOVs requires the referenced LOV to be imported first.
 
-#### Export API
+### Export API
 
 To export Blitz Reports programmatically, use the following function in package `XXEN_API`:
 
@@ -186,7 +186,7 @@ end;
 /
 ```
 
-#### Import API
+### Import API
 
 To import Blitz Report XML files programmatically from Linux:
 
@@ -202,7 +202,7 @@ function import_xml(p_xml in clob) return varchar2; --returns null if successful
 
 
 
-### 2.7 Import
+## 2.7 Import
 
 The Blitz Report 'Import' menu option allows import of reports from XML files generated via export or downloaded from the Blitz Report library, or reports developed in other technologies such as BI Publisher, Oracle Discoverer, Enterprise Command Center or other third party tools.
 
@@ -210,7 +210,7 @@ The Blitz Report 'Import' menu option allows import of reports from XML files ge
 
 During import, reports are assigned to categories automatically, depending on the originating concurrent program's application module. This automated category assignment is defined by lookup `XXEN_REPORT_APPLICATIONS`.
 
-#### 2.7.1 XML Upload
+### 2.7.1 XML Upload
 
 **Blitz Report Setup > Tools > Import > XML Upload**
 
@@ -226,7 +226,7 @@ With XML upload, you can migrate reports exported from other EBS environments or
 
 > **Note:** To avoid incompatibilities due to possible file format changes between different Blitz Report versions, please ensure that source and destination environment have the same or latest Blitz Report version installed.
 
-#### 2.7.2 BI Publisher
+### 2.7.2 BI Publisher
 
 Blitz Report imports BI Publisher reports of java executable `XDODTEXE` (XML Publisher Data Template Executable) by importing the report SQL from the corresponding XML data source.
 
@@ -245,13 +245,13 @@ xxen_api.import_concurrent_program(
 );
 ```
 
-#### 2.7.3 Concurrent Program
+### 2.7.3 Concurrent Program
 
 This option allows import of parameter definitions, LOVs and request group assignments of any concurrent program, and can be used to help migrating other reporting technologies, such as Oracle Reports .rdf files or custom report programs into Blitz Report.
 
 Note that the report SQL can usually not be imported automatically for such technologies, and would need to be transferred manually.
 
-#### 2.7.4 Discoverer Worksheet
+### 2.7.4 Discoverer Worksheet
 
 Select 'Discoverer Worksheet' to import worksheets available from the selected end user layer. By default, the LOV shows worksheets that ran within the History Days timeframe only.
 
@@ -274,7 +274,7 @@ xxen_api.import_discoverer_worksheet(
 );
 ```
 
-#### 2.7.5 Discoverer Folders
+### 2.7.5 Discoverer Folders
 
 The 'Discoverer Folders' import option allows consolidation of different workbooks during migration to Blitz Report by importing distinct folder or view object combinations only.
 
@@ -300,7 +300,7 @@ xxen_api.import_discoverer_folders(
 );
 ```
 
-#### 2.7.6 Discoverer Import Prerequisites
+### 2.7.6 Discoverer Import Prerequisites
 
 **Enable statistics collection:**
 
@@ -353,7 +353,7 @@ Create or set `QPPCreateNewStats` and `QPPEnable` keys to value `1`.
 create index .xxeul5_documents_n1 on .eul5_documents (doc_name) tablespace apps_ts_tx_idx;
 ```
 
-#### 2.7.7 Excel4apps Reports Wand
+### 2.7.7 Excel4apps Reports Wand
 
 Blitz Report imports custom Excel4apps Reports Wand reports through the import menu option.
 
@@ -370,7 +370,7 @@ xxen_api.import_concurrent_program(
 );
 ```
 
-#### 2.7.8 Enterprise Command Center
+### 2.7.8 Enterprise Command Center
 
 Blitz Report imports Oracle's Enterprise Command Center dataset queries, allowing users to access ECC data of unlimited size and real-time in Excel.
 
@@ -386,7 +386,7 @@ xxen_api.import_ecc_dataset(
 );
 ```
 
-#### 2.7.9 Polaris Reporting Workbench
+### 2.7.9 Polaris Reporting Workbench
 
 Blitz Report imports Polaris Reporting Workbench reports either through the import menu option or an API.
 
@@ -407,7 +407,7 @@ procedure import_reporting_workbench(
 
 
 
-### 2.8 Upload Large SQL
+## 2.8 Upload Large SQL
 
 **Blitz Report Setup > Tools > Upload Large SQL**
 
@@ -421,7 +421,7 @@ While the form displays the first 32767 characters only, a double click on the S
 
 
 
-### 2.9 Column Translations
+## 2.9 Column Translations
 
 Column Translations provide multi-language support for SQL column headers and report parameters and allows specifying number formats for numeric columns/parameters.
 
@@ -433,7 +433,7 @@ The number of existing translations is shown in column 'Count'. If you have a re
 
 
 
-### 2.10 Dynamic Column Translations
+## 2.10 Dynamic Column Translations
 
 Dynamic column translation rules allow dynamic translation of parameters and report header column names based on individual rule SQLs.
 
@@ -445,7 +445,7 @@ This can for example be used to show GL segment names based on a selected ledger
 
 
 
-### 2.11 Resequence Parameters
+## 2.11 Resequence Parameters
 
 **Blitz Report Setup > Tools > Resequence parameters**
 
@@ -457,7 +457,7 @@ Assigns new parameter sequence numbers automatically. Sometimes you cannot inser
 
 
 
-### 2.12 License Key
+## 2.12 License Key
 
 **Blitz Report Setup > Tools > License Key**
 
@@ -475,11 +475,11 @@ Double click on the active users count to open a detailed list of active Blitz R
 
 
 
-### 2.13 User License Assignment
+## 2.13 User License Assignment
 
 The access to Blitz Report functionality and licenses is controlled by the profile option 'Blitz Report Access'.
 
-#### Automatic License Assignment
+### Automatic License Assignment
 
 The recommended way to maintain Blitz Report user licenses is to have them assigned automatically, whenever users run a report. This option requires:
 
@@ -487,7 +487,7 @@ The recommended way to maintain Blitz Report user licenses is to have them assig
 - Keep the 'Blitz Report Access' profile option setting to 'User' on site level
 - Assign reports to users via the Assignments tab inside each report or via Blitz Report Setup > Tools > Assignments
 
-#### Manual User License Assignment
+### Manual User License Assignment
 
 If you have a large number of EBS users, but a limited number of Blitz Report licenses, you may want to assign licenses manually to individual responsibilities or users. In this case:
 
@@ -498,7 +498,7 @@ If you have a large number of EBS users, but a limited number of Blitz Report li
 
 
 
-### 2.14 Mass Change
+## 2.14 Mass Change
 
 **Blitz Report Setup > Tools > Mass Change**
 

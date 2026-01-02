@@ -1,10 +1,10 @@
-## 4. Profile Options
+# 4. Profile Options
 
 The profile option 'Blitz Report Access' should be set to 'Developer' for users with the SQL skills required for creating Blitz Reports.
 
 The following optional profile options can be set to configure Blitz Report functionality according to your business and user requirements:
 
-### Core Profile Options
+## Core Profile Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -16,7 +16,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Debug** | Set to 'Yes' to write additional debug information, for example in the upload processing logs | No |
 | **Blitz Report Default Email Address** | Default email address for Blitz Reports | |
 
-### Column and Translation Options
+## Column and Translation Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -26,7 +26,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Disable Run Button after Submission** | After report submission, the run button is disabled to prevent accidental resubmission | Yes |
 | **Blitz Report Disable SQL Text Double Click Editor Window** | Disables the default behavior to open an editor window when double clicking on the report SQL text | No |
 
-### Discoverer Import Options
+## Discoverer Import Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -37,7 +37,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Discoverer Import Preserve Original SQL** | Set to 'Yes' to turn off additional enhancements to imported Discoverer SQLs | No |
 | **Blitz Report Discoverer Import Report Name Prefix** | Prefix for imported Discoverer reports | |
 
-### Email Options
+## Email Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -52,7 +52,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report SMTP use SSL** | Use SSL for Blitz Report advanced email delivery | No |
 | **Blitz Report Use Advanced Email Delivery** | Set to "Yes" to use Blitz Report Advanced Email Delivery instead of the standard Oracle EBS Delivery Option | No |
 
-### Output and File Options
+## Output and File Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -64,7 +64,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Output Filename Length Limit** | Output file name full path length limit | 160 |
 | **Blitz Report Output Format** | Blitz Report output file format (CSV, TSV or XLSX) | XLSX |
 
-### Log and Retention Options
+## Log and Retention Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -75,7 +75,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Log Retention Days System** | Number of days to keep log data for successful system type report runs | no purge |
 | **Blitz Report LOV History Days** | Number of days to identify users most recently run reports for 'favourites on top' | 365 |
 
-### User Interface Options
+## User Interface Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -90,7 +90,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Start Tab** | Allows developers to directly open the specified start tab | SQL |
 | **Blitz Report Suppress Empty File Delivery** | Suppress file delivery if report is empty | Yes |
 
-### Security Options
+## Security Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -104,7 +104,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report Use Operating Unit Security** | When 'Yes', also restrict by operating unit | No |
 | **Blitz Report VPD Policy Rule** | Allows setting up access to sensitive data protected through VPD policies | No access |
 
-### XLSX Format Options
+## XLSX Format Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -123,7 +123,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Report XLSX Sheet Row Limit** | Maximum number of rows per excel sheet | 1048576 |
 | **Blitz Report XLSX Use Long Date Format** | When 'Yes', show full year and leading zeroes (e.g. 05-Jan-2018) | No |
 
-### Blitz Upload Options
+## Blitz Upload Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|
@@ -135,7 +135,7 @@ The following optional profile options can be set to configure Blitz Report func
 | **Blitz Upload Round to Decimal Places** | Number of decimal places used for rounding number values | 5 |
 | **Blitz Upload Use mod_plsql** | Use mod_plsql for establishing server connections from the upload excel | No |
 
-### Blitz FSG Options
+## Blitz FSG Options
 
 | Profile Option | Description | Default if not set |
 |---------------|-------------|-------------------|

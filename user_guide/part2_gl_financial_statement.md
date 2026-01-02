@@ -1,4 +1,4 @@
-## 2. GL Financial Statement and Drilldown (FSG)
+# 2. GL Financial Statement and Drilldown (FSG)
 
 The GL Financial Statement and Drilldown (FSG) Report empowers users to generate comprehensive reports on financial balances while providing detailed insights through drilldown capabilities. This tool allows users to link Excel cells directly to Oracle data via built-in functions, ensuring that data can be refreshed as needed to reflect the most up-to-date information.
 
@@ -15,9 +15,9 @@ For a quick demonstration, refer to the YouTube video: https://youtu.be/dsRWXT2b
 
 
 
-### 2.1 Accessing Blitz FSG
+## 2.1 Accessing Blitz FSG
 
-#### Running the Default GL Financial Statement and Drilldown (FSG) Report in Blitz Report
+### Running the Default GL Financial Statement and Drilldown (FSG) Report in Blitz Report
 
 1. Select Report Name GL Financial Statement and Drilldown (FSG).
 2. The Template Name field is left blank to use the default template.
@@ -30,7 +30,7 @@ For a quick demonstration, refer to the YouTube video: https://youtu.be/dsRWXT2b
 
 ![Creating a new template using Blitz FSG custom ribbons](images/fsg-02-template-tools.png)
 
-#### Running the GL Financial Statement and Drilldown (FSG) Report for uploaded templates in Blitz Report
+### Running the GL Financial Statement and Drilldown (FSG) Report for uploaded templates in Blitz Report
 
 1. Select Report Name GL Financial Statement and Drilldown (FSG).
 2. Select the previously uploaded Template.
@@ -44,7 +44,7 @@ For a quick demonstration, refer to the YouTube video: https://youtu.be/dsRWXT2b
 
 ![Customize report parameters](images/fsg-04-parameters.png)
 
-#### Running the GL Financial Statement and Drilldown (FSG) Report for templates stored locally
+### Running the GL Financial Statement and Drilldown (FSG) Report for templates stored locally
 
 The template can be built and stored locally on your computer or saved to a shared drive for team access. Locate and open the template file.
 
@@ -61,7 +61,7 @@ If the Single Sign On is enabled in the organization and the profile 'Blitz Repo
 
 ![Version discrepancy warning](images/fsg-06-version-warning.png)
 
-#### Exit
+### Exit
 
 Click 'Exit' to end the connection between Oracle EBS and the Excel workbook template.
 
@@ -69,13 +69,13 @@ Click 'Exit' to end the connection between Oracle EBS and the Excel workbook tem
 
 
 
-### 2.2 Responsibility, Ledger and Segment Selector
+## 2.2 Responsibility, Ledger and Segment Selector
 
 Once logged in, the Ledger and Segment dropdown menus will populate based on your assigned responsibilities. The responsibility is defaulted with the responsibility from which the report was run.
 
 ![Responsibility, Ledger and Segment Selector](images/fsg-08-responsibility-selector.png)
 
-#### Select Responsibility
+### Select Responsibility
 
 The list displays all responsibilities you have access to in Oracle, including those with Account Inquiry functionality. By default, the system selects the responsibility from which the report was launched.
 
@@ -87,7 +87,7 @@ After making your selection, click OK to load the corresponding ledgers in the d
 
 ![Select Responsibility](images/fsg-09-select-responsibility.png)
 
-#### Ledger
+### Ledger
 
 The Ledger dropdown dynamically displays available ledgers according to your access permissions:
 
@@ -97,7 +97,7 @@ The Ledger dropdown dynamically displays available ledgers according to your acc
 
 ![Ledger dropdown](images/fsg-10-ledger.png)
 
-#### Segment
+### Segment
 
 The dropdown list displays all available segments for the currently selected ledger. Each segment is labeled with its corresponding segment number in parentheses (e.g., 'Company (1)'). It also contains the special 'Period' value for period name discovery.
 
@@ -105,7 +105,7 @@ The dropdown list displays all available segments for the currently selected led
 
 
 
-### 2.3 Discover
+## 2.3 Discover
 
 The Discover Tools enable you to:
 - Extract segment information directly from Oracle
@@ -113,9 +113,9 @@ The Discover Tools enable you to:
 
 ![Discover Tools](images/fsg-12-discover.png)
 
-#### Key Functionality
+### Key Functionality
 
-##### Discover
+#### Discover
 
 This feature enables you to:
 - Populate Excel spreadsheets directly with chart of accounts values and period name.
@@ -151,7 +151,7 @@ This feature enables you to:
    - Example: For "001", enter '001
    - Note: Without this, leading zeros will be lost and discovery may fail
 
-#### Expand
+### Expand
 
 To expand to child segment values:
 
@@ -171,7 +171,7 @@ When expanded, the child values will be inserted while automatically copying all
 - Supports multiple undo levels.
 - Repeated clicks will step backward through previous Expand results.
 
-#### Explode
+### Explode
 
 The Explode feature duplicates the current worksheet for each child value of your selection. Your selection can be:
 - Parent segment value
@@ -189,7 +189,7 @@ The Explode feature duplicates the current worksheet for each child value of you
 
 
 
-### 2.4 List of Values
+## 2.4 List of Values
 
 ![List of Values](images/fsg-17-lov.png)
 
@@ -205,14 +205,14 @@ The LOV will display values specific to the data type assigned to that LOV cell.
 
 There are 3 different types of List of Values:
 
-#### Single Value
+### Single Value
 
 1. Refine selections using the search field or select from the list.
 2. Click OK to apply selections to the cell.
 
 ![Single Value LOV](images/fsg-19-single-value.png)
 
-#### Multiple Value
+### Multiple Value
 
 1. Select values individually or use Add Range for bulk inclusion.
 2. Exclude specific entries with Add Exclude.
@@ -228,7 +228,7 @@ There are 3 different types of List of Values:
 >   - Range: ~4/11/2025-4/20/2025
 > - **Multiple Values on the cells:** Separated by semicolons (;). Example: 4/11/2025; 4/20/2025
 
-#### Segment Values
+### Segment Values
 
 The Segment List of Values (LOV) enables selecting account ranges or individual values. It supports hierarchical navigation, multi-selection, and exclusions.
 
@@ -247,7 +247,7 @@ The Segment List of Values (LOV) enables selecting account ranges or individual 
 >   - Range: ~1110-1120
 > - **Multiple Values on the cells:** Separated by semicolons (;). Example: 1110-1150;1210;1211;~1111;~1120-1130
 
-#### Adding Range in Multiple Values and Segment List of Values
+### Adding Range in Multiple Values and Segment List of Values
 
 1. First select multiple values from the list, then click 'Add Range' to form your chosen value range.
 
@@ -265,19 +265,19 @@ The Segment List of Values (LOV) enables selecting account ranges or individual 
 
 ![Adding Range with Exclude](images/fsg-25-add-exclude.png)
 
-#### Delete List of Values
+### Delete List of Values
 
 To delete the list of values from the cell then you can click on 'Delete' from List of Values on the ribbon.
 
 
 
-### 2.5 Insert Functions
+## 2.5 Insert Functions
 
 Blitz FSG provides a suite of custom Excel functions that enable dynamic data extraction from Oracle. To use these functions click on dedicated function button like 'Balance' or select one from the 'Functions' dropdown menu.
 
 ![Insert Functions](images/fsg-26-insert-functions.png)
 
-#### Using the Function Form
+### Using the Function Form
 
 1. **Parameter Selection**
    - Choose values from list of values, which are dynamically populated with valid options for each parameter pulled directly from Oracle.
@@ -289,7 +289,7 @@ Blitz FSG provides a suite of custom Excel functions that enable dynamic data ex
 2. **Multiple Values on the cells:** Separated by semicolons (;).
 3. If you want to choose all the values you could choose to keep the parameter as blank, this is same as passing '%'
 
-#### Balance
+### Balance
 
 As the cornerstone of Blitz FSG, the Balance function retrieves General Ledger balances—either individually or aggregated—based on your specified parameters. To begin, click the Balance button on the Blitz FSG toolbar to open the function form.
 
@@ -315,7 +315,7 @@ As the cornerstone of Blitz FSG, the Balance function retrieves General Ledger b
 | **Journal Source** | Limits the result to journal sources. |
 | **Journal Category** | Limit the results to journal categories. |
 
-#### Segment Description
+### Segment Description
 
 Returns the description and corresponding value for the specified segment within the applicable ledger context.
 
@@ -331,7 +331,7 @@ Returns the description and corresponding value for the specified segment within
 | **Segment** | The segment name. |
 | **Segment Value** | The segment value. |
 
-#### Period Offset
+### Period Offset
 
 Returns the period name located a specified number of periods before (negative values) or after (positive values) a reference point.
 
@@ -349,7 +349,7 @@ Returns the period name located a specified number of periods before (negative v
 | **Return Range** | When enabled (Yes), formats results as a period range spanning from offset to base period. Example: Mar-08 with offset -2 returns 'Jan-08-Mar-08'. |
 | **Adjustment Period** | Use this parameter to control how adjustment periods are handled. Exclude: Adjustment periods are filtered out. |
 
-#### Period by Date
+### Period by Date
 
 Returns the accounting period name corresponding to the specified date.
 
@@ -365,7 +365,7 @@ Returns the accounting period name corresponding to the specified date.
 | **Date** | The date that you want the period name for. |
 | **Offset** | Enter a numerical value to retrieve period names relative to your specified criteria. |
 
-#### Period Name
+### Period Name
 
 Returns the accounting period name for a specified year and period number.
 
@@ -383,7 +383,7 @@ Returns the accounting period name for a specified year and period number.
 | **Offset** | Enter a numerical value to retrieve period names relative to your specified criteria. |
 | **Adjustment Period** | Use this parameter to control how adjustment periods are handled. Exclude: Adjustment periods are filtered out. |
 
-#### Daily Rate
+### Daily Rate
 
 Returns the daily currency conversion rate for the selected currencies, date and conversion type.
 
@@ -402,46 +402,46 @@ Returns the daily currency conversion rate for the selected currencies, date and
 
 
 
-### 2.6 Refresh
+## 2.6 Refresh
 
 The refresh buttons provide granular control over which cells are updated.
 
 ![Refresh buttons](images/fsg-33-refresh.png)
 
-#### Refreshing Data with Pending Calculations
+### Refreshing Data with Pending Calculations
 
 To refresh only cells requiring recalculation (marked as "(pending)"):
 1. Click the Pending refresh button.
 
-#### Refreshing a Sheet
+### Refreshing a Sheet
 
 To calculate an entire sheet:
 1. Select the desired sheet
 2. Click the Sheet refresh button
 
-#### Refreshing Specific Ranges
+### Refreshing Specific Ranges
 
 To calculate selected cells:
 1. Highlight your target range
    - For multiple ranges: Hold Ctrl while selecting (standard Excel behavior)
 2. Click the Range refresh button
 
-#### Refreshing the Entire Workbook
+### Refreshing the Entire Workbook
 
 To refresh all calculations in the workbook:
 1. Click the Workbook refresh button
 
 
 
-### 2.7 Drilldown
+## 2.7 Drilldown
 
 In Blitz FSG, drilldown data is extracted through Blitz Reports such as 'GL Journal (Drilldown)' and 'GL Account Analysis (Drilldown).' Each of these reports has templates that define which columns are displayed, their sequence, and sorting order. Users can create custom templates to add, remove, sort, or reorder columns as needed. Although the report is designed to be comprehensive and cover all possible data columns, users with developer access can create a custom copy of the drilldown reports to add any missing columns if required.
 
-#### Drill Criteria
+### Drill Criteria
 
 There are two types of drill criteria sheets available:
 
-##### Balance Drill Criteria
+#### Balance Drill Criteria
 
 The Balance Criteria Sheet enables rapid extraction of detailed general ledger balances that meet specific criteria. This is particularly useful when working with large volumes of GL data, as it returns values faster than multiple individual Get Balance formulas.
 
@@ -467,7 +467,7 @@ The Balance Criteria Sheet enables rapid extraction of detailed general ledger b
 
 ![Balance Drill Criteria](images/fsg-34-balance-drill.png)
 
-##### Journal Extract Drill Criteria
+#### Journal Extract Drill Criteria
 
 The Journal Extract Drill Criteria Sheet enables users to extract journal entries based on specified criteria.
 
@@ -486,7 +486,7 @@ The Journal Extract Drill Criteria Sheet enables users to extract journal entrie
 
 ![Journal Extract Drill Criteria](images/fsg-35-journal-drill.png)
 
-#### Next Level Drilldown
+### Next Level Drilldown
 
 To drill down to Balance, Journal, or Subledger data from the balance sheet:
 
@@ -520,7 +520,7 @@ Drill down to transaction details and access the relevant Oracle EBS form for de
 
 ![Drill down to transaction details](images/fsg-39-drill-details.png)
 
-#### Layout Options
+### Layout Options
 
 After defining the templates in Blitz Reports, follow the steps below to select your preferred drilldown data.
 
@@ -549,13 +549,13 @@ After defining the templates in Blitz Reports, follow the steps below to select 
 
 
 
-### 2.8 Tools
+## 2.8 Tools
 
 ![Tools menu](images/fsg-41-tools.png)
 
 Under Blitz FSG Tools you can:
 
-#### Snapshot
+### Snapshot
 
 Use the Snapshot tool to convert your Blitz FSG report into static values.
 
@@ -569,21 +569,21 @@ Ideal for:
 - Reducing file size or improving performance.
 - Archiving data without live Oracle connections.
 
-#### Hide Zeros
+### Hide Zeros
 
 Hide Zeros allows you to hide rows in a report that contain only zero values. This feature is especially useful for streamlining reports with many empty rows—such as those with no balances in a given period. With just one click, you can instantly remove all zero-value rows, improving readability and presentation.
 
-#### Unhide Zeros
+### Unhide Zeros
 
 This will show the rows previously hidden by the Hide Zeros feature.
 
 
 
-### 2.9 Converter
+## 2.9 Converter
 
 The Blitz FSG Converter allows you to import Financial Statement Generator (FSG) report definitions from Oracle FSG, as well as third-party tools like GL Wand and Spreadsheet Server.
 
-#### Oracle FSG
+### Oracle FSG
 
 1. Click on 'Oracle FSG'
 
@@ -679,7 +679,7 @@ Upload the migrated template to make it available for later use:
 
 ![Upload migrated template](images/fsg-54-upload.png)
 
-#### GL Wand & Spreadsheet Server
+### GL Wand & Spreadsheet Server
 
 Open the workbook which has the legacy template and follow the below:
 
@@ -697,7 +697,7 @@ After copying the legacy sheets into GL Financial Statement and Drilldown (FSG) 
 
 
 
-## Related Links
+# Related Links
 
 - [Blitz Report Features](https://www.enginatics.com/blitz-report-features/)
 - [Blitz Report Training Videos](https://www.enginatics.com/tutorials/)

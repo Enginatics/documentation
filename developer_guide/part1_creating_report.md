@@ -1,6 +1,6 @@
-## 1. Creating a Blitz Report
+# 1. Creating a Blitz Report
 
-### 1.1 Report Creation Steps
+## 1.1 Report Creation Steps
 
 With Blitz Report you can easily leverage existing SQL to create reports for your users. There is a [training video](https://www.enginatics.com/blitz-report-training-videos/) available on creating a report from an SQL query.
 
@@ -22,11 +22,11 @@ Unlike most reporting tools, Blitz Report creates dynamic SQL at run-time, combi
 
 To ensure that there is no unnecessary parsing of the dynamic SQL, Blitz Report's parameterization uses bind variables.
 
-### 1.2 Anchors and Binds
+## 1.2 Anchors and Binds
 
 Anchors are 'placeholders' in the extraction SQL, which allow the precise placement of additional (optional) parameterized SQL clauses at run-time. These clauses are constructed from user-specified parameters, which are then inserted into the extraction SQL at run-time. There are two types of Anchors:
 
-#### n=n
+### n=n
 
 WHERE clause SQL anchors, such as `1=1`, `2=2` etc. Blitz Report inserts the associated SQL text directly before these anchors, automatically adding the keyword `and` and a line feed, to create valid SQL. This allows quick parameter creation – no need to consider the precise position of the `and` keyword.
 
@@ -34,7 +34,7 @@ A typical example for a SQL text would be `column_name=:bind_variable`, where `:
 
 > **Note:** A common coding practice is to write non-Blitz Report SQL with a `where 1=1` clause, usually for formatting purposes. This does no harm when importing the SQL into Blitz Report, and may actually be useful, since it serves as the obvious anchor for any parameterized WHERE clauses.
 
-#### &lexical
+### &lexical
 
 Lexical parameter references work in the same way as lexical parameters in sqlplus or Oracle reports. Blitz Report replaces these placeholders completely with the parameter SQL text at run-time. To replace a lexical with the user entered parameter value, use the string in the SQL text field. If a parameter value is left blank, the corresponding reference is removed before SQL execution.
 
@@ -56,7 +56,7 @@ A lexical parameter SQL text may contain a bind variable, which will be bound wi
 
 In case you require the parameter value to show up as lexical text in the SQL, e.g. to purposefully enforce reparsing for different parameter values, you can use placeholder `<parameter_value>` as shown in the examples table below.
 
-#### :bind
+### :bind
 
 Similar to other reporting solutions, Blitz Report also supports the use of bind parameters. To avoid performance issues due to `nvl(:bind_variable, column_name)` coding for optional parameters however, it is recommended to use one of the above anchors for dynamic SQL instead.
 
@@ -66,7 +66,7 @@ Some words are reserved by Oracle and can not be used as bind variables. To find
 select keyword from v$reserved_words where reserved='Y' or res_semi='Y' order by keyword asc;
 ```
 
-#### Examples
+### Examples
 
 | Anchor Type | Report SQL | Parameter SQL text | Run-time SQL |
 |-------------|------------|-------------------|--------------|
@@ -77,7 +77,7 @@ select keyword from v$reserved_words where reserved='Y' or res_semi='Y' order by
 | &lexical | `select &columns frv.responsibility_name` | `fu.user_name, fu.email_address,` | `select fu.user_name, fu.email_address, frv.responsibility_name` |
 | :bind | `where fu.user_name=:user_name` | | `where fu.user_name=:user_name` |
 
-#### :sheet_name
+### :sheet_name
 
 By default the Excel output's data sheet name is the same as the report name. A parameter referencing the `:sheet_name` anchor allows to define a custom sheet name. It can be set up as a standard visible parameter, but also hidden by using a negative display sequence, for example dependent on another parameter.
 
@@ -87,9 +87,9 @@ Example: The Sheet name parameter inherits its value from the Operating unit par
 
 ![Sheet Name Parameter Example](./images/blitz_report_sheet_name_parameter-2.png)
 
-### 1.3 Dynamic SQL Example
+## 1.3 Dynamic SQL Example
 
-#### n=n Anchor Example
+### n=n Anchor Example
 
 A query on parties and accounts (see below) should allow users to extract all customers' information or to restrict the data by optional parameters such as customer name or account number.
 
@@ -132,7 +132,7 @@ upper(hp.party_name) like upper('George Clooney') and
 hp.party_id=hca.party_id
 ```
 
-#### Pivot Table in SQL
+### Pivot Table in SQL
 
 There is possibility to have dynamic pivot table described in SQL. It is done using `&lexical` parameter reference.
 
@@ -178,49 +178,49 @@ pivot(sum(amount) for period_name in (&gl_period_pivot))
 
 ![Pivot Table Parameters](./images/pivot_table_parameters.png)
 
-### 1.4 Report Header
+## 1.4 Report Header
 
-#### Name
+### Name
 
 Report name uniquely identifies reports. Names should be short and descriptive.
 
 Good practice is to prefix report names with the appropriate Oracle EBS module short code.
 
-#### Description
+### Description
 
 An optional report description of maximum 4000 characters may be set up to assist users in understanding and using the report.
 
-#### Search
+### Search
 
 This Google like search functionality retrieves reports by report name, description or underlying SQL. You can search for example for a table or column name accessed by a SQL, or by parts of the report name or description.
 
-#### Category
+### Category
 
 Retrieve reports by category.
 
-#### Enabled
+### Enabled
 
 Defines whether a report is visible to end users. Disabling a report removes it from the user report list. This may be useful during the development and testing phase. Even if a report is disabled, it may still be run by users having User Admin, Developer or System access.
 
-#### Version
+### Version
 
 Click on a report's version number to review the change history and previous report SQLs. A new version number is added and stored automatically for each report SQL update. Other report setup modifications such as report name, description or parameter changes are not tracked in the version history.
 
 ![Version Window](./images/version_window.png)
 
-#### Type
+### Type
 
 Reports of type 'Protected' or 'System' are visible to users with access profiles set to 'User Admin' or 'Developer', but may only be edited by users which have their access profile set to 'System'.
 
 This serves as an additional level of protection for reports providing important system functionality such as outbound interfaces or search screens.
 
-#### BIP Code
+### BIP Code
 
 BI Publisher data definition code. When populated, Blitz Report executes the dataTrigger section e.g. beforeReportTrigger of the associated data definition XML template. This allows running BI Publisher report SQLs through Blitz Report where the data extracted is based on global temporary tables preprocessed in the before report trigger.
 
 Double click onto the BI Code to download and view the data definition XML template.
 
-#### Number Format
+### Number Format
 
 Format for numeric value display in Excel output files. By setting the number format, you can, for example, change the number of decimals or the display style and color of negative numbers.
 
@@ -228,7 +228,7 @@ The number format can either be set by a profile option, for all columns in a re
 
 The list of available format codes is defined in lookup `XXEN_REPORT_NUMBER_FORMATS`, which can be extended with additional custom format codes according to your needs.
 
-#### Report Options
+### Report Options
 
 Report Options define additional attributes and processing options for a specific report:
 
@@ -249,15 +249,15 @@ Report Options define additional attributes and processing options for a specifi
 
 ![Blitz Report Setup Options](./images/Blitz-Report-Setup-Options.png)
 
-#### DB Package
+### DB Package
 
 Package name containing pre and post processing functions, which can be used for example to call Oracle standard PLSQL code or to run additional processes before or after report execution. The functions need to follow the naming convention: `afterpform`, `beforereport`, `afterreport` and return the boolean data type.
 
-#### Author email
+### Author email
 
 Email address of the report author. Additional information can be found on registered authors in the [online library](https://www.enginatics.com/reports/).
 
-#### Email
+### Email
 
 Default email address for sending output files. If different email addresses are set up on different levels, the default email on the Blitz Report run window is derived in following order:
 
@@ -282,15 +282,15 @@ fu.user_id=fnd_global.user_id
 
 > **Note:** Blitz Report's email functionality is available from EBS version R12 onwards only.
 
-#### Output Format
+### Output Format
 
 Allows changing the output format from Excel XLSX (Excel) to CSV (comma separated values) or TSV (tab separated values).
 
-#### Row Limit
+### Row Limit
 
 Limits the maximum number of lines for report execution.
 
-#### Time Limit
+### Time Limit
 
 Maximum run time limit in seconds. The Blitz Report Monitor concurrent program automatically cancels reports exceeding the set time limit.
 
@@ -302,43 +302,43 @@ A time limit can also be set when running reports or using profile option 'Blitz
 4. Profile option on responsibility level
 5. Profile option on site level
 
-#### Custom Postprocess
+### Custom Postprocess
 
 Provides the same functionality as the Custom Postprocess runtime option to default a postprocess on report level.
 
-#### Output Filename
+### Output Filename
 
 Provides the same functionality as the Output Filename runtime option to default the output filename format on report level.
 
-#### Additional Out. Directory on APPS Server
+### Additional Out. Directory on APPS Server
 
 Saves a copy of the report output file in the specified directory on the application server. Tokens can be used to create a directory path dynamically.
 
-#### Additional Out. Directory on DB Server
+### Additional Out. Directory on DB Server
 
 Saves a copy of the report output file in the specified directory on the database server.
 
-#### Additional Out. Filename
+### Additional Out. Filename
 
 Naming convention for output files if additional output directories are defined. Tokens can be used to create a filename dynamically.
 
-#### Request type
+### Request type
 
 Allows assigning request types defined under System Administrator > Concurrent > Program > Types to specific Blitz Reports. Request types can be used in concurrent managers specialization rules.
 
-#### Target Database
+### Target Database
 
 Allows running blitz reports on a standby database. Specify a TNS descriptor defined in `$TNS_ADMIN/tnsnames.ora` on the apps server.
 
-#### SQL
+### SQL
 
 The report extraction SQL must start either with the word `select` or `with`. Blitz Report does not parse the SQL syntax for validity. SQL entry through the form is limited to 32767 characters. To create a report with a larger SQL, use the Upload Large SQL functionality from the tools menu.
 
-#### 'Blitz Report Information' Descriptive Flexfield
+### 'Blitz Report Information' Descriptive Flexfield
 
 New 'Blitz Report Information' descriptive flexfield allows to store additional information, e.g. for change management.
 
-### 1.5 Parameters
+## 1.5 Parameters
 
 Parameter definitions consist of:
 
@@ -348,7 +348,7 @@ Parameter definitions consist of:
 - A parameter type and optional LOV
 - An optional matching value to restrict the SQL text insertion to certain parameter values
 
-#### Display Sequence
+### Display Sequence
 
 Sequence number that defines the order in which parameters are displayed.
 
@@ -356,19 +356,19 @@ If different WHERE clauses are used for the same parameter name, e.g. to insert 
 
 Negative display sequence numbers are used to define hidden parameters. These can be used to populate a `&lexical` with a SQL text dynamically before report execution.
 
-#### Parameter Name
+### Parameter Name
 
 Parameter identifier. You can use the LOV to copy existing parameter definitions from other reports.
 
 If you need a different SQL text in different SQL positions for one parameter, you can have more than one entries for the same parameter name, but only one of them can have a display sequence, parameter type and list of values setup.
 
-#### SQL Text
+### SQL Text
 
 Parameter specific text added dynamically into the report SQL if a value for the parameter is entered at run-time. Usually, the SQL text forms a where-clause restriction including a bind variable name starting with a colon e.g. `:account_number`. Blitz Report automatically detects the variable and binds it with the value entered by the user.
 
 A maximum of one bind variable per parameter is allowed. If a parameter's SQL text contains more than one bind variables, only the first one is bound with the entered parameter value.
 
-#### Multiple Values
+### Multiple Values
 
 If the SQL text includes a bind variable restriction and the user checks the multiple values checkbox, Blitz Report automatically replaces the restriction with an IN-clause during SQL execution. This replacement works for restrictions using 'equal', 'like', 'not equal' or 'not like' operators such as:
 
@@ -388,11 +388,11 @@ upper(column_name) like upper(:bind_variable)
 
 > **Note:** The multiple values functionality is only available for parameters with anchor styles `1=1` or `&lexical`, not for `:bind` anchors.
 
-#### Anchor
+### Anchor
 
 The position inside the report SQL where the parameter SQL text is inserted. The LOV for this field shows all anchors used in the SQL.
 
-#### Parameter Type
+### Parameter Type
 
 The parameter type definition controls validation of parameter values at run-time:
 
@@ -406,15 +406,15 @@ The parameter type definition controls validation of parameter values at run-tim
 | **LOV custom** | Create an ad hoc LOV based on an SQL statement for validation of the current report parameter only. The LOV SQL may select an optional 'id' column and must include the two columns 'value' and 'description'. |
 | **LOV Oracle** | Allows selecting Oracle standard value sets for parameter validation. |
 
-#### LOV Name
+### LOV Name
 
 Name of a shared LOV or Oracle standard value set.
 
-#### LOV Query
+### LOV Query
 
 SQL statement of a list of values. Double click in this field to open the LOV definition window. The LOV query must select the columns 'value' and 'description', and it may include an optional 'id' column.
 
-#### Matching Value
+### Matching Value
 
 If the parameter value entered at run-time matches the matching value, then the corresponding SQL text is inserted.
 
@@ -424,7 +424,7 @@ Matching values may contain wildcard characters. If, for the same Anchor, the pa
 
 ![Blitz Report Matching Value Example 2](./images/Blitz-Report-matching-value-example-1.png)
 
-#### Default Value
+### Default Value
 
 Specifies a default parameter value. If the value starts with the keyword `select`, then Blitz Report would execute the SQL to derive the default value dynamically instead of using a fixed value.
 
@@ -444,15 +444,15 @@ abs, add_months, bitand, cast, ceil, chr, coalesce, decode, greatest, initcap, i
 
 ![Blitz Report Default Value Example 2](./images/Blitz-Report-default-value-example-1.png)
 
-#### Description
+### Description
 
 Additional parameter description displayed in the bottom left message area of the Blitz Report run window.
 
-#### Required
+### Required
 
 The required flag enforces a parameter value entry by the user, for example to prevent accidental report submission with insufficient parameter restrictions.
 
-#### Advanced Required Parameters
+### Advanced Required Parameters
 
 Using the 'Required' button, you can define an advanced definition for required parameters by entering a logical expression based on parameter names.
 
@@ -464,7 +464,7 @@ Example of a logical expression forcing the user to enter either the parameter '
 
 Parameters are referenced by their names (in the installed base language, usually US), prefixed with a colon and having spaces or other non-word characters replaced with a single underscore.
 
-#### Dependent Parameters
+### Dependent Parameters
 
 Similar to Oracle standard's dependent parameter functionality, you can define parameter dependencies in LOV queries and default values using the syntax:
 
@@ -482,7 +482,7 @@ In case you want to use multiple values functionality for a parameter which the 
 
 ![Multiple Dependent Parameters Example 2](./images/Multiple-dependent-parameters-example-1.png)
 
-#### Dynamic Parameter SQL Text
+### Dynamic Parameter SQL Text
 
 Blitz Report provides a possibility to create parameters with dynamic SQL text which depends on a runtime value of a parameter.
 
@@ -494,7 +494,7 @@ Blitz Report provides a possibility to create parameters with dynamic SQL text w
 
 ![Dynamic Parameter SQL Text Example 4](./images/Dynamic-parameter-SQL-text-example-5.png)
 
-### 1.6 Assignments
+## 1.6 Assignments
 
 ![Blitz Report Assignment Tab](./images/Blitz-Report-assignment-tab.png)
 
@@ -518,7 +518,7 @@ By default, inclusion assignments are implemented as a union, which means that t
 
 For assignments on operating unit level in combination with request group or application, profile option 'Blitz Report Restrict Assignments by Operating Unit Level' can limit access to the combination or intersect of assignment level values instead of adding them.
 
-#### Form Assignment
+### Form Assignment
 
 The forms assignment feature allows opening Blitz Reports directly from any Oracle EBS standard form.
 
@@ -537,23 +537,23 @@ To integrate a Blitz Report to a form:
 
 ![Blitz Report Parameter Values Passed from Form](./images/Blitz-Report-parameter-values-passed-from-a-standard-Oracle-form-1.png)
 
-#### Default Assignments
+### Default Assignments
 
 The Blitz Report installation includes seeded reports developed by Enginatics, and their assignments to Oracle standard applications and forms. These default assignments allow business users to start working with the included reports without creating assignments for them individually.
 
-#### Mass Assignments
+### Mass Assignments
 
 Assignments can be loaded from Excel with the Blitz Report Assignment Upload.
 
-### 1.7 Categories
+## 1.7 Categories
 
 If you have a large number of reports in your system, category assignments will help users to find the reports they require via the category drop-down list on the run window.
 
 To create a new category, navigate to the menu Tools > Categories.
 
-### 1.8 Multi-language Support
+## 1.8 Multi-language Support
 
-#### Report Data
+### Report Data
 
 If you have more than one language installed, Blitz Report offers multi-language support via the Oracle EBS translation menu icon for the following data:
 
@@ -569,11 +569,11 @@ If you have more than one language installed, Blitz Report offers multi-language
 
 ![Blitz Report German Translation](./images/Blitz-Report-german-translation.png)
 
-#### User Messages
+### User Messages
 
 To add translations for user-facing messages, navigate to Application Developer > Application > Messages > query messages starting with XXEN and add translations for a different language as required.
 
-#### User Interface Translations
+### User Interface Translations
 
 The labels shown on the Blitz Report user interface can be translated via Application Developer > Application > Lookups > Application Object Library, query Lookup `XXEN_REPORT_TRANSLATIONS` and enter translations for the lookup code descriptions as required.
 
@@ -581,7 +581,7 @@ The labels shown on the Blitz Report user interface can be translated via Applic
 
 > **Note:** If you install an additional language in Oracle applications, in addition to running the adadmin 'Maintain multi-lingual tables' process, you need to run the concurrent request 'Blitz Report Maintain Multilingual Tables'.
 
-### 1.9 Security and User Profiles
+## 1.9 Security and User Profiles
 
 Blitz Report provides the following levels of security:
 
@@ -591,7 +591,7 @@ Blitz Report provides the following levels of security:
 - Access to layout templates is controlled by the profile option 'Blitz Report Template Access'.
 - Access to sensitive data can be restricted through additional VPD policies.
 
-#### Access Profile Functionality Matrix
+### Access Profile Functionality Matrix
 
 | Functionality \ Access Profile | User | User Admin | Developer | System |
 |-------------------------------|------|------------|-----------|--------|
@@ -612,7 +612,7 @@ Blitz Report provides the following levels of security:
 \* Users can see and run reports restricted to their assignments only.
 \*\* Depending on the setup of profile option 'Blitz Report Template Access'.
 
-### 1.10 Data Access Security
+## 1.10 Data Access Security
 
 For increased flexibility and maintainability, we recommend using `_all` tables in report SQL queries, for example `ap_invoices_all`, instead of Oracle's VPD secured synonyms, such as `ap_invoices`.
 
@@ -626,7 +626,7 @@ Security is then applied by adding a required Operating Unit parameter in Blitz 
 
 This approach allows greater flexibility, e.g. to enable certain users, such as in shared service centers, to see all data in the system, or to test SQL queries through database access tools, without having the application user session context initialized.
 
-### 1.11 Securing Sensitive Information with Oracle Virtual Private Database
+## 1.11 Securing Sensitive Information with Oracle Virtual Private Database
 
 With Blitz Report, you can use Oracle Virtual Private Database (VPD) to control access to sensitive data. VPD policies are set up on database objects to automatically add restrictions before SQL execution, thus preventing visibility of sensitive information.
 
@@ -638,7 +638,7 @@ Blitz Report includes the following objects to maintain these:
 - Database package `XXEN_VPD` containing the policy function code
 - Profile option **Blitz Report VPD Policy Rule** to control data access
 
-#### Steps to Secure Your Data
+### Steps to Secure Your Data
 
 **1. Set up tables or column names in lookup XXEN_REPORT_VPD_POLICY_TABLES**
 

@@ -1,12 +1,12 @@
-## 5. APIs and Integration
+# 5. APIs and Integration
 
-### 5.1 Export
+## 5.1 Export
 
 To make migration tasks easier Blitz Report offers the following Export APIs:
 
 - [Blitz Report Library Export API](https://www.enginatics.com/blitz-report-developer-guide/#export_api)
 
-### 5.2 Import
+## 5.2 Import
 
 To make migration tasks easier Blitz Report offers the following Import APIs:
 
@@ -18,11 +18,11 @@ To make migration tasks easier Blitz Report offers the following Import APIs:
 - [Enterprise Command Center Import API](https://www.enginatics.com/blitz-report-developer-guide/#ecc)
 - [Polaris Reporting Workbench Import API](https://www.enginatics.com/blitz-report-developer-guide/#polaris)
 
-### 5.3 Submitting Blitz Report from PLSQL
+## 5.3 Submitting Blitz Report from PLSQL
 
 Blitz reports can be started from PLSQL as a background concurrent program, or through an API call returning the Excel output as a blob.
 
-#### FND Concurrent Program API
+### FND Concurrent Program API
 
 Blitz reports can be submitted through the Oracle standard `fnd_request.submit_request` API. Arguments 1-15 specify the report and template names, and other runtime options, such as the email address or output format. The user entered report parameters start from arguments16 onwards.
 
@@ -66,7 +66,7 @@ begin
 end;
 ```
 
-#### Blitz Report Concurrent Program API
+### Blitz Report Concurrent Program API
 
 You can also use the API `xxen_api.report_submit_concurrent_`, which allows referencing the report, parameter and template names by name or id instead of argument position:
 
@@ -106,7 +106,7 @@ begin
 end;
 ```
 
-#### Runtime Option Names
+### Runtime Option Names
 
 You can specify the following runtime option names in procedure `set_runtime_option`:
 
@@ -126,7 +126,7 @@ You can specify the following runtime option names in procedure `set_runtime_opt
 | `ADDITIONAL_OUT_FNAME` | Additional output file name |
 | `ORGANIZATION_ID` | Organization ID |
 
-#### PLSQL API Returning a BLOB
+### PLSQL API Returning a BLOB
 
 You can create a blitz report from a PLSQL API. First create a new run_id, then set all parameter and runtime option values, and finally call the report creation API:
 
@@ -170,7 +170,7 @@ begin
 end;
 ```
 
-#### Opening Reports from Custom Forms
+### Opening Reports from Custom Forms
 
 Using the above PLSQL API returning a BLOB, you can open a blitz report directly from a custom form, for example in a when-button-pressed trigger.
 
@@ -207,11 +207,11 @@ end;
 
 
 
-### 5.4 Useful DB Functions
+## 5.4 Useful DB Functions
 
 There is a list of useful functions from custom package `XXEN_UTIL` that can be used during report creation.
 
-#### XXEN_UTIL.CLIENT_TIME (p_date in date)
+### XXEN_UTIL.CLIENT_TIME (p_date in date)
 
 This function allows converting date from server's timezone to client local timezone.
 
@@ -232,7 +232,7 @@ Assume:
 |--------------|--------|
 | `select to_char(xxen_util.client_time(to_date('2020.09.03 09:00:00', 'YYYY.MM.DD HH24:Mi:Ss')), 'YYYY.MM.DD HH24:Mi:Ss') from dual` | 2020.09.03 10:00:00 |
 
-#### XXEN_UTIL.SERVER_TIME (p_date in date)
+### XXEN_UTIL.SERVER_TIME (p_date in date)
 
 This function works in the similar way as above. It checks if server timezone differs from client timezone and converts date if needed.
 
@@ -247,7 +247,7 @@ Assume:
 |--------------|--------|
 | `select to_char(xxen_util.server_time(to_date('2020.09.03 09:00:00', 'YYYY.MM.DD HH24:Mi:Ss')), 'YYYY.MM.DD HH24:Mi:Ss') from dual` | 2020.09.03 08:00:00 |
 
-#### XXEN_UTIL.TIME (p_seconds in number)
+### XXEN_UTIL.TIME (p_seconds in number)
 
 This function converts number of seconds to the time in format "67d 14h 45.3s".
 
@@ -262,7 +262,7 @@ This function converts number of seconds to the time in format "67d 14h 45.3s".
 | `select xxen_util.time(361012) from dual` | 4d 4h 16m 52s |
 | `select xxen_util.time(36101200) from dual` | 417d 20h 6m 40s |
 
-#### XXEN_UTIL.USER_NAME (p_user_name in varchar2)
+### XXEN_UTIL.USER_NAME (p_user_name in varchar2)
 
 This function converts user name to the full description of the user.
 
@@ -275,7 +275,7 @@ This function converts user name to the full description of the user.
 |--------------|--------|
 | `select xxen_util.user_name('SYSADMIN') from dual` | SYSADMIN (System Administrator) |
 
-#### XXEN_UTIL.USER_NAME (p_user_id in pls_integer)
+### XXEN_UTIL.USER_NAME (p_user_id in pls_integer)
 
 Similar to the function above, returns user name and user description based on user id.
 
@@ -290,7 +290,7 @@ Similar to the function above, returns user name and user description based on u
 |--------------|--------|
 | `select xxen_util.user_name(0) from dual` | SYSADMIN (System Administrator) |
 
-#### XXEN_UTIL.USER_ID (p_user_name in varchar2)
+### XXEN_UTIL.USER_ID (p_user_name in varchar2)
 
 Function returns user id based on user name.
 
@@ -303,7 +303,7 @@ Function returns user id based on user name.
 |--------------|--------|
 | `select xxen_util.user_id('SYSADMIN') from dual` | 0 |
 
-#### XXEN_UTIL.DFF_COLUMNS
+### XXEN_UTIL.DFF_COLUMNS
 
 Returns a SQL text for the descriptive flexfield columns of a specified table, to be used for dynamic `&lexical` replacement.
 
