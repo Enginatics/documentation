@@ -1,6 +1,6 @@
 # 3. Installation
 
----
+
 
 Follow these steps to install the Supply Chain Hub:
 
@@ -28,6 +28,6 @@ Review the error summary and installation log file and in case of any errors, pl
 
 > **Note:** If you are running decentralized ASCP and wish to use the Action Release/Reschedule/Cancel recommendations functionality from the Supply Chain Hub running in the EBS Instance; then you must also install Blitz Report on the ASCP instance.
 
----
+
 
 *Previous: [Prerequisites](part1_prerequisites.md) | Next: [Application Setup](part3_application_setup.md)*

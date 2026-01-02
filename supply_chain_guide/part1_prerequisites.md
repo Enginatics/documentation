@@ -1,6 +1,6 @@
 # 2. Prerequisites
 
----
+
 
 ## 2.1 Install Blitz Report in Oracle E-Business Suite
 

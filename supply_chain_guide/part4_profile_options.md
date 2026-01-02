@@ -1,12 +1,12 @@
 # 5. Profile Options
 
----
+
 
 The Supply Chain Hub includes a set of configurable profile options that determine system behavior, UI availability, and integration with other Oracle applications. These profile options must be reviewed and set according to the organization's supply planning, release management, pricing, and performance requirements.
 
 > **Important:** After installation, many of these options may appear blank. This is expected, and administrators are advised to populate them explicitly based on intended usage scenarios and planning sources (ASCP or MRP).
 
----
+
 
 ## Profile Options Reference
 
@@ -28,7 +28,7 @@ The Supply Chain Hub includes a set of configurable profile options that determi
 | **Supply Chain Hub: Use Quick Sales Orders Form** | Supply Chain Hub: Use Quick Sales Orders Form for Drilldowns<br>- By default Supply Chain Hub drills down to the Orders Workbench<br>- This profile can be used to direct Supply Chain Hub to drill down to the Quick Orders Sales Order form instead | No |
 | **Supply Chain Hub: Use Purchasing Buyer Work Center** | Supply Chain Hub: Use Purchasing Buyer Work Center for Drilldowns<br>- By default Supply Chain Hub drills down to the Purchasing Forms<br>- This profile can be used to direct Supply Chain Hub to drill down to the Purchasing Buyers Work Center instead | No |
 
----
+
 
 ## Best Practices
 
@@ -37,13 +37,13 @@ The Supply Chain Hub includes a set of configurable profile options that determi
 - **Drilldown configurations:** Adjust drilldown forms (e.g., Quick Sales Orders Form, Buyer Work Center) based on user roles and departmental preferences.
 - **Testing:** Always validate profile option settings in a non-production environment before deploying to production.
 
----
+
 
 ## Notes
 
 - Unset (blank) values may result in default behaviors, but these are not always suitable for every deployment.
 - Some profile options, such as those related to drilldown forms or price lists, are environment-specific and may require coordination with functional consultants and business owners.
 
----
+
 
 *Previous: [Application Setup](part3_application_setup.md) | Next: [Upgrade](part5_upgrade.md)*

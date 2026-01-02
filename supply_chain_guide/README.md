@@ -1,6 +1,6 @@
 # Supply Chain Hub Installation Guide
 
----
+
 
 ## 1. Introduction
 
@@ -20,7 +20,7 @@ The basic installation steps are:
 1. Run the installation shell script on the application node using the application owner user.
 2. Perform additional manual application setup steps from the 'System Administrator' responsibility.
 
----
+
 
 ## Table of Contents
 
@@ -33,6 +33,6 @@ The basic installation steps are:
 | [Upgrade](part5_upgrade.md) | Upgrade procedures |
 | [Troubleshooting](part6_troubleshooting.md) | Common issues and solutions |
 
----
+
 
 *Next: [Prerequisites](part1_prerequisites.md)*
