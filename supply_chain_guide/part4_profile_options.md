@@ -1,4 +1,4 @@
-# 5. Profile Options
+# 4. Profile Options
 
 The Supply Chain Hub includes a set of configurable profile options that determine system behavior, UI availability, and integration with other Oracle applications. These profile options must be reviewed and set according to the organization's supply planning, release management, pricing, and performance requirements.
 
@@ -36,4 +36,4 @@ The Supply Chain Hub includes a set of configurable profile options that determi
 - Unset (blank) values may result in default behaviors, but these are not always suitable for every deployment.
 - Some profile options, such as those related to drilldown forms or price lists, are environment-specific and may require coordination with functional consultants and business owners.
 
-*Previous: [Application Setup](part3_application_setup.md) | Next: [Upgrade](part5_upgrade.md)*
+*Previous: [3. Application Setup](part3_application_setup.md) | Next: [5. Upgrade](part5_upgrade.md)*

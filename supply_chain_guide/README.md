@@ -1,6 +1,6 @@
 # Supply Chain Hub Installation Guide
 
-## 1. Introduction
+## Introduction
 
 This document guides you through the steps required to install the Supply Chain Hub for Oracle E-Business Suite R12.
 
@@ -22,11 +22,11 @@ The basic installation steps are:
 
 | Section | Description |
 |---------|-------------|
-| [Prerequisites](part1_prerequisites.md) | Install Blitz Report requirement |
-| [Installation](part2_installation.md) | Step-by-step installation process |
-| [Application Setup](part3_application_setup.md) | Menu entry, planning source, WIP setup |
-| [Profile Options](part4_profile_options.md) | Configurable profile options |
-| [Upgrade](part5_upgrade.md) | Upgrade procedures |
-| [Troubleshooting](part6_troubleshooting.md) | Common issues and solutions |
+| [1. Prerequisites](part1_prerequisites.md) | Install Blitz Report requirement |
+| [2. Installation](part2_installation.md) | Step-by-step installation process |
+| [3. Application Setup](part3_application_setup.md) | Menu entry, planning source, WIP setup |
+| [4. Profile Options](part4_profile_options.md) | Configurable profile options |
+| [5. Upgrade](part5_upgrade.md) | Upgrade procedures |
+| [6. Troubleshooting](part6_troubleshooting.md) | Common issues and solutions |
 
-*Next: [Prerequisites](part1_prerequisites.md)*
+*Next: [1. Prerequisites](part1_prerequisites.md)*

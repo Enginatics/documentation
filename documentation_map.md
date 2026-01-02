@@ -243,7 +243,7 @@ Contains comprehensive instructions for installing, configuring, and troubleshoo
     -   **Topics**: Prerequisites for Supply Chain Hub installation, primarily requiring Blitz Report to be installed first.
     -   **Keywords**: Prerequisites, Blitz Report, decentralized ASCP, Action Release, Reschedule, Cancel recommendations.
     -   **Inner Structure**:
-        -   `2.1 Install Blitz Report in Oracle E-Business Suite`: Blitz Report dependency, decentralized ASCP considerations.
+        -   `1.1 Install Blitz Report in Oracle E-Business Suite`: Blitz Report dependency, decentralized ASCP considerations.
     -   **Common Queries**: "What are the prerequisites for Supply Chain Hub?", "Do I need Blitz Report for SCHUB?", "ASCP integration requirements."
 
 -   **`part2_installation.md`**
@@ -257,9 +257,9 @@ Contains comprehensive instructions for installing, configuring, and troubleshoo
     -   **Topics**: Post-installation application setup including menu entries, choosing ASCP or MRP as planning source, and WIP requirement operations configuration.
     -   **Keywords**: Application setup, Menu entry, XXEN_SCHUB form function, sub-menu, System Administrator, ASCP, MRP, Planning Source, Supply Chain Hub: Use MRP for Planning Source profile, WIP Requirement Operations Closed Flag, wip_requirement_operations table, DFF, Component Information flexfield, WRO Closed Flag.
     -   **Inner Structure**:
-        -   `4.1 Menu Entry`: Manual menu assignment for SCHUB.
-        -   `4.2 Choosing ASCP or MRP as the Planning Source`: Default ASCP, profile option for MRP.
-        -   `4.3 Set WIP Requirement Operations Closed Flag Concurrent Program`: WIP Demand KPI, DFF setup, scheduling recommendations.
+        -   `3.1 Menu Entry`: Manual menu assignment for SCHUB.
+        -   `3.2 Choosing ASCP or MRP as the Planning Source`: Default ASCP, profile option for MRP.
+        -   `3.3 Set WIP Requirement Operations Closed Flag Concurrent Program`: WIP Demand KPI, DFF setup, scheduling recommendations.
     -   **Common Queries**: "How to add Supply Chain Hub to menu?", "Configure MRP instead of ASCP.", "Setup WIP Demand KPI.", "WRO Closed Flag flexfield."
 
 -   **`part4_profile_options.md`**
@@ -282,7 +282,7 @@ Contains comprehensive instructions for installing, configuring, and troubleshoo
     -   **Topics**: Troubleshooting guide covering form compilation errors, index synchronization issues, and planned order release problems for MRP and ASCP.
     -   **Keywords**: Troubleshooting, PL/SQL ERROR 302, XXEN_SCHUB_WIPDJMDF.fmb, WIPDJMDF, XXEN_SCHUB_FORMS lookup, Index synchronization, xxen_mtl_sys_items_tl_t1, xxen_mtl_sys_items_tl_t2, intermedia index, Planned Orders, MRP on-prem, Work Orders, Purchase Requisitions, ASCP centralized, ASCP distributed, APS_RELEASE responsibility, SCP Workbench, Release Order Transaction ID, Make vs Buy, Plan Organization, Pegging Info, Cross-Org Fulfillment.
     -   **Inner Structure**:
-        -   `7.1 PL/SQL ERROR 302`: Form compilation workaround using standard WIP Discrete Jobs form.
-        -   `7.2 Index Synchronization Performance Issues`: Reduce intermedia index sync frequency.
-        -   `7.3 Planned Orders`: MRP vs ASCP requirements, Release Order Transaction ID, Make vs Buy confusion, Cross-Org fulfillment visibility, known gaps and upcoming enhancements.
+        -   `6.1 PL/SQL ERROR 302`: Form compilation workaround using standard WIP Discrete Jobs form.
+        -   `6.2 Index Synchronization Performance Issues`: Reduce intermedia index sync frequency.
+        -   `6.3 Planned Orders`: MRP vs ASCP requirements, Release Order Transaction ID, Make vs Buy confusion, Cross-Org fulfillment visibility, known gaps and upcoming enhancements.
     -   **Common Queries**: "SCHUB form compilation error.", "Index synchronization performance.", "Planned order release not working.", "MRP vs ASCP differences.", "Make vs Buy attribute.", "Pegging info drilldown."

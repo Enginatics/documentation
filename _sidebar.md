@@ -27,13 +27,13 @@
   * [6. Troubleshooting](installation_guide/part6_troubleshooting.md)
 
 * **Supply Chain Hub Installation Guide**
-  * [1. Introduction](supply_chain_guide/README.md)
-  * [2. Prerequisites](supply_chain_guide/part1_prerequisites.md)
-  * [3. Installation](supply_chain_guide/part2_installation.md)
-  * [4. Application Setup](supply_chain_guide/part3_application_setup.md)
-  * [5. Profile Options](supply_chain_guide/part4_profile_options.md)
-  * [6. Upgrade](supply_chain_guide/part5_upgrade.md)
-  * [7. Troubleshooting](supply_chain_guide/part6_troubleshooting.md)
+  * [Introduction](supply_chain_guide/README.md)
+  * [1. Prerequisites](supply_chain_guide/part1_prerequisites.md)
+  * [2. Installation](supply_chain_guide/part2_installation.md)
+  * [3. Application Setup](supply_chain_guide/part3_application_setup.md)
+  * [4. Profile Options](supply_chain_guide/part4_profile_options.md)
+  * [5. Upgrade](supply_chain_guide/part5_upgrade.md)
+  * [6. Troubleshooting](supply_chain_guide/part6_troubleshooting.md)
 
 * **Resources**
   * [Enginatics Website](https://www.enginatics.com/)

@@ -1,6 +1,6 @@
-# 7. Troubleshooting
+# 6. Troubleshooting
 
-## 7.1 PL/SQL ERROR 302, when compiling XXEN_SCHUB_WIPDJMDF.fmb
+## 6.1 PL/SQL ERROR 302, when compiling XXEN_SCHUB_WIPDJMDF.fmb
 
 For some clients on older patching levels, the custom form `XXEN_SCHUB_WIPDJMDF.fmb` may fail compilation during the installation of Supply Chain Hub.
 
@@ -19,7 +19,7 @@ Change the description of the Lookup Code from `XXEN_SCHUB_WIPDJMDF` to `WIPDJMD
 
 ![Form Compilation Error Workaround](images/form-compilation-workaround.png)
 
-## 7.2 Index Synchronization Performance Issues
+## 6.2 Index Synchronization Performance Issues
 
 If you face performance issues with mass updates of item descriptions (e.g. updating items' long description via the EGO Spreadsheet Java Concurrent Program), you can reduce the intermedia index synchronization frequency from on commit to daily.
 
@@ -32,7 +32,7 @@ alter index inv.xxen_mtl_sys_items_tl_t1 rebuild parameters('replace sync(every 
 alter index inv.xxen_mtl_sys_items_tl_t2 rebuild parameters('replace sync(every "trunc(sysdate)+1+2/24")');
 ```
 
-## 7.3 Planned Orders
+## 6.3 Planned Orders
 
 ### If using MRP (on-prem):
 
@@ -87,4 +87,4 @@ Use the **Pegging Info** column in the Supply/Demand tab to trace fulfillment so
   - Batch release support
   - Ability to modify quantity and dates at release time
 
-*Previous: [Upgrade](part5_upgrade.md) | Back to: [Introduction](README.md)*
+*Previous: [5. Upgrade](part5_upgrade.md) | Back to: [Introduction](README.md)*

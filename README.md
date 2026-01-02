@@ -57,12 +57,12 @@ The [Installation Guide](installation_guide/README.md) provides comprehensive in
 
 The [Supply Chain Hub Installation Guide](supply_chain_guide/README.md) provides instructions for installing the Supply Chain Hub add-on:
 
-- [Prerequisites](supply_chain_guide/part1_prerequisites.md) - Blitz Report requirement, ASCP considerations
-- [Installation](supply_chain_guide/part2_installation.md) - Step-by-step installation process
-- [Application Setup](supply_chain_guide/part3_application_setup.md) - Menu entry, planning source, WIP setup
-- [Profile Options](supply_chain_guide/part4_profile_options.md) - Configurable profile options
-- [Upgrade](supply_chain_guide/part5_upgrade.md) - Upgrade procedures
-- [Troubleshooting](supply_chain_guide/part6_troubleshooting.md) - Common issues and solutions
+- [1. Prerequisites](supply_chain_guide/part1_prerequisites.md) - Blitz Report requirement, ASCP considerations
+- [2. Installation](supply_chain_guide/part2_installation.md) - Step-by-step installation process
+- [3. Application Setup](supply_chain_guide/part3_application_setup.md) - Menu entry, planning source, WIP setup
+- [4. Profile Options](supply_chain_guide/part4_profile_options.md) - Configurable profile options
+- [5. Upgrade](supply_chain_guide/part5_upgrade.md) - Upgrade procedures
+- [6. Troubleshooting](supply_chain_guide/part6_troubleshooting.md) - Common issues and solutions
 
 ## Quick Links
 

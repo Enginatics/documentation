@@ -1,4 +1,4 @@
-# 6. Upgrade
+# 5. Upgrade
 
 To perform the Supply Chain Hub upgrade, download and deploy the latest installation file in the same way as for a new installation by following steps 1-3 in the [Installation](part2_installation.md) section.
 
@@ -18,4 +18,4 @@ cd supply_chain_hub_*/
 
 > **Note:** Ignore any `ORA-00955: name is already used by an existing object` error messages. These are expected during upgrade as the objects already exist from the previous installation.
 
-*Previous: [Profile Options](part4_profile_options.md) | Next: [Troubleshooting](part6_troubleshooting.md)*
+*Previous: [4. Profile Options](part4_profile_options.md) | Next: [6. Troubleshooting](part6_troubleshooting.md)*
