@@ -28,6 +28,9 @@ desktop.ini
 *.log
 /tmp/
 
+# Input resources folder (source materials for documentation)
+/input/
+
 # OS generated files
 *.pid
 *.seed
