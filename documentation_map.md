@@ -229,3 +229,60 @@ Contains comprehensive instructions for installing, configuring, upgrading, and 
         -   `6.40 504 Gateway Time-out`: Increase OAFM heap size.
         -   `6.41 FRM-30085`: Recompile packages and form.
     -   **Common Queries**: "ORA-12154 during installation.", "ISG connection error.", "Excel macro blocked.", "Form compilation error.", "Character set mismatch.", "Blitz Report function not available."
+
+## 4. Supply Chain Hub Installation Guide (`supply_chain_guide/`)
+
+Contains comprehensive instructions for installing, configuring, and troubleshooting the Supply Chain Hub add-on for Oracle E-Business Suite.
+
+-   **`README.md`**
+    -   **Topics**: Introduction to Supply Chain Hub, overview of installed objects, basic installation steps, and table of contents.
+    -   **Keywords**: Supply Chain Hub, SCHUB, Oracle E-Business Suite R12, Blitz Report add-on, XXEN_SCHUB prefix, database objects, user interface form, application setups.
+    -   **Common Queries**: "What is Supply Chain Hub?", "Supply Chain Hub overview.", "SCHUB installation summary."
+
+-   **`part1_prerequisites.md`**
+    -   **Topics**: Prerequisites for Supply Chain Hub installation, primarily requiring Blitz Report to be installed first.
+    -   **Keywords**: Prerequisites, Blitz Report, decentralized ASCP, Action Release, Reschedule, Cancel recommendations.
+    -   **Inner Structure**:
+        -   `2.1 Install Blitz Report in Oracle E-Business Suite`: Blitz Report dependency, decentralized ASCP considerations.
+    -   **Common Queries**: "What are the prerequisites for Supply Chain Hub?", "Do I need Blitz Report for SCHUB?", "ASCP integration requirements."
+
+-   **`part2_installation.md`**
+    -   **Topics**: Step-by-step installation instructions for Supply Chain Hub, including running the install script and handling errors.
+    -   **Keywords**: Installation, install.sh, unzip, supply_chain_hub_*.zip, APPS_PWD, APPS password, non-interactive installation, installation log, supply_chain_hub_install_logs_*.zip, decentralized ASCP.
+    -   **Inner Structure**:
+        -   `Installation Steps`: Steps 1-3 for installation, non-interactive mode, error review.
+    -   **Common Queries**: "How to install Supply Chain Hub?", "Run SCHUB installation script.", "Non-interactive installation."
+
+-   **`part3_application_setup.md`**
+    -   **Topics**: Post-installation application setup including menu entries, choosing ASCP or MRP as planning source, and WIP requirement operations configuration.
+    -   **Keywords**: Application setup, Menu entry, XXEN_SCHUB form function, sub-menu, System Administrator, ASCP, MRP, Planning Source, Supply Chain Hub: Use MRP for Planning Source profile, WIP Requirement Operations Closed Flag, wip_requirement_operations table, DFF, Component Information flexfield, WRO Closed Flag.
+    -   **Inner Structure**:
+        -   `4.1 Menu Entry`: Manual menu assignment for SCHUB.
+        -   `4.2 Choosing ASCP or MRP as the Planning Source`: Default ASCP, profile option for MRP.
+        -   `4.3 Set WIP Requirement Operations Closed Flag Concurrent Program`: WIP Demand KPI, DFF setup, scheduling recommendations.
+    -   **Common Queries**: "How to add Supply Chain Hub to menu?", "Configure MRP instead of ASCP.", "Setup WIP Demand KPI.", "WRO Closed Flag flexfield."
+
+-   **`part4_profile_options.md`**
+    -   **Topics**: Comprehensive reference of all Supply Chain Hub profile options controlling system behavior, UI availability, and Oracle application integration.
+    -   **Keywords**: Profile Options, Supply Chain Hub: Enable Release, Enable Reschedule and Cancel Actions, Calculate Price, Demand Price List, Drilldown after Release, Exclude Complete Work Orders, Exclude Inventory Master Organizations, Item Attachment Category, Show KPIs in Item Details Tab, Show KPIs in Item Search Tab, Show Release Button, Show Tooltip Help, Use MRP for Planning Source, Use Quick Sales Orders Form, Use Purchasing Buyer Work Center, Best Practices, Performance tuning.
+    -   **Inner Structure**:
+        -   `Profile Options Reference`: Complete table of all profile options with descriptions and defaults.
+        -   `Best Practices`: Review and set explicitly, performance tuning, drilldown configurations, testing.
+        -   `Notes`: Blank values, environment-specific options.
+    -   **Common Queries**: "List all Supply Chain Hub profile options.", "How to enable planned order release?", "Configure drilldown forms.", "Performance tuning for SCHUB."
+
+-   **`part5_upgrade.md`**
+    -   **Topics**: Instructions for upgrading Supply Chain Hub using the same installation process.
+    -   **Keywords**: Upgrade, supply_chain_hub_*.zip, ORA-00955, existing object errors.
+    -   **Inner Structure**:
+        -   `Upgrade Steps`: Download and deploy latest installation file, handle ORA-00955 errors.
+    -   **Common Queries**: "How to upgrade Supply Chain Hub?", "ORA-00955 during upgrade.", "SCHUB upgrade steps."
+
+-   **`part6_troubleshooting.md`**
+    -   **Topics**: Troubleshooting guide covering form compilation errors, index synchronization issues, and planned order release problems for MRP and ASCP.
+    -   **Keywords**: Troubleshooting, PL/SQL ERROR 302, XXEN_SCHUB_WIPDJMDF.fmb, WIPDJMDF, XXEN_SCHUB_FORMS lookup, Index synchronization, xxen_mtl_sys_items_tl_t1, xxen_mtl_sys_items_tl_t2, intermedia index, Planned Orders, MRP on-prem, Work Orders, Purchase Requisitions, ASCP centralized, ASCP distributed, APS_RELEASE responsibility, SCP Workbench, Release Order Transaction ID, Make vs Buy, Plan Organization, Pegging Info, Cross-Org Fulfillment.
+    -   **Inner Structure**:
+        -   `7.1 PL/SQL ERROR 302`: Form compilation workaround using standard WIP Discrete Jobs form.
+        -   `7.2 Index Synchronization Performance Issues`: Reduce intermedia index sync frequency.
+        -   `7.3 Planned Orders`: MRP vs ASCP requirements, Release Order Transaction ID, Make vs Buy confusion, Cross-Org fulfillment visibility, known gaps and upcoming enhancements.
+    -   **Common Queries**: "SCHUB form compilation error.", "Index synchronization performance.", "Planned order release not working.", "MRP vs ASCP differences.", "Make vs Buy attribute.", "Pegging info drilldown."

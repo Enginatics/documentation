@@ -16,4 +16,5 @@
 [User Guide](user_guide/README.md)
 [Developer Guide](developer_guide/README.md)
 [Installation Guide](installation_guide/README.md)
+[Supply Chain Hub](supply_chain_guide/README.md)
 [Report Library](https://www.enginatics.com/reports/)

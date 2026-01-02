@@ -53,6 +53,17 @@ The [Installation Guide](installation_guide/README.md) provides comprehensive in
 - [Optional Configurations](installation_guide/part5_optional_configurations.md) - Windows, SSO, standby database
 - [Troubleshooting](installation_guide/part6_troubleshooting.md) - Common issues and solutions
 
+### Supply Chain Hub Installation Guide
+
+The [Supply Chain Hub Installation Guide](supply_chain_guide/README.md) provides instructions for installing the Supply Chain Hub add-on:
+
+- [Prerequisites](supply_chain_guide/part1_prerequisites.md) - Blitz Report requirement, ASCP considerations
+- [Installation](supply_chain_guide/part2_installation.md) - Step-by-step installation process
+- [Application Setup](supply_chain_guide/part3_application_setup.md) - Menu entry, planning source, WIP setup
+- [Profile Options](supply_chain_guide/part4_profile_options.md) - Configurable profile options
+- [Upgrade](supply_chain_guide/part5_upgrade.md) - Upgrade procedures
+- [Troubleshooting](supply_chain_guide/part6_troubleshooting.md) - Common issues and solutions
+
 ## Quick Links
 
 - **Website:** [www.enginatics.com](https://www.enginatics.com/)
