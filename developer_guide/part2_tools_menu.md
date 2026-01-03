@@ -300,7 +300,60 @@ xxen_api.import_discoverer_folders(
 );
 ```
 
-### 2.7.6 Discoverer Import Prerequisites
+### 2.7.6 Mass Discoverer Import
+
+For organizations with many Discoverer workbooks, Blitz Report provides a mass import procedure that can migrate hundreds of reports in minutes.
+
+**Before Mass Import:**
+
+1. Run the **DIS Discoverer Workbook Summary** report to identify which workbooks to migrate
+2. Review the list showing business areas, folder locations, last access dates, and creation dates
+3. Decide which workbooks to include based on usage patterns
+
+**Mass Import Process:**
+
+Use the following PL/SQL script from SQL Developer, Toad, or similar tools:
+
+```sql
+begin
+  for c in (
+    select distinct
+    ew.ew_doc_owner doc_owner,
+    ed.doc_name workbook_name,
+    es.esh_name worksheet_name
+    from
+    eul_us.eul5_documents ed,
+    eul_us.eul5_doc_owners ew,
+    eul_us.eul5_worksheets es
+    where
+    ed.doc_eu_id=ew.ew_id and
+    ed.doc_id=es.esh_doc_id
+    -- Uncomment the line below to filter by last access date
+    -- and ed.doc_accessed_date>sysdate-180
+    order by 1,2,3
+  ) loop
+    xxen_api.import_discoverer_worksheet(c.doc_owner, c.workbook_name, c.worksheet_name);
+  end loop;
+end;
+/
+```
+
+> **Note:** The default script filters workbooks accessed within the last 180 days. Adjust or comment out this filter based on your migration requirements.
+
+**Monitoring Progress:**
+
+Run the **Blitz Report Categories** report during import to monitor the count of imported Discoverer reports as they are added.
+
+**What Gets Imported:**
+
+- Original SQL from Discoverer workbook
+- Parameters with list of values definitions
+- Security assignments (responsibilities and users)
+- Category assignments for organization
+
+The mass import typically processes 1000 reports in approximately 10 minutes.
+
+### 2.7.7 Discoverer Import Prerequisites
 
 **Enable statistics collection:**
 
@@ -353,7 +406,7 @@ Create or set `QPPCreateNewStats` and `QPPEnable` keys to value `1`.
 create index .xxeul5_documents_n1 on .eul5_documents (doc_name) tablespace apps_ts_tx_idx;
 ```
 
-### 2.7.7 Excel4apps Reports Wand
+### 2.7.8 Excel4apps Reports Wand
 
 Blitz Report imports custom Excel4apps Reports Wand reports through the import menu option.
 
@@ -370,7 +423,7 @@ xxen_api.import_concurrent_program(
 );
 ```
 
-### 2.7.8 Enterprise Command Center
+### 2.7.9 Enterprise Command Center
 
 Blitz Report imports Oracle's Enterprise Command Center dataset queries, allowing users to access ECC data of unlimited size and real-time in Excel.
 
@@ -386,7 +439,7 @@ xxen_api.import_ecc_dataset(
 );
 ```
 
-### 2.7.9 Polaris Reporting Workbench
+### 2.7.10 Polaris Reporting Workbench
 
 Blitz Report imports Polaris Reporting Workbench reports either through the import menu option or an API.
 
