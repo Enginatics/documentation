@@ -122,30 +122,151 @@ ffmpeg -i input/videos/training_video.mp4 -vn -acodec pcm_s16le -ar 16000 -ac 1 
 ffmpeg -i input/videos/training_video.mp4 -vn -acodec libmp3lame -q:a 2 /tmp/audio.mp3
 ```
 
-#### Step 3: Transcribe Audio
+#### Step 3: Split Long Audio into Chunks (Recommended for videos > 10 minutes)
+
+For videos longer than 10 minutes, split the audio into 10-minute chunks before transcription. This improves reliability and allows parallel processing.
+
+```bash
+# Create output directory for chunks
+mkdir -p /tmp/chunks
+
+# Split audio into 10-minute (600 second) segments
+ffmpeg -i /tmp/audio.wav -f segment -segment_time 600 -c copy /tmp/chunks/chunk_%03d.wav
+
+# Verify chunks were created
+ls -la /tmp/chunks/
+```
+
+#### Step 4: Transcribe Audio
+
+**For short videos (< 10 minutes):**
 ```bash
 # Using OpenAI Whisper (local installation)
 whisper /tmp/audio.wav --model base --output_format txt --output_dir /tmp/
 
-# For longer videos, use medium or large model for accuracy
+# For better accuracy
 whisper /tmp/audio.wav --model medium --language en --output_format txt --output_dir /tmp/
 
 # Output: /tmp/audio.txt (transcription)
 ```
 
-#### Step 4: Extract Key Frames (Screenshots)
+**For long videos (chunked processing):**
 ```bash
-# Extract frame every 30 seconds
+# Create transcripts directory
+mkdir -p /tmp/transcripts
+
+# Process each chunk sequentially
+for f in /tmp/chunks/chunk_*.wav; do
+  echo "Processing: $f"
+  whisper "$f" --model base --language en --output_format txt --output_dir /tmp/transcripts/
+done
+
+# Concatenate all transcripts into final output (preserves order)
+cat /tmp/transcripts/chunk_*.txt > /tmp/full_transcript.txt
+
+# Optional: Create CSV with chunk metadata
+echo "chunk_file,transcript_file,status" > /tmp/transcription_log.csv
+for f in /tmp/chunks/chunk_*.wav; do
+  basename="${f%.wav}"
+  txt_file="/tmp/transcripts/$(basename "$basename").txt"
+  if [ -f "$txt_file" ]; then
+    echo "$(basename "$f"),$(basename "$txt_file"),completed" >> /tmp/transcription_log.csv
+  else
+    echo "$(basename "$f"),,failed" >> /tmp/transcription_log.csv
+  fi
+done
+
+# Verify final transcript
+wc -l /tmp/full_transcript.txt
+```
+
+> **Note:** Chunked processing is recommended for videos over 10 minutes to prevent memory issues and allow recovery if transcription fails partway through.
+
+#### Step 5: Extract Key Frames (Screenshots)
+
+Screenshots should be collected to illustrate new documentation content. Align frame extraction with transcript timestamps where key features or UI elements are demonstrated.
+
+**Basic Frame Extraction:**
+```bash
+# Extract frame every 30 seconds (for initial review)
 ffmpeg -i input/videos/training_video.mp4 -vf "fps=1/30" input/images/video_frames/frame_%04d.png
 
-# Extract frame at specific timestamp
+# Extract frame at specific timestamp (from transcript)
 ffmpeg -i input/videos/training_video.mp4 -ss 00:01:30 -vframes 1 input/images/screenshot_1m30s.png
 
 # Extract frames at scene changes
 ffmpeg -i input/videos/training_video.mp4 -vf "select='gt(scene,0.3)'" -vsync vfr input/images/scenes/scene_%04d.png
 ```
 
-#### Step 5: Process Transcription
+**Collecting Screenshots Aligned with Documentation:**
+
+1. **Review transcript for visual content mentions:**
+   ```bash
+   # Find timestamps mentioning UI elements, screens, or demonstrations
+   grep -n -i -E "screen|click|button|menu|form|window|dialog|tab|report|shows|see here|look at" /tmp/full_transcript.txt
+   ```
+
+2. **Extract frames at documentation-relevant timestamps:**
+   ```bash
+   # Create directory for documentation screenshots
+   mkdir -p input/images/doc_screenshots
+
+   # Extract frames at specific timestamps identified from transcript
+   # Format: HH:MM:SS or SS (seconds)
+   ffmpeg -i input/videos/training_video.mp4 -ss 00:05:23 -vframes 1 input/images/doc_screenshots/report-selection-screen.png
+   ffmpeg -i input/videos/training_video.mp4 -ss 00:12:45 -vframes 1 input/images/doc_screenshots/parameter-entry-form.png
+   ffmpeg -i input/videos/training_video.mp4 -ss 00:18:30 -vframes 1 input/images/doc_screenshots/excel-output-example.png
+   ```
+
+3. **Batch extract multiple timestamps:**
+   ```bash
+   # Create a timestamps file with: timestamp,output_filename
+   cat > /tmp/screenshot_timestamps.txt << 'EOF'
+   00:05:23,report-selection-screen
+   00:12:45,parameter-entry-form
+   00:18:30,excel-output-example
+   00:25:10,template-configuration
+   EOF
+
+   # Extract all screenshots
+   while IFS=, read -r timestamp filename; do
+     ffmpeg -i input/videos/training_video.mp4 -ss "$timestamp" -vframes 1 "input/images/doc_screenshots/${filename}.png" -y
+   done < /tmp/screenshot_timestamps.txt
+   ```
+
+4. **Optimize screenshots for documentation:**
+   ```bash
+   # Resize to max width 800px and optimize
+   for img in input/images/doc_screenshots/*.png; do
+     convert "$img" -resize 800x\> "$img"
+     optipng -o5 "$img"
+   done
+   ```
+
+**Screenshot Naming Convention:**
+- Use lowercase with hyphens: `feature-name-action.png`
+- Include context: `blitz-report-run-window.png`, `discoverer-import-lov.png`
+- Match documentation section: `part1-parameter-selection.png`
+
+**Screenshot Selection Criteria:**
+- UI screens showing features being documented
+- Clear visibility of relevant buttons, menus, or fields
+- Before/after states for process documentation
+- Error messages or dialog boxes mentioned in troubleshooting
+- Output examples (Excel reports, charts, etc.)
+
+**Linking Screenshots to Documentation Updates:**
+```bash
+# Create a mapping file linking screenshots to doc sections
+cat > /tmp/screenshot_mapping.csv << 'EOF'
+screenshot,target_doc,section,description
+report-selection-screen.png,user_guide/part1_running_blitz_report.md,1.2,Report selection interface
+parameter-entry-form.png,user_guide/part1_running_blitz_report.md,1.3,Parameter entry example
+excel-output-example.png,user_guide/part1_running_blitz_report.md,1.5,Excel output with formatting
+EOF
+```
+
+#### Step 6: Process Transcription
 ```bash
 # Clean transcription output
 cat /tmp/audio.txt | \
@@ -157,7 +278,7 @@ cat /tmp/audio.txt | \
 grep -i -E "blitz report|parameter|template|schedule" /tmp/clean_transcript.txt > /tmp/relevant_sections.txt
 ```
 
-#### Step 6: Download YouTube/Vimeo Videos
+#### Step 7: Download YouTube/Vimeo Videos
 ```bash
 # Download video from YouTube
 yt-dlp -o "input/videos/%(title)s.%(ext)s" "https://www.youtube.com/watch?v=VIDEO_ID"
@@ -447,7 +568,111 @@ pdftk input/references/manual.pdf cat 1-5 output /tmp/first_five.pdf
 - **Update the map**: Always update `documentation_map.md` when structure changes.
 - **Log everything**: Maintain detailed entries in `processed_resources.log`.
 
-### 5.6 Resource Processing Priorities
+### 5.6 Preserving Documentation Structure
+
+**CRITICAL**: When updating documentation, you MUST preserve the existing structure:
+
+- **Never create new documentation files**: Always integrate new content into existing files. The documentation structure has been carefully designed - adding new files disrupts navigation, sidebar organization, and cross-references.
+- **Never change section numbering**: Existing section numbers (1.1, 2.3, etc.) are referenced throughout the documentation and by users. Adding new numbered sections breaks these references.
+- **Prefer expanding existing sections**: Add new content as subsections, bullet points, or paragraphs within existing sections rather than creating new top-level sections.
+- **Use the documentation map**: Consult `documentation_map.md` to find the most appropriate existing section for new content.
+
+**When you identify new content to document:**
+
+1. Find the most relevant existing file and section using `documentation_map.md`
+2. Add content as a subsection or expand existing paragraphs
+3. If content spans multiple topics, split it across the appropriate existing sections
+4. Update keywords in `documentation_map.md` but do NOT add new file entries
+
+**Examples:**
+
+| New Content | Correct Approach | Wrong Approach |
+|-------------|------------------|----------------|
+| User-facing Upload guide | Add to existing `part1_running_blitz_report.md` section 1.5 (Templates) or create subsection within existing file | Create new `part3_using_blitz_upload.md` |
+| New API endpoint | Add to existing `part5_apis_integration.md` | Create new `part6_new_apis.md` |
+| New profile option | Add row to existing table in `part4_profile_options.md` | Create new section |
+| New troubleshooting issue | Add to existing `part6_troubleshooting.md` | Create new troubleshooting file |
+
+### 5.7 Preventing Duplicate Content
+
+**CRITICAL**: Before adding any content, you MUST verify it doesn't already exist elsewhere in the documentation. Duplicate content creates maintenance burden and leads to inconsistencies.
+
+#### Duplicate Detection Algorithm
+
+**Step 1: Extract Key Concepts**
+From the new content, identify:
+- Feature names (e.g., "Blitz Upload", "Excel template", "pivot table")
+- Technical terms (e.g., "LOV validation", "color coding", "bulk processing")
+- User actions (e.g., "create mode", "error handling", "scheduling")
+
+**Step 2: Search Documentation Map**
+```bash
+# Search for each key concept in documentation_map.md
+grep -i "upload" documentation_map.md
+grep -i "color.*column\|column.*color" documentation_map.md
+grep -i "LOV\|list of values" documentation_map.md
+```
+
+**Step 3: Check Keywords Section**
+For each file listed in `documentation_map.md`, review the **Keywords** field:
+- If keywords overlap significantly (>50%) with your new content, that section likely already covers the topic
+- Read that section before adding new content
+
+**Step 4: Search Existing Documentation**
+```bash
+# Search for specific terms in all documentation files
+grep -r -i -l "blitz upload" user_guide/ developer_guide/
+grep -r -i "create.*mode\|update.*mode" user_guide/ developer_guide/
+```
+
+**Step 5: Compare and Decide**
+
+| Scenario | Action |
+|----------|--------|
+| Content exists in appropriate location | Do NOT add duplicate; update existing if needed |
+| Content exists but in wrong guide (e.g., user content in developer guide) | Move/consolidate to correct location |
+| Content exists but is incomplete | Expand existing section, don't create new one |
+| Content is genuinely new | Add to most appropriate existing section |
+| Content spans user AND developer perspectives | Split: user-facing in user guide, technical details in developer guide with cross-references |
+
+#### Cross-Reference Strategy
+
+When related content must exist in multiple places:
+1. **Primary location**: Full detailed content
+2. **Secondary locations**: Brief summary with link to primary
+3. **Use explicit cross-references**:
+   ```markdown
+   > For detailed information on creating uploads, see [Developer Guide: Creating a Blitz Upload](../developer_guide/part6_upload_glossary.md#6-creating-a-blitz-upload).
+   ```
+
+#### Documentation Map Maintenance
+
+After adding content, update `documentation_map.md`:
+1. Add new keywords to the relevant file's **Keywords** field
+2. Update **Inner Structure** if new subsections were added
+3. Add to **Common Queries** if applicable
+4. This ensures future duplicate checks will find this content
+
+#### Example: Checking for Duplicates Before Adding Upload Content
+
+```bash
+# 1. Search documentation map for upload-related content
+grep -i "upload" documentation_map.md
+
+# Results show:
+# - part1_running_blitz_report.md: "Excel upload" (template upload feature)
+# - part6_upload_glossary.md: "Blitz Upload, Creating a Blitz Upload" (developer guide)
+
+# 2. Determine: Is this user-facing or developer-facing content?
+# User-facing → check part1_running_blitz_report.md
+# Developer-facing → check part6_upload_glossary.md
+
+# 3. Read existing sections to understand current coverage
+# 4. Add only genuinely new content to appropriate location
+# 5. Update documentation_map.md keywords
+```
+
+### 5.8 Resource Processing Priorities
 
 When processing sources, prioritize in this order:
 
@@ -457,10 +682,11 @@ When processing sources, prioritize in this order:
 4. **Training videos** - Practical demonstrations and use cases
 5. **Community content** - May need verification before incorporating
 
-### 5.7 Quality Checklist
+### 5.9 Quality Checklist
 
 Before finalizing any documentation update, verify:
 
+- [ ] Duplicate check performed using documentation map (section 5.7)
 - [ ] Content is technically accurate
 - [ ] Spelling and grammar are correct
 - [ ] Code examples are syntactically valid
@@ -471,7 +697,7 @@ Before finalizing any documentation update, verify:
 - [ ] `processed_resources.log` entry is added
 - [ ] Temporary files are cleaned up
 
-### 5.8 Error Handling
+### 5.10 Error Handling
 
 When encountering issues during processing:
 
