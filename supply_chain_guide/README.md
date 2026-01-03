@@ -4,7 +4,21 @@
 
 This document guides you through the steps required to install the Supply Chain Hub for Oracle E-Business Suite R12.
 
-Supply Chain Hub is an add-on to Blitz Report and installs the following objects on your Oracle E-Business Suite server:
+Supply Chain Hub is an add-on to Blitz Report designed specifically for discrete manufacturing customers. It provides a unified view of supply chain data by combining ERP information with Advanced Supply Chain Planning (ASCP) data, giving users a powerful single-screen interface for planning and analysis.
+
+### Key Features
+
+- **Unified Data View:** Combines data from ERP and ASCP (if using a separate planning server) through database link integration
+- **Advanced Item Search:** Search for inventory items based on item type, sales order, project/task, or planning exceptions
+- **Bill of Materials Explosion:** Explode BOM levels up to 5 levels deep from the item search results
+- **Quick Navigation:** Right-click on items to navigate directly to Oracle standard screens (Bill of Materials, On-Hand Quantities, etc.)
+- **Hyperlink Access:** Click hyperlinks to access PO supply, work orders, and other related documents
+- **Blitz Report Integration:** Highlight items and run Blitz Reports (such as the Horizontal Plan report) directly from the interface
+- **Planned Order Release:** Release planned orders to work orders or purchase requisitions directly from the Supply/Demand grid
+
+### Installed Objects
+
+Supply Chain Hub installs the following objects on your Oracle E-Business Suite server:
 
 - Database tables, sequences, synonyms, indexes and views
 - Database packages
