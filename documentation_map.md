@@ -7,9 +7,9 @@ This document provides a detailed map of the project's documentation. Use it to 
 Contains information for end-users on how to effectively use Blitz Report to run, manage, and customize reports.
 
 -   **`introduction.md`**
-    -   **Topics**: High-level introduction to Blitz Report, its integration with Oracle E-Business Suite, output formats (XLSX, CSV), and general benefits for business users.
-    -   **Keywords**: Overview, What is Blitz Report, Oracle Forms, E-Business Suite, SQL scripts, XLSX, CSV, operational reporting solution.
-    -   **Common Queries**: "What is Blitz Report?", "How does Blitz Report integrate with Oracle EBS?"
+    -   **Topics**: High-level introduction to Blitz Report, its integration with Oracle E-Business Suite, interface options (Forms and OAF web), output formats (XLSX, CSV), key features including seamless integration, templates, data loading, high performance exports, and Financial Statement Generator.
+    -   **Keywords**: Overview, What is Blitz Report, Oracle Forms, OAF, web interface, E-Business Suite, SQL scripts, XLSX, CSV, operational reporting solution, Excel icon, parameter defaulting, templates, pivot tables, dashboards, charts, slicers, data loading, bulk processing, high performance, 100000 rows, Financial Statement Generator, FSG, drill-down.
+    -   **Common Queries**: "What is Blitz Report?", "How does Blitz Report integrate with Oracle EBS?", "What interfaces does Blitz Report have?", "How fast is Blitz Report?"
 
 -   **`part1_running_blitz_report.md`**
     -   **Topics**: Detailed steps for running a Blitz Report, including selecting reports, entering parameter values, viewing output, customizing runtime options, managing templates, and scheduling reports.
@@ -43,9 +43,9 @@ Contains information for end-users on how to effectively use Blitz Report to run
 Contains technical, in-depth information for developers on how to create reports, integrate with APIs, and leverage advanced features of Blitz Report.
 
 -   **`introduction.md`**
-    -   **Topics**: High-level introduction to Blitz Report for IT professionals, its role in Oracle EBS, and core functionalities for report creation and maintenance.
-    -   **Keywords**: Overview, Developer Guide, Oracle Forms, E-Business Suite, SQL scripts, IT team, operational reporting solution.
-    -   **Common Queries**: "What is the developer guide about?", "Blitz Report for developers."
+    -   **Topics**: High-level introduction to Blitz Report for IT professionals, its role in Oracle EBS, core functionalities for report creation and maintenance, DBA and system administrator use cases, performance tuning capabilities, and version compatibility information.
+    -   **Keywords**: Overview, Developer Guide, Oracle Forms, OAF, E-Business Suite, SQL scripts, IT team, operational reporting solution, DBA, database administrator, AWR Performance Summary, SQL tuning, CPU optimization, cloud cost reduction, performance tuning, EBS 11i, R12, R12.2, Oracle Database 11g.
+    -   **Common Queries**: "What is the developer guide about?", "Blitz Report for developers.", "What versions of EBS does Blitz Report support?", "How can Blitz Report help DBAs?", "Performance tuning with Blitz Report."
 
 -   **`part1_creating_report.md`**
     -   **Topics**: Detailed instructions on creating a Blitz Report, including SQL definition, anchor types (`n=n`, `&lexical`, `:bind`), dynamic SQL examples, report header properties, parameter setup (display sequence, types, LOVs, default values, dependencies), assignments, multi-language support, and security aspects like access profiles and VPD.
