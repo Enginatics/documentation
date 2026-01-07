@@ -2,7 +2,7 @@
 
 ## 1.1 Report Creation Steps
 
-With Blitz Report you can easily leverage existing SQL to create reports for your users. There is a [training video](https://www.enginatics.com/blitz-report-training-videos/) available on creating a report from an SQL query.
+With Blitz Report you can easily leverage existing SQL to create reports for your users. There is a [training video](https://www.youtube.com/watch?v=z8Pwjc-pyV4) available on creating a report from an SQL query.
 
 A Blitz Report consists of an SQL query to retrieve the data, and optional parameters that enable users to control or restrict data returned by a report.
 
