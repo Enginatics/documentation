@@ -12,8 +12,8 @@ Contains information for end-users on how to effectively use Blitz Report to run
     -   **Common Queries**: "What is Blitz Report?", "How does Blitz Report integrate with Oracle EBS?"
 
 -   **`part1_running_blitz_report.md`**
-    -   **Topics**: Detailed steps for running a Blitz Report, including selecting reports, entering parameter values, viewing output, customizing runtime options, managing templates, and scheduling reports.
-    -   **Keywords**: Running reports, report selection, parameter values, multiple values, default parameters, output viewing, options, email delivery, output format, row limit, time limit, disable column translations, exclude column headers, custom postprocess, output filename, additional output directory, tokens, templates, template layout, pivot table, Excel upload, datasheet, template sharing, excluded parameters, scheduling a report, delivery options, output distribution.
+    -   **Topics**: Detailed steps for running a Blitz Report, including selecting reports, entering parameter values, viewing output, customizing runtime options, managing templates, scheduling reports, and using Blitz Upload for data entry.
+    -   **Keywords**: Running reports, report selection, parameter values, multiple values, default parameters, output viewing, options, email delivery, output format, row limit, time limit, disable column translations, exclude column headers, custom postprocess, output filename, additional output directory, tokens, templates, template layout, pivot table, Excel upload, datasheet, template sharing, excluded parameters, scheduling a report, delivery options, output distribution, Blitz Upload, create mode, create or update mode, color-coded columns, gray columns, yellow columns, read-only, required columns, LOV validation, bulk upload, error handling, upload results.
     -   **Inner Structure**:
         -   `1.1 Selecting a report`: Text search, LOV options, responsibility filtering.
         -   `1.2 Parameter values`: Multiple values, saving user/template defaults.
@@ -21,7 +21,8 @@ Contains information for end-users on how to effectively use Blitz Report to run
         -   `1.4 Options`: User/Developer view, Email (placeholders, custom messages), Output Format, Row/Time Limit, Column Translations, Postprocess, Filename, Additional Directories, Tokens, Freeze flag.
         -   `1.5 Templates`: Select/create, layout (columns, aggregation, sort, sheet break), pivot table (filters, columns, rows, values), Excel upload, datasheet, template sharing (site, responsibility, user), excluded parameters.
         -   `1.6 Scheduling a report`: Copy existing request, manual submission, delivery options (email, FTP, WebDAV), suppress empty file delivery.
-    -   **Common Queries**: "How to run a report?", "How to schedule a Blitz Report?", "What are runtime options?", "How to use templates?", "Email report output."
+        -   `1.7 Using Blitz Upload`: Upload modes (create, create or update), color-coded Excel columns (gray/yellow/white), LOV validation, data entry, bulk processing, error handling and reprocessing.
+    -   **Common Queries**: "How to run a report?", "How to schedule a Blitz Report?", "What are runtime options?", "How to use templates?", "Email report output.", "How to use Blitz Upload?", "What do Excel column colors mean?", "How to fix upload errors?"
 
 -   **`part2_gl_financial_statement.md`**
     -   **Topics**: Comprehensive guide to the GL Financial Statement and Drilldown (FSG) feature, covering its capabilities, accessing it, responsibility/ledger/segment selection, Discover tools, List of Values, Insert Functions, Refresh options, Drilldown, and conversion tools.

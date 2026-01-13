@@ -347,3 +347,69 @@ Alternatively, you can submit a new 'Blitz Report' concurrent request, populatin
 Oracle's delivery options allow sending the report output e.g. as an email attachment, to an FTP location or uploading it to a WebDAV cloud storage.
 
 If a scheduled report does not retrieve any data, Blitz Report does not send an empty output file. In case you also want to send empty output files for scheduled reports, set profile option **Blitz Report Suppress Empty File Delivery** to 'No'.
+
+
+
+## 1.7 Using Blitz Upload
+
+Blitz Upload provides an efficient way to create and update data in Oracle E-Business Suite directly from Excel. It combines the familiar Excel interface with powerful server-side bulk processing, making data operations significantly faster than traditional tools like Web ADI.
+
+> There is a [training video](https://www.enginatics.com/tutorials/) available on using Blitz Upload.
+
+### Accessing Blitz Upload
+
+Blitz Upload is accessed through the same Blitz Report interface. When you click on the Excel icon in Oracle EBS navigation, uploads are displayed alongside reports and can be selected from the list.
+
+![Blitz Upload selection screen](images/upload-selection.png)
+
+### Upload Modes
+
+When you select an upload, you can choose how you want to work with the data:
+
+| Mode | Description |
+|------|-------------|
+| **Create** | Create new records only. The tool generates an empty Excel file with the required column structure for data entry. |
+| **Create or Update** | Query existing records and modify them, or create new records. This mode downloads existing data that you can update. |
+
+### Understanding the Excel Output
+
+When you run an upload, Blitz Upload generates a macro-enabled Excel file with color-coded columns:
+
+| Color | Meaning |
+|-------|---------|
+| **Gray** | Read-only columns. These cannot be modified for existing records (e.g., requisition number). |
+| **Yellow** | Required columns. You must provide values for these columns when creating new records. |
+| **White** | Optional columns. You may enter values but they are not required. |
+
+![Blitz Upload color-coded columns](images/upload-color-coding.png)
+
+Similar to Oracle Forms, Blitz Upload provides List of Values (LOV) validation directly in Excel for fields like inventory organizations, locations, requesters, suppliers, and inventory items.
+
+![Blitz Upload LOV validation](images/upload-lov-validation.png)
+
+### Data Entry and Upload Process
+
+1. **For existing records**: The tool automatically detects which records you modified. Only modified records are processed during upload.
+2. **For new records**: Add new rows, fill in all yellow (required) columns, and optionally fill in white (optional) columns.
+3. **Save** the Excel file and click the **Upload** button in the Blitz Upload window.
+4. Select the saved file from your downloads folder.
+
+Blitz Upload processes the entire dataset in bulk on the server, enabling updates of hundreds of thousands of records efficiently.
+
+### Viewing Results and Handling Errors
+
+After the upload completes, a new output file is generated showing the **Status** (Success or Error) and **Message** for each record.
+
+![Blitz Upload error messages](images/upload-error-handling.png)
+
+If records fail validation:
+
+1. Review error messages in the output file
+2. Correct the data directly in the output file
+3. Save and upload again
+
+Common errors include invalid dates, invalid charge accounts, and missing required fields. The iterative error correction process allows you to quickly resolve issues and reprocess records until all are successful.
+
+![Blitz Upload success results](images/upload-success-results.png)
+
+> For detailed information on creating uploads, see [Developer Guide: Creating a Blitz Upload](../developer_guide/part6_upload_glossary.md#6-creating-a-blitz-upload).
